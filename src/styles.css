@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'app/comman_style/customBootstrap.rtl.css';
+@import 'app/comman_style/style-rtl.css';
+.mat-progress-spinner{
+    display: block;
+    position: absolute !important;
+    left: 50%;
+    z-index: 10000;
+    top: 50%;
+}

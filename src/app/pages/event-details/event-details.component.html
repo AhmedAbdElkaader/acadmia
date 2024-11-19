@@ -1,0 +1,215 @@
+<app-app-nav></app-app-nav>
+<main class="">
+  <!-- whatsapp floating button -->
+  <app-whatsapp></app-whatsapp>
+  <!-- END whatsapp floating button -->
+  <div class="container-fluid position-relative">
+    <div class="row bg-secondary py-4">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb animate__animated animate__fadeInDown mb-0">
+            <li class="breadcrumb-item mb-2 mb-md-0">
+              <a class="text-white" href="home.html">أكادميه الفنون</a>
+            </li>
+            <!-- <li class="breadcrumb-item mb-2 mb-md-0">
+              <a class="text-white">معهد السينما</a>
+            </li> -->
+            <li class="breadcrumb-item mb-2 mb-md-0">
+              <a class="text-white" href="research-listing.html">
+                فعاليات
+              </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {{event_data.TITLE}}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <section class="row pb-5 pt-4  animate__animated animate__fadeIn animate__fast wow">
+      <div class="col-lg-8 col-xl-9 ps-lg-4 course-details">
+        <!-- <div class="pb-4 fw-medium animate__fadeInDown animate__faster wow">
+            العودة إلى 
+            <a class="text-primary">المعهد العالي للسينما <i class="icon-arrow-sm default"></i></a>
+          </div> -->
+        <h2>{{event_data.TITLE}}</h2>
+        <!-- <label class="badge bg-primary-light py-1 px-2 lh-base text-black d-sm-none d-inline-block mt-2">
+            سينما
+          </label> -->
+        <div class="position-relative mt-4">
+
+            <img src="{{event_data.IMG_PATH}}"/>
+
+          <div class="bg-white p-3 position-absolute start-0 d-sm-flex align-items-center date-details">
+            <div class="d-flex me-3 align-items-center">
+              <i class="icon-calender text-primary me-2"></i>
+              <p class="fw-medium mb-0">{{event_data.START_DATE}}</p>
+            </div>
+            <div class="d-md-flex me-3 align-items-center d-none">
+              <i class="icon-location text-primary me-2"></i>
+              <p class="fw-medium mb-0">{{event_data.Place}}</p>
+            </div>
+            <!-- <label class="badge bg-primary-light py-1 px-2 lh-base text-black d-sm-inline-block d-none">
+              سينما
+            </label> -->
+          </div>
+        </div>
+        <!-- <div class="position-relative pt-4">
+          <div class="mb-4 event-date">
+            <div class="d-flex align-items-start">
+              <i class="icon-time mt-1"></i>
+              <div class="d-flex flex-wrap date-list">
+                <div class="bg-light text-black py-1 px-2 fw-medium ms-2">
+                  اﻟﺠﻤﻌﻪ 22 ﻳﻨﺎﻳﺮ / 9-10 ﻣﺴﺎء
+                </div>
+                <div class="bg-light text-black py-1 px-2 fw-medium ms-2">
+                  اﻟسبت 23 ﻳﻨﺎﻳﺮ / 9-10 ﻣﺴﺎء
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-4 event-date">
+            <div class="d-flex align-items-start align-items-md-center">
+              <i class="icon-location"></i>
+              <div class="d-flex flex-wrap date-list text-black fw-medium ps-2">
+                اكاديمية الفنون ش جمال الدين الأفغانى – طريق الهرم – جيزة – مصر <a class="text-primary">/ الموقع على
+                  خرائط جوجل</a>
+              </div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <h5 class="fw-bold text-black mb-2">
+              وصف
+            </h5>
+            <p class="text-muted fw-medium">
+              أمسية موسيقية لعازفة البيانو العالمية مشيرة عيسى تقام في الثامنة مساء الجمعة 10 ديسمبر على المسرح الكبير
+              بدار الأوبرا المصرية بمشاركة مجموعة من المواهب الواعدة في العزف على الة البيانو من طلاب المدارس والجامعات
+              المختلفة وأكاديمية الفنون.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-muted fw-medium">
+              ويشارك في الأمسية تاليا عطية، إيمان مهني، سليم فكري، فريدة مبارك، عمر توفيق، نادية الجمال، عائشة بن علي،
+              مايا الزوربا، هيدي الجندي، منى كشكي، حسن الزوربا، علي عطية، خالد سيف الدين.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-muted fw-medium">
+              نرشح لك - التجديد في موسيقى الشعر العربي بصالون أوبرا الإسكندرية الثقافي يتضمن البرنامج مختارات من الأعمال
+              الكلاسيكية العالمية التي كتبها خصيصاً لالة البيانو كبار المؤلفين. يشار إلى أن مشيرة عيسى حاصلة على دبلوم
+              المعهد العالي للكونسرفتوار بتقدير امتياز، ودبلوم فن الأداء على البيانو من فيينا بالنمسا عام 1984، نالت
+              درجة الدكتوراه في الموسيقى عام 1987 ، شاركت في العديد من المهرجانات الدولية المتخصصة منها مهرجان سرفانتيون
+              الدولي بالمكسيك، ومهرجان أسابيع الموسيقى الدولي بصوفيا ( ايطاليا).وحازت العديد من الجوائز وشهادات التقدير
+              من مصر والخارج منها الجائزة الأولى من جمعية الشباب الموسيقى بالقاهرة عام 1971، وجائزة ستيبانوف بفيينا عام
+              1982 وجائزة شيكاغو للفنون عام 1987، وتعد من أهم العازفين الذين صاحبوا أوركسترا القاهرة السيمفونى خلال
+              مواسمه المتتالية ، قدمت العديد من الحفلات المنفردة والمتميزة بمصر والخارج بالإضافة إلى مشاركتها في حفل
+              افتتاح دار الأوبرا المصرية عام 1988 ، تشغل حالياً منصب أستاذ دكتور بمعهد الكونسرفتوار بالقاهرة، تم
+              اختيارها ضمن 100 شخصية عالمية مؤثرة من قبل شبكة bbc العربية عام 2019.
+            </p>
+          </div>
+        </div> -->
+        <!-- <div class="border-top border-bottom mt-5 py-1 d-flex">
+          <ul class="list-inline mb-0 d-flex align-items-center">
+            <li class="list-inline-item">
+              <button class="btn border-0 px-1">
+                <img src="assets/img/fb.svg">
+              </button>
+            </li>
+            <li class="list-inline-item">
+              <button class="btn border-0 px-1">
+                <img src="assets/img/twitter.svg">
+              </button>
+            </li>
+            <li class="list-inline-item">
+              <button
+                class="btn border-0 text-black fw-medium px-1 share-btn d-flex align-items-center dropdown-toggle dropdown-toggle-split"
+                type="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="icon-share d-inline-block me-1"></i>
+                شارك البحث
+              </button>
+              <ul class="dropdown-menu border shadow p-0 dropdown-share" aria-labelledby="dropdownShare">
+                <li><a class="dropdown-item border-bottom fw-medium  d-flex align-items-center" href="#">
+                    <i class="icon-email d-inline-block me-2 text-muted"></i>
+                    بريد إلكتروني
+                  </a></li>
+                <li><a class="dropdown-item fw-medium d-flex align-items-center" href="#">
+                    <i class="icon-copy d-inline-block me-2 text-muted"></i>
+                    نسخ الرابط
+                  </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+      <aside class="col-lg-4 col-xl-3 mt-lg-5 pt-5">
+        <div class="border px-3 pt-4">
+          <h3>الفعاليات الاكثر مشاهدة </h3>
+          <ul class="list-unstyled fw-medium fs-7">
+            <li class="border-top py-4 px-1">
+              <a class="text-black hover">البناء المونتاجى في اعمال المخرج اليمنى سمير العفيف ...</a>
+            </li>
+            <li class="border-top py-4 px-1">
+              <a class="text-black hover">تأثير تقنيات الإضاءة الحديثة على تصميم عروض البالية المعاصر</a>
+            </li>
+            <li class="border-top py-4 px-1">
+              <a class="text-black hover">فنون الميديا وتأصيل القيم الاخلاقية لطفل الروضة</a>
+            </li>
+            <li class="border-top py-4 px-1">
+              <a class="text-black hover">تأثير تقنيات الإضاءة الحديثة على تصميم عروض البالية المعاصر</a>
+            </li>
+            <li class="border-top py-4 px-1">
+              <a class="text-black hover">فنون الميديا وتأصيل القيم الاخلاقية لطفل الروضة </a>
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="text-center w-100 overflow-hidden pt-5">
+          <img src="assets/img/300x600.jpg">
+        </div> -->
+      </aside>
+    </section>
+  </div>
+  <!-- <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            موقع الطالب
+            <p class="mb-0 text-gray mt-1">
+              تعرف على المواد و المهام و النتيجة
+            </p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            موقع هيئة التدريس
+            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            موقع الموظفين
+            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            خدمات الخريجين
+            <p class="mb-0 text-gray mt-1">
+              تعرف على الخدمات الخاصه بالخرجين
+            </p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+    </div>
+  </section> -->
+</main>

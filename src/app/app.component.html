@@ -1,0 +1,302 @@
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<!-- academy nav -->
+<div class="offcanvas offcanvas-end main-nav" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+  <div class="offcanvas-header align-items-end">
+    <h5 class="offcanvas-title mx-auto" id="offcanvasNavLabel">
+      <a class="d-block p-3">
+        <img class="logo" src="assets/img/logo.jpg">
+      </a>
+    </h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-0">
+    <!-- <a class="nav-search d-flex bg-light px-3 py-3 text-black" data-bs-toggle="modal" data-bs-target="#searchModal">
+      <label class="mb-0 col">
+        بحث
+      </label>
+      <div class="col-auto">
+        <i class="icon-search"></i>
+      </div>
+    </a> -->
+    <div class="academy-nav mt-3">
+      <div class="accordion" id="accordionNav">
+        <div class="accordion-item border-0" >
+          <h2 class="accordion-header" id="headingInstitutes">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseInstitutes" aria-expanded="true"
+              aria-controls="collapseInstitutes">
+              المعاهد - الفرع الرئيسي
+            </button>
+          </h2>
+          <div id="collapseInstitutes" class="accordion-collapse collapse show" aria-labelledby="headingInstitutes"
+            data-bs-parent="#accordionNav">
+            <div class="accordion-body px-0 border-bottom pb-0">
+              <ul class="list-unstyled pe-0">
+                <li class="px-3" (click)="gotToFaculty(item)" *ngFor="let item of main_branch ; let i = index">
+                  <a data-bs-dismiss="offcanvas" aria-label="Close">
+                    {{item.FACULTY_NAME}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-0" >
+          <h2 class="accordion-header" id="headingInstitutes1">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseInstitutes1" aria-expanded="false"
+              aria-controls="collapseInstitutes1">
+              المعاهد - فرع اسكندرية 
+            </button>
+          </h2>
+          <div id="collapseInstitutes1" class="accordion-collapse " aria-labelledby="headingInstitutes1"
+            data-bs-parent="#accordionNav">
+            <div class="accordion-body px-0 border-bottom pb-0">
+              <ul class="list-unstyled pe-0">
+                <li class="px-3" (click)="gotToFaculty(item)" *ngFor="let item of alex_branch ; let i = index">
+                  <a data-bs-dismiss="offcanvas" aria-label="Close">
+                    {{item.FACULTY_NAME}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingAbout">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom collapsed"
+              type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrograms" aria-expanded="false"
+              aria-controls="collapsePrograms">
+              البرامج اﻟﺄﻛﺎدﻳﻤﻴﺔ
+            </button>
+          </h2>
+          <div id="collapsePrograms" class="accordion-collapse collapse" aria-labelledby="headingAbout"
+            data-bs-parent="#accordionNav">
+            <div class="accordion-body px-0 border-bottom pb-0">
+              <ul class="list-unstyled pe-0">
+                <li class="px-3">
+                  <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    دراﺳﺎت اﻟﺒﻜﺎﻟﻮرﻳﻮس
+                  </a>
+                </li>
+                <li class="px-3">
+                  <a>
+                    اﻟﺪراﺳﺎت اﻟﻌﻠﻴﺎ
+                  </a>
+                </li>
+                <li class="px-3">
+                  <a>
+                    اﻟﺪراﺳﺎت اﻟﺤﺮة
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+        <div class="accordion-item border-0" >
+          <h2 class="accordion-header">
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" 
+            class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed"
+              type="button">
+              القبول والتسجيل
+            </button>
+          </h2>
+        </div>
+        <div class="accordion-item border-0" routerLink="/research_list" data-bs-dismiss="offcanvas" aria-label="Close">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed"
+              type="button">
+              دراﺳﺎت و ﺑﺤﻮث
+            </button>
+          </h2>
+        </div>
+        <div class="accordion-item border-0" routerLink="/news_list" data-bs-dismiss="offcanvas" aria-label="Close">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed"
+              type="button">
+              الأخبار
+            </button>
+          </h2>
+        </div>
+        <div class="accordion-item border-0" routerLink="/events" data-bs-dismiss="offcanvas" aria-label="Close">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed"
+              type="button">
+              الفعاليات
+            </button>
+          </h2>
+        </div>
+
+        <div class="accordion-item border-0" >
+            <h2 class="accordion-header" id="headingInstitutes2">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseInstitutes2" aria-expanded="false"
+                aria-controls="collapseInstitutes2">
+                إنشاءات الأكاديمية
+              </button>
+            </h2>
+            <div id="collapseInstitutes2" class="accordion-collapse " aria-labelledby="headingInstitutes1"
+              data-bs-parent="#accordionNav">
+              <div class="accordion-body px-0 border-bottom pb-0">
+                <ul class="list-unstyled pe-0">
+                  <li class="px-3"  *ngFor="let item of buildingArr ; let i = index">
+                    <a (click)="gotToConstrction(item)"  data-bs-dismiss="offcanvas" aria-label="Close">
+                      {{item.TITLE}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+       
+        <!-- <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingPrograms">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom collapsed"
+              type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbout" aria-expanded="false"
+              aria-controls="collapseAbout">
+              ﻋﻦ اﻟﺄﻛﺎدﻳﻤﻴﺔ
+            </button>
+          </h2>
+          <div id="collapseAbout" class="accordion-collapse collapse" aria-labelledby="headingPrograms"
+            data-bs-parent="#accordionNav">
+            <div class="accordion-body px-0 border-bottom pb-0">
+              <ul class="list-unstyled pe-0">
+                <li class="px-3" routerLink="/about" data-bs-dismiss="offcanvas" aria-label="Close">
+                  <a>
+                    نبذة عن اﻟﺄﻛﺎدﻳﻤﻴﺔ
+                  </a>
+                </li>
+                <li class="px-3">
+                  <a>
+                    الهيكل التنظيمي
+                  </a>
+                </li>
+                <li class="px-3" routerLink="/contact_us" data-bs-dismiss="offcanvas" aria-label="Close">
+                  <a>
+                    اتصل بنا
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingStudent">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed">
+              <a style="color: black" target="_blank"  href="https://student.aoa.edu.eg/">بوابة الطلبة</a>
+            </button>
+          </h2>
+        </div> -->
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header">
+            <button data-bs-dismiss="offcanvas" aria-label="Close" routerLink="/academy_instractors" class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed"
+              type="button">
+              <a style="color: black">  اعضاء ﻫﻴﺌﺔ اﻟﺘﺪرﻳﺲ </a>
+            </button>
+          </h2>
+        </div>
+        <!-- <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingGraduated">
+            <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed"
+              type="button" data-bs-toggle="collapse" data-bs-target="#collapseGraduated" aria-expanded="false"
+              aria-controls="collapseGraduated">
+              الخريجون
+            </button>
+          </h2>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END academy nav -->
+
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <button type="button" class="btn-close position-absolute top-0 end-0 h-100 py-0 pe-4 opacity-25"
+        data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body p-0">
+        <div class="input-group input-group-lg position-relative search-main-input">
+          <input type="text" class="form-control border-0 fw-medium" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-lg">
+          <button class="btn border-0 position-absolute start-0 h-100 opacity-25" type="button">
+            <i class="icon-search d-block"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">المعاهد المتاح بها درجه البكالوريوس </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="floating-label-select position-relative border">
+          <select (change)="selectOption($event)"  class="floating-select form-select border-0" onclick="this.setAttribute('value', this.value);"
+            value="">
+            <option value=""></option>
+            <!-- <option [value]="item.ID" *ngFor="let item of faucltyArr">
+                {{item.FACULTY_NAME}}
+            </option> -->
+            <option value="1">الفرع الرئيسي</option>
+            <option value="2">فرع اسكندرية</option>
+          </select>
+          <label>إختر الفرع</label>
+        </div>
+        <div class="floating-label-select position-relative border mt-2" *ngIf="branch_status">
+          <select (change)="selectOptionFaculty($event)"  class="floating-select form-select border-0" onclick="this.setAttribute('value', this.value);"
+            value="">
+            <option value=""></option>
+            <option [value]="item.ID" *ngFor="let item of faucltyArr">
+                {{item.FACULTY_NAME}}
+            </option>
+          </select>
+          <label>إختر المعهد</label>
+        </div>
+      </div>
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn border text-black-50 fw-medium" data-bs-dismiss="modal">إغلاق</button>
+        <button type="button" (click)="go_faculty()" data-bs-dismiss="modal" class="btn btn-primary fw-medium">تصفح البرنامج</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="conditionsModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="conditionsModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title fw-medium text-black" id="conditionsModelLabel">
+          الشروط العامة للقبول بمعاهد الأكاديمية  ​
+          <!-- تم غلق باب تقديم طلبات الالتحاق بمعاهد اكاديمية الفنون -->
+        </h6>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <ol class="">
+          <p>شروط عامة لجميع المعاهد </p>
+          <li style="list-style: none" class="mb-2" *ngFor="let item of list_condtion">
+            {{item}}
+          </li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn " data-bs-dismiss="modal">إغلاق</button>
+        <button type="button" routerLink="/academy_register" data-bs-dismiss="modal" class="btn btn-primary">أوافق على
+          الشروط</button>
+      </div>
+    </div>
+  </div>
+</div>

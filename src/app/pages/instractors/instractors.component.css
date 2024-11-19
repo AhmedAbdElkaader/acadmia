@@ -1,0 +1,79 @@
+/*Direction */
+.institute-pref {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+    width: 50%;
+  }
+  
+  .institute-pref.inner {
+    padding-bottom: 18rem;
+  }
+  
+  @media (max-width: 1199.98px) {
+    .institute-pref {
+      width: 60%;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .institute-pref {
+      width: 80%;
+    }
+    .institute-pref.inner {
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+    }
+  }
+  
+  .institute-pref .blend-darken-bg {
+    background: #D1002C;
+    mix-blend-mode: darken;
+  }
+  
+  .institute-pref .pref {
+    z-index: 1;
+    max-width: 600px;
+  }
+  
+  .institute-pref .pref label {
+    font-size: calc(1.4375rem + 2.25vw);
+    line-height: 0.9;
+  }
+  
+  @media (min-width: 1200px) {
+    .institute-pref .pref label {
+      font-size: 3.125rem;
+    }
+  }
+  
+  .institute-pref .pref h2 {
+    font-size: calc(1.4375rem + 2.25vw);
+  }
+  
+  @media (min-width: 1200px) {
+    .institute-pref .pref h2 {
+      font-size: 3.125rem;
+    }
+  }
+  
+  .institute-pref .pref p {
+    min-height: 126px;
+  }
+  
+  .faculty-hero .slid-img > img {
+    min-height: 100%;
+    height: auto;
+    min-width: 100%;
+    width: auto;
+    max-width: unset;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  
+  .black-layer {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(52.75%, rgba(0, 0, 0, 0)), to(#000000));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.75%, #000000 100%);
+  }
+  /*# sourceMappingURL=facultyHero.css.map */

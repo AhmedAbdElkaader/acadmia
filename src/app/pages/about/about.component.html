@@ -1,0 +1,274 @@
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+  <app-header></app-header>
+  <main>
+    <!-- whatsapp floating button -->
+    <app-whatsapp></app-whatsapp>
+    <!-- END whatsapp floating button -->
+    <section class="pb-5 position-relative">
+      <div class="position-relative faculty-hero d-flex">
+        <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+          <img class="position-absolute" src="assets/img/slider/cinema-slide.jpg" />
+          <div class="black-layer position-absolute top-0 end-0 h-100 w-100"></div>
+        </div>
+        <div
+          class="position-relative d-flex align-items-lg-end justify-content-center institute-pref flex-column inner">
+          <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+          <div class="pref position-relative text-white pe-lg-5 pe-3 ms-3 animate__animated animate__slideInRight wow">
+            <h2 class="heading-font d-inline-block pt-5">
+              <label class="d-block text-sm-start">{{faculty_about.DATE_ESTABLISH}}</label>
+              {{faculty_about.FACULTY_Name}}
+            </h2>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb animate__animated animate__fadeInDown">
+                <li class="breadcrumb-item">
+                  <a class="text-white">أكادميه الفنون</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a class="text-white">
+                    {{faculty_about.FACULTY_Name}}
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  عن المعهد
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-fluid floated-contatiner-top position-relative">
+      <div class="row">
+        <div class="col-lg-11 offset-lg-1 bg-white">
+          <div class="col-11 ps-3">
+            <section class="pt-4 mt-3 pb-5">
+              <h3
+                class="text-center heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+                عن المعهد
+              </h3>
+              <p class="fs-5 fw-medium animate__animated animate__fadeInUp animate__fast wow">
+                {{faculty_about.ABOUT_FACULTY}}
+              </p>
+            </section>
+            <!--brife grid-->
+            <section class="pb-5 row">
+              <div class="col-lg-6 h-100 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+                <div class="brief bg-secondary position-relative p-4 overflow-hidden text-white mb-3">
+                  <img class="position-absolute fit-img" src="assets/img/faculty-pic.jpg">
+                  <div class="position-absolute w-100 h-100 bg-secondary opacity-75 top-0 start-0"></div>
+                  <div class="position-relative">
+                    <h3 class="heading-font">منذ {{faculty_about.DATE_ESTABLISH}}</h3>
+                    <p class="mb-0">
+                     {{faculty_about.WORD_ABOUT_FACULTY}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 h-100 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+                <div class="brief bg-primary p-4 text-white mb-3">
+                  <div class="position-relative">
+                    <h3 class="heading-font"> اهداف {{faculty_about.FACULTY_Name}}</h3>
+                    <p class="mb-0">
+                      {{faculty_about.WHY_THIS_FACULTY}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 h-100 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+                <div class="brief border p-4 mb-3">
+                  <div class="position-relative">
+                    <h3 class="heading-font">ترتيب المعهد عالميا</h3>
+                    <p class="mb-0">
+                      {{faculty_about.FACULTY_RANK}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 h-100 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+                <div class="brief bg-secondary position-relative p-4 overflow-hidden text-white mb-3">
+                  <img class="position-absolute fit-img" src="assets/img/faculty-career.jpg">
+                  <div class="position-absolute w-100 h-100 bg-secondary opacity-50 top-0 start-0"></div>
+                  <div class="position-relative">
+                    <h3 class="heading-font">آفاق حياتك المهنية</h3>
+                    <p class="mb-0">
+                      {{faculty_about.YOUR_CAREER}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+            <!--END brife grid-->
+            <section class="pt-4 mt-2 pb-5">
+              <h3
+                class="heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+                الرؤية
+              </h3>
+              <p class="fs-5 fw-medium animate__animated animate__fadeInUp animate__fast wow">
+                <span class="d-block mb-4">
+                  {{faculty_about.FACULTY_VISION}}
+                </span>
+                <!-- <span class="d-block">
+                  و بعد ستة وثلاثين عاما من إنشاء المعهد العالى للسينما يمكننا القول بأن المعهد قد نجح تماما في ظهور جيل
+                  جديد من السينمائيين في مصر من بين خريجيه الذين يشكلون حاليا أكثر من تسعين بالمائة من العاملين في كافة
+                  التخصصات السينمائية، كما ان اعضاء هيئة تدريسه بالكامل من خريجيه الذين نجحوا في انهاء تخصصاتهم الدراسية
+                  في درجات الماجستير والدكتوراه بالخارج، وهي الدرجات التي يمنحها المعهد حاليا بالإضافة إلى درجة
+                  البكالوريوس ودبلوم الدراسات العليا في كافة التخصصات السينمائية. و تشكل افلام الطلبة التي يقوم المعهد
+                  بإنتاجها سنويا ظاهرة هامة في الحياة السينمائية في مصر، حيث يصل عدد الأفلام المنتجة إلى اربعين فيلما
+                  سنويا من مقاسات 35 مم و16 مم والفيديو من الأفلام الروائية القصيرة والوثائقية بالإضافة إلى ثمانية عشر
+                  فيلما سنويا من افلام الرسوم المتحركة. لقد تحقق الهدف الرئيسى من إنشاء معهد السينما بايجاد الكادر
+                  السينمائي الجديد من بين خريجيه بعد عدد من السنوات، وهو ما بدا في سنوات سابقة كأمر بعيد المنال.
+                </span> -->
+              </p>
+            </section>
+
+          </div>
+          <!--Fuculty Managers-->
+
+          <section class="col pt-4 mt-2 pb-5">
+            <h3
+              class="heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              عمداء المعهد
+            </h3>
+            <div class="manger-swiper-container">
+              <div class="swiper managers-swiper">
+                <swiper [config]="mangerConfig">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let item of faculty_about.FACULTIES_DEANS">
+                      <div [ngClass]="{'latest':item.is_current == true}"
+                      class="position-relative overflow-hidden  d-flex swiper-element">
+                        <img class="hover-scale fit-img position-absolute"
+                          src="{{item.DEAN_IMG ? item.DEAN_IMG : 'assets/img/instructor-default.jpg '}}">
+                        <div class="position-absolute bg-white bottom-0 end-0 text-black manger-info p-4">
+
+                          <h4 class="fw-medium fs-4 mb-0 pb-3 lh-md">
+                            أ.د.{{item.FULL_NAME}}
+                          </h4>
+                          <span class="pt-1 border-top border-primary text-black fs-6"
+                            *ngIf="item.is_current == true">العميد الحالي</span>
+                          <span class="pt-1 border-top border-primary text-black fs-6"
+                            *ngIf="item.is_current != true">
+                            {{item.START_YEAR}} - {{item.END_YEAR}}
+                          </span>
+                          <p class="pt-2 mb-0  opacity-75 fw-medium">
+                            {{item.ADBOUT_DEAN}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </swiper>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </section>
+
+          <!--Graduated-->
+
+          <section class="py-5">
+            <h2
+              class="heading-font heading-style mb-4 pb-3 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              الخريجين</h2>
+            <!-- Swiper -->
+            <div class="animate__animated animate__fadeInUp wow">
+              <div class="swiper timelineContent ">
+                <swiper>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let item of faculty_about.graduates">
+                      <div class="graduated-year-list border-start position-relative px-3 pt-5">
+                        <label
+                          class="position-absolute top-0 start-0 heading-font text-primary fw-bold fs-1 lh-1 mt-3 ps-4">
+                          {{item.graduation_year}}
+                        </label>
+                        <ul class="row list-unstyled px-3 pt-5 graduated-list">
+                          <li class="col position-relative" *ngFor="let grad of item.graduates">
+                            <div class="student-img position-relative overflow-hidden">
+                              <img class="position-absolute fit-img" src="{{grad.image}}">
+                            </div>
+                            <div class="position-absolute student-info bg-white p-3">
+                              <p class="fs-4 fw-medium mb-2">{{grad.name}}</p>
+                              <label class="text-black-50 mb-0"> {{grad.faculty_name}}</label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </swiper>
+              </div>
+              <!-- <div thumbsSlider="" class="swiper timelineYear">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="d-block fs-4 fw-medium heading-font lh-1 py-3 ps-2">
+                      1976
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="d-block fs-4 fw-medium heading-font lh-1 py-3 ps-2">
+                      1973
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="d-block fs-4 fw-medium heading-font lh-1 py-3 ps-2">
+                      1994
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+
+          </section>
+          <!--END Graduated-->
+        </div>
+      </div>
+    </div>
+    <!-- <section class="container-fluid pt-5 pt-5 pb-lg-5 pb-3">
+      <div class="row">
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الطالب
+              <p class="mb-0 text-gray mt-1">
+                تعرف على المواد و المهام و النتيجة
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع هيئة التدريس
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الموظفين
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              خدمات الخريجين
+              <p class="mb-0 text-gray mt-1">
+                تعرف على الخدمات الخاصه بالخرجين
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+  </main>
+  <!-- <app-footer></app-footer> -->
+</div>

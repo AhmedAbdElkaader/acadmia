@@ -1,0 +1,107 @@
+.search-main-input .form-control {
+  height: 65px;
+  -webkit-padding-start: 50px;
+          padding-inline-start: 50px;
+}
+
+.search-main-input .form-control:focus ~ .btn {
+  opacity: 1 !important;
+}
+
+.search-main-input .btn {
+  z-index: 99;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.search-main-input .btn .icon-search {
+  font-size: 25px;
+  height: 25px;
+  margin-top: -5px;
+}
+
+#searchModal .btn-close {
+  z-index: 99;
+}
+/*# sourceMappingURL=searchmodel.css.map */
+/*Direction */
+@media (min-width: 992px) {
+    .plus-filter {
+      width: calc(100% - 270px);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .plus-filter {
+      width: calc(100% - 360px);
+    }
+  }
+  
+  @media (min-width: 576px) {
+    .list-img {
+      width: 260px;
+      height: 210px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .list-img {
+      width: 100%;
+      height: unset;
+      margin-bottom: 1rem;
+    }
+    .list-img img {
+      position: static !important;
+      -webkit-transform: unset !important;
+              transform: unset !important;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .list-img.news {
+      width: 100%;
+      height: unset;
+      margin-bottom: 1rem;
+    }
+    .list-img.news img {
+      position: static !important;
+      -webkit-transform: unset !important;
+              transform: unset !important;
+      width: 100%;
+    }
+  }
+  
+  .feed-listing .brife {
+    font-size: 0.875rem;
+  }
+  
+  .feed-listing .feed-item h5 {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  .feed-listing .feed-item:hover h5 {
+    color: #D1002C;
+  }
+  
+  @media (max-width: 767.98px) {
+    .feed-listing .price {
+      padding-right: 102px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .feed-listing .price {
+      padding-right: calc(1.5rem * .5);
+      margin-top: .5rem;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .feed-listing .main-points {
+      opacity: 0.7;
+      font-size: 0.875rem;
+    }
+  }
+  /*# sourceMappingURL=feed-listing.css.map */

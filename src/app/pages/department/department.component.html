@@ -1,0 +1,904 @@
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+  <app-header></app-header>
+  <main>
+    <!--department css file-->
+
+    <!-- whatsapp floating button -->
+    <app-whatsapp></app-whatsapp>
+    <!-- END whatsapp floating button -->
+
+    <!--HERO Faculty-->
+    <section class="pb-md-5 position-relative">
+      <div class="position-relative faculty-hero d-flex">
+        <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+          <img class="position-absolute" src="{{faculty_image}}" />
+          <div class="black-layer position-absolute top-0 end-0 h-100 w-100"></div>
+        </div>
+        <div
+          class="position-relative d-flex align-items-lg-end justify-content-center institute-pref flex-column inner">
+          <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+          <div class="pref position-relative text-white pe-lg-5 pe-3 ms-3 animate__animated animate__slideInRight wow">
+            <h2 class="heading-font d-inline-block pt-5">
+              <label class="d-block text-sm-start">{{depart_obj.faculty_publish_year}}</label>
+              {{depart_obj.faculty_name}}
+            </h2>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb animate__animated animate__fadeInDown">
+                <li class="breadcrumb-item mb-2 mb-md-0">
+                  <a class="text-white">أكادميه الفنون</a>
+                </li>
+                <li class="breadcrumb-item mb-2 mb-md-0">
+                  <a class="text-white" href="faculty.html">
+                    {{depart_obj.faculty_name}}
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  أقسام المعهد
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  {{depart_obj.department_name}}
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-fluid floated-contatiner-top position-relative pb-lg-5">
+      <div class="row">
+        <!--Desktop side nav-->
+        <div class="col-lg-3 pt-5 mt-4 pe-0 d-lg-block d-none">
+          <div class="bg-secondary p-3 h-100 list-group" id="navbar-example2">
+            <h4 class="text-white border-bottom border-primary pb-2 mt-2 mb-4 d-inline-block">
+              <span class="opacity-50">
+                {{depart_obj.about_department}}
+              </span>
+            </h4>
+            <ul class="list-unstyled side-nav pt-3 sticky-top" role="tablist">
+              <li *ngIf="showBach" class="mb-4 animate__animated animate__fadeInRight animate__faster wow">
+                <a (click)="element1.scrollIntoView({ behavior: 'smooth', block: 'center' })"
+                  class="d-block p-3 text-white fs-5 list-group-item list-group-item-action">
+                  دراسة البكالوريوس
+                </a>
+              </li>
+              <li class="mb-4 animate__animated animate__fadeInRight animate__fast wow">
+                <a (click)="element.scrollIntoView({ behavior: 'smooth', block: 'center' })"
+                  class="d-block p-3 text-white fs-5 list-group-item list-group-item-action">
+                  الدراسات العليا
+                </a>
+              </li>
+              <!-- <li class="mb-4 animate__animated animate__fadeInRight wow">
+                <a class="d-block p-3 text-white fs-5 list-group-item list-group-item-action" href="#courses">
+                  الدراسات الحرة
+                </a>
+              </li> -->
+            </ul>
+          </div>
+
+        </div>
+        <!--END Desktop side nav-->
+        <div class="col-lg-9 bg-white pt-5 pb-lg-5">
+          <section class="px-2">
+            <h3
+              class="text-center heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              {{depart_obj.about_department}}
+            </h3>
+            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow">
+              {{depart_obj.about_department}}
+            </p>
+          </section>
+          <!--Mobile side nav-->
+          <section class="sticky-top bg-light side-nav py-1 d-block d-lg-none row">
+            <div class="col-12">
+              <div class="swiper tablistSwiper" role="tablist">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="d-block p-2 border list-group-item list-group-item-action fw-bold" href="#bs">
+                      دراسة البكالوريوس
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="d-block p-2 border list-group-item list-group-item-action fw-bold" href="#master">
+                      الدراسات العليا
+                    </a>
+                  </div>
+                  <!-- <div class="swiper-slide">
+                    <a class="d-block p-2 border list-group-item list-group-item-action fw-bold" href="#courses">
+                      الدراسات الحرة
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+
+          </section>
+          <!--End Mobile side nav-->
+          <section class="py-5 px-2" *ngIf="showBach">
+            <div class="goto-link position-relative" id="bs"></div>
+            <h1 #element1 class="heading-font mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              دراسة البكالوريوس
+            </h1>
+            <!-- <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow mb-4">
+              بكالوريوس فنون الاخراج درجة شاملة مدتها أربع سنوات في فن وحرفة اخراج الأفلام ، مع التركيز على التعليمات
+              العملية إلى جانب التدريبات العملية في جميع أساسيات اخراج السينمائي والتلفزيونيو.
+            </p> -->
+            <!--department main info-->
+            <div class="row department-summery animate__animated animate__fadeInUp wow">
+              <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                <i class="icon-graduated mt-3 d-block"></i>
+                <h5 class="mt-4">بكالوريوس </h5>
+                <p class="fs-6 mb-3 pt-3">
+                  8 فصول دراسية
+                </p>
+              </div>
+              <div class="col-xl-4 col-xl-4 order-2 bg-light text-center py-4">
+                <i class="icon-money mt-3 d-block"></i>
+                <h5 class="mt-4">المصروفات</h5>
+                <ul class="d-inline-flex list-unstyled align-items-center justify-content-start mb-0 pt-3">
+                  <li class="text-end px-3">
+                    <span class="fw-medium fs-5">{{depart_obj.Expenses_for_mo3tamd}}</span> <span> سنويا</span>
+                    <label class="fw-medium">تعليم نظامى</label>
+                  </li>
+                  <li class="text-start px-3 border-start">
+                    <span class="fw-medium fs-5">{{depart_obj.Expenses_for_credit}}</span> <span>لكل فصل دراسي غير شاملة
+                      مصاريف الساعات الدراسية</span>
+                    <label class="fw-medium">تعليم موازي</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                <!-- <i class="icon-calender mt-3 d-block"></i>
+                <h5 class="mt-4">تاريخ البدء</h5>
+                <p class="fs-6 mb-3 pt-3">
+                  19 سبتمبر 2022
+                </p> -->
+              </div>
+            </div>
+            <!--end department main info-->
+
+            <div class="accordion mt-5 mb-5 animate__animated animate__fadeIn animate__fast wow" id="accordionBs">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBs">
+                  <button class="accordion-button fw-medium fs-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseBs" aria-expanded="true" aria-controls="collapseBs">
+                    المواد التي يتم دراستها في برنامج البكالوريوس
+                  </button>
+                </h2>
+                <div id="collapseBs" class="accordion-collapse collapse show" aria-labelledby="headingBs"
+                  data-bs-parent="#accordionBs">
+                  <div class="accordion-body">
+                    <!-- <p class="fs-6 fw-medium mb-4 mt-3">
+                      يطبق برنامج الساعات المعتمدة في الدراسه في المعهد العالي للسينما فيما يلي المواد التي يوصي
+                      بتسجيلها في كل فصل و للطالب حرية الإختيار عند تسجيل المواد تعرف أكثر علي <a
+                        class="text-primary">الأنظمه التعليميه للمعهد</a>
+                    </p> -->
+
+                    <div class="border-top mt-5">
+                      <div class="swiper tablistSwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                              <li class="nav-item" *ngFor="let item of depart_obj.deptCourses; let i = index">
+                                <button class="nav-link py-3 fw-medium fs-7 " [ngClass]="{'active' : i == 0}"
+                                  [attr.aria-selected]='i === 0 ? "true" : "false"' [attr.id]="'first-tab'+i"
+                                  data-bs-toggle="tab" [attr.data-bs-target]="'#first-year'+i" type="button" role="tab"
+                                  [attr.aria-controls]="'first-year'+i">{{item.course_type_name}}</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="tab-content" id="myTabContent">
+                        <div *ngFor="let item of depart_obj.deptCourses; let i = index" class="tab-pane py-3 fade  "
+                          [ngClass]="{'active' : i == 0 , 'show' : i == 0}" [attr.id]="'first-year'+i" role="tabpanel"
+                          [attr.aria-labelledby]="'first-tab'+i">
+                          <!-- <p class="fw-medium">
+                            السنة الأولى موجهة نحو تعلم أساسيات الاخراج السينمائي والتلفزيوني مع التركيز على الأفلام
+                            الوثائقية والأشكال الأخرى غير الخيالية في الإنتاج السينمائي والتلفزيوني.
+                          </p> -->
+                          <div class="pb-4">
+                            <div class="bg-light fs-7 fw-medium text-center p-3 border border-bottom-0">
+                              التفاصيل
+                            </div>
+                            <div class="table-responsive mb-4">
+                              <table class="table table-bordered table-hover text-nowrap fw-medium mb-0">
+                                <thead class="gray-head">
+                                  <tr>
+                                    <th scope="col">اسم المقرر</th>
+                                    <th scope="col">عدد الساعات</th>
+                                    <th scope="col">المتطلبـــــــــــــــات</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let course of item.cources">
+                                    <td>{{course.course_name}}</td>
+                                    <td>{{course.course_hours}}</td>
+                                    <td>{{course.course_type_name}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
+
+                          </div>
+                          <!-- <a
+                            class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                            حمل المقررات كامله
+                            <i class="icon-arrow-sm"></i> 
+                          </a>-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    المصروفات
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionBs">
+                  <div class="accordion-body">
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    ادوات مطلوبه للدراسه
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionBs">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <!--JOIN ROW-->
+            <!-- <div class="join-now mb-5 row animate__animated animate__fadeInUp wow">
+              <div class="col-xl-6 mb-4 mb-xl-0">
+                <a class="btn btn-primary text-white d-flex align-items-center text-start py-3 px-4 fs-6 h-100">
+                  <div class="flex-fill pe-3">
+                    انضم إلى العام الدراسي الجديد في سبتمبر
+                    <span class="d-block fw-bold pt-1"> سجل الان </span>
+                  </div>
+                  <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+                </a>
+              </div>
+              <div class=" col-xl-6">
+                <a class="btn btn-link border border-primary d-flex align-items-center text-start py-3 px-4 fs-6">
+                  <div class="flex-fill pe-3">
+                    <div class="text-black fw-medium">
+                      شروط القبول والتسجيل للبرامج الدراسيه المتاحه
+                    </div>
+                    <span class="d-block fw-bold pt-1">إقراء المزيد</span>
+                  </div>
+                  <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+                </a>
+              </div>
+            </div> -->
+            <!--END JOIN ROW-->
+
+          </section>
+
+          <section class="py-5 px-2" #element>
+            <div class="goto-link position-relative" id="master"></div>
+            <h1 class="heading-font mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              الدراسات العليا
+            </h1>
+            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow mb-4">
+              وسّع أفقك بدرجة الدراسات العليا في المعهد التي تشمل <a >دبلوم الدراسات العليا</a> و <a
+                >ماجستير </a> و <a >دكتوراة الفلسفة </a>
+            </p>
+            <div class="">
+              <div class="goto-link position-relative" id="dDetails"></div>
+              <h4
+                class="d-inline-block border-bottom border-primary pb-3 px-2 mb-3 animate__animated animate__fadeInUp wow">
+                <span class="text-primary">1-</span> دراسة دبلوم الدراسات العليا
+              </h4>
+              <h6 class="opacity-75 mb-4 animate__animated animate__fadeInUp wow">
+                {{depart_obj?.FACULTY_REQUIREMENTS_DIPLOMA}}
+              </h6>
+              <h6 class="opacity-75 mb-4">
+                {{depart_obj?.DEPARTMENT_REQUIREMENTS_DIPLOMA}}
+              </h6>
+              <ng-container *ngIf="depart_obj?.specilaizationsRequirmentsList.length != 0">
+
+                <ng-container *ngFor="let item of depart_obj.specilaizationsRequirmentsList">
+                  <h5 class="mt-4">
+                    <span class="text-primary">-</span>
+                    {{item.SPECIALIZATION_NAME}}
+                  </h5>
+                  <h6 class="opacity-75 mb-4">
+                    {{item.SPEC_REQUIREMENTS_DIPLOMA}}
+                  </h6>
+                </ng-container>
+              </ng-container>
+            </div>
+
+            <div class="">
+              <div class="goto-link position-relative" id="dDetails"></div>
+              <h4
+                class="d-inline-block border-bottom border-primary pb-3 px-2 mb-3 animate__animated animate__fadeInUp wow">
+                <span class="text-primary">2-</span> دراسة ماجيستير الدراسات العليا
+              </h4>
+              <h6 class="opacity-75 mb-4 animate__animated animate__fadeInUp wow">
+                {{depart_obj?.FACULTY_REQUIREMENTS_MASTER}}
+              </h6>
+              <h6 class="opacity-75 mb-4">
+                {{depart_obj?.DEPARTMENT_REQUIREMENTS_MASTER}}
+              </h6>
+              <ng-container *ngIf="depart_obj?.specilaizationsRequirmentsList.length != 0">
+                <ng-container *ngFor="let item of depart_obj.specilaizationsRequirmentsList">
+                  <h5 class="mt-4">
+                    <span class="text-primary">-</span>
+                    {{item.SPECIALIZATION_NAME}}
+                  </h5>
+                  <h6 class="opacity-75 mb-4">
+                    {{item.SPEC_REQUIREMENTS_MASTER}}
+                  </h6>
+                </ng-container>
+
+              </ng-container>
+            </div>
+
+            <div class="">
+              <div class="goto-link position-relative" id="dDetails"></div>
+              <h4
+                class="d-inline-block border-bottom border-primary pb-3 px-2 mb-3 animate__animated animate__fadeInUp wow">
+                <span class="text-primary">3-</span> دراسة دكتوراه الفلسفه الدراسات العليا
+              </h4>
+              <h6 class="opacity-75 mb-4 animate__animated animate__fadeInUp wow">
+                {{depart_obj?.FACULTY_REQUIREMENTS_DOCTORAL}}
+              </h6>
+              <h6 class="opacity-75 mb-4">
+                {{depart_obj?.DEPARTMENT_REQUIREMENTS_DOCTORAL}}
+              </h6>
+              <ng-container *ngIf="depart_obj?.specilaizationsRequirmentsList.length != 0">
+                <ng-container *ngFor="let item of depart_obj.specilaizationsRequirmentsList">
+                  <h5 class="mt-4">
+                    <span class="text-primary">-</span>
+                    {{item.SPECIALIZATION_NAME}}
+                  </h5>
+                  <h6 class="opacity-75 mb-4">
+                    {{item.SPEC_REQUIREMENTS_DOCTORAL}}
+                  </h6>
+                </ng-container>
+
+              </ng-container>
+            </div>
+            <div class="">
+              <div class="goto-link position-relative" id="mDetails"></div>
+              <!-- <h4
+                class="d-inline-block border-bottom border-primary pb-3 px-2 mb-3 animate__animated animate__fadeInUp wow">
+                <span class="text-primary">2-</span>ماجستير 
+              </h4> -->
+              <!-- <h6 class="opacity-75 mb-4 animate__animated animate__fadeInUp wow">
+                دبلوم عال يؤهل للتقدم لدراسة الماجستير، وهو يلي مرحلة البكالوريوس 
+              </h6> -->
+              <!--department main info-->
+              <!-- <div class="row department-summery animate__animated animate__fadeInUp wow">
+                <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                  <i class="icon-graduated mt-3 d-block"></i>
+                  <h5 class="mt-4">ماجستير </h5>
+                  <p class="fs-6 mb-3 pt-3">
+                    2 فصول دراسية
+                  </p>
+                </div>
+                <div class="col-xl-4 col-xl-4 order-2 bg-light text-center py-4">
+                  <i class="icon-money mt-3 d-block"></i>
+                  <h5 class="mt-4">المصروفات</h5>
+                  <ul class="d-inline-flex list-unstyled align-items-center justify-content-start mb-0 pt-3">
+                    <li class="text-end px-3">
+                      <span class="fw-medium fs-5">1450</span> <span>جم - سنويا</span>
+                      <label class="fw-medium">تعليم نظامى</label>
+                    </li>
+                    <li class="text-start px-3 border-start">
+                      <span class="fw-medium fs-5">1000</span> <span>جم - للساعه</span>
+                      <label class="fw-medium">تعليم موازي</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                  <i class="icon-calender mt-3 d-block"></i>
+                  <h5 class="mt-4">تاريخ البدء</h5>
+                  <p class="fs-6 mb-3 pt-3">
+                    19 سبتمبر 2022
+                  </p>
+                </div>
+              </div> -->
+              <!--end department main info-->
+              <!-- <div class="accordion mt-5 mb-5 animate__animated animate__fadeIn animate__fast wow" id="accordionBs"> -->
+              <!-- <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingMCourses">
+                    <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseMCourses" aria-expanded="true" aria-controls="collapseMCourses">
+                      المواد التي يتم دراستها في ماجستير فنون السينما
+                    </button>
+                  </h2>
+                  <div id="collapseMCourses" class="accordion-collapse collapse" aria-labelledby="headingMCourses"
+                    data-bs-parent="#accordionMCourses">
+                    <div class="accordion-body">
+                      <p class="fs-6 fw-medium mb-4 mt-3">
+                        يطبق برنامج الساعات المعتمدة في الدراسه في المعهد العالي للسينما فيما يلي المواد التي يوصي
+                        بتسجيلها في كل فصل و للطالب حرية الإختيار عند تسجيل المواد تعرف أكثر علي <a
+                          class="text-primary">الأنظمه التعليميه للمعهد</a>
+                      </p>
+                      <div class="border-top mt-5">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link py-3 fw-medium fs-7 active" id="Mfirst-tab" data-bs-toggle="tab"
+                              data-bs-target="#Mfirst-year" type="button" role="tab" aria-controls="Mfirst-year"
+                              aria-selected="true">السنة الأولى</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link py-3 fw-medium fs-7 " id="Mseconde-tab" data-bs-toggle="tab"
+                              data-bs-target="#Mseconde-year" type="button" role="tab" aria-controls="Mseconde-year"
+                              aria-selected="false">السنة الثانية</button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane py-3 fade show active" id="Mfirst-year" role="tabpanel"
+                            aria-labelledby="Mfirst-tab">
+                            <p class="fw-medium">
+                              السنة الأولى موجهة نحو تعلم أساسيات الاخراج السينمائي والتلفزيوني مع التركيز على الأفلام
+                              الوثائقية والأشكال الأخرى غير الخيالية في الإنتاج السينمائي والتلفزيوني.
+                            </p>
+                            <div class="pb-4">
+                              <div class="bg-light fs-7 fw-medium text-center p-3 border border-bottom-0">
+                                الفصل الأول
+                              </div>
+                              <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-hover text-nowrap fw-medium mb-0">
+                                  <thead class="gray-head">
+                                    <tr>
+                                      <th scope="col">اسم المقرر</th>
+                                      <th scope="col">عدد الساعات</th>
+                                      <th scope="col">المتطلبـــــــــــــــات</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>حاسب آلي</td>
+                                      <td>92</td>
+                                      <td>متطلبات معهد إجبارية</td>
+                                    </tr>
+                                    <tr>
+                                      <td>تاريخ وتذوق فنون</td>
+                                      <td>92</td>
+                                      <td>@متطلبات أكاديمية إختيارية</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                              <div class="bg-light fs-7 fw-medium text-center p-3 border border-bottom-0">
+                                الفصل الثاني
+                              </div>
+                              <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-hover text-nowrap fw-medium mb-0">
+                                  <thead class="gray-head">
+                                    <tr>
+                                      <th scope="col">اسم المقرر</th>
+                                      <th scope="col">عدد الساعات</th>
+                                      <th scope="col">المتطلبـــــــــــــــات</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>تطور فكر فلسفي</td>
+                                      <td>92</td>
+                                      <td>متطلبات معهد إجبارية</td>
+                                    </tr>
+                                    <tr>
+                                      <td>تاريخ وتذوق فنون</td>
+                                      <td>92</td>
+                                      <td>متطلبات أكاديمية إختيارية</td>
+                                    </tr>
+                                    <tr>
+                                      <td>فنية تطور تاريخ 3</td>
+                                      <td>92</td>
+                                      <td>متطلبات أكاديمية إختيارية</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <a
+                              class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                              حمل المقررات كامله
+                              <i class="icon-arrow-sm"></i>
+                            </a>
+                          </div>
+                          <div class="tab-pane py-3 fade" id="Mseconde-year" role="tabpanel"
+                            aria-labelledby="Mseconde-tab">
+                            ...
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              <!-- <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingMFees">
+                    <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseMFees" aria-expanded="false" aria-controls="collapseMFees">
+                      المصروفات
+                    </button>
+                  </h2>
+                  <div id="collapseMFees" class="accordion-collapse collapse" aria-labelledby="headingMFees"
+                    data-bs-parent="#accordionBs">
+                    <div class="accordion-body">
+                    </div>
+                  </div>
+                </div> -->
+              <!-- </div> -->
+            </div>
+            <div class="">
+              <div class="goto-link position-relative" id="phdDetails"></div>
+              <!-- <h4
+                class="d-inline-block border-bottom border-primary pb-3 px-2 mb-3 animate__animated animate__fadeInUp wow">
+                <span class="text-primary">3-</span>دكتوراة الفلسفة 
+              </h4> -->
+              <!-- <h6 class="opacity-75 mb-4">
+                دبلوم عال يؤهل للتقدم لدراسة الماجستير، وهو يلي مرحلة البكالوريوس 
+              </h6> -->
+              <!--department main info-->
+              <!-- <div class="row department-summery animate__animated animate__fadeInUp wow">
+                <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                  <i class="icon-graduated mt-3 d-block"></i>
+                  <h5 class="mt-4">دكتوراة الفلسفة </h5>
+                  <p class="fs-6 mb-3 pt-3">
+                    2 فصول دراسية
+                  </p>
+                </div>
+                <div class="col-xl-4 col-xl-4 order-2 bg-light text-center py-4">
+                  <i class="icon-money mt-3 d-block"></i>
+                  <h5 class="mt-4">المصروفات</h5>
+                  <ul class="d-inline-flex list-unstyled align-items-center justify-content-start mb-0 pt-3">
+                    <li class="text-end px-3">
+                      <span class="fw-medium fs-5">1450</span> <span>جم - سنويا</span>
+                      <label class="fw-medium">تعليم نظامى</label>
+                    </li>
+                    <li class="text-start px-3 border-start">
+                      <span class="fw-medium fs-5">1000</span> <span>جم - للساعه</span>
+                      <label class="fw-medium">تعليم موازي</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                  <i class="icon-calender mt-3 d-block"></i>
+                  <h5 class="mt-4">تاريخ البدء</h5>
+                  <p class="fs-6 mb-3 pt-3">
+                    19 سبتمبر 2022
+                  </p>
+                </div>
+              </div> -->
+              <!--end department main info-->
+              <!-- <div class="accordion mt-5 mb-5 animate__animated animate__fadeIn animate__fast wow" id="accordionBs">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingPHDCourses">
+                    <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsePHDCourses" aria-expanded="true" aria-controls="collapsePHDCourses">
+                      المواد التي يتم دراستها في دكتوراة الفلسفة 
+                    </button>
+                  </h2>
+                  <div id="collapsePHDCourses" class="accordion-collapse collapse" aria-labelledby="headingPHDCourses"
+                    data-bs-parent="#accordionMCourses">
+                    <div class="accordion-body">
+                      <p class="fs-6 fw-medium mb-4 mt-3">
+                        يطبق برنامج الساعات المعتمدة في الدراسه في المعهد العالي للسينما فيما يلي المواد التي يوصي
+                        بتسجيلها في كل فصل و للطالب حرية الإختيار عند تسجيل المواد تعرف أكثر علي <a
+                          class="text-primary">الأنظمه التعليميه للمعهد</a>
+                      </p>
+                      <div class="border-top mt-5">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link py-3 fw-medium fs-7 active" id="PHDfirst-tab" data-bs-toggle="tab"
+                              data-bs-target="#PHDfirst-year" type="button" role="tab" aria-controls="PHDfirst-year"
+                              aria-selected="true">السنة الأولى</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link py-3 fw-medium fs-7 " id="PHDseconde-tab" data-bs-toggle="tab"
+                              data-bs-target="#PHDseconde-year" type="button" role="tab" aria-controls="PHDseconde-year"
+                              aria-selected="false">السنة الثانية</button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane py-3 fade show active" id="PHDfirst-year" role="tabpanel"
+                            aria-labelledby="PHDfirst-tab">
+                            <p class="fw-medium">
+                              السنة الأولى موجهة نحو تعلم أساسيات الاخراج السينمائي والتلفزيوني مع التركيز على الأفلام
+                              الوثائقية والأشكال الأخرى غير الخيالية في الإنتاج السينمائي والتلفزيوني.
+                            </p>
+                            <div class="pb-4">
+                              <div class="bg-light fs-7 fw-medium text-center p-3 border border-bottom-0">
+                                الفصل الأول
+                              </div>
+                              <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-hover text-nowrap fw-medium mb-0">
+                                  <thead class="gray-head">
+                                    <tr>
+                                      <th scope="col">اسم المقرر</th>
+                                      <th scope="col">عدد الساعات</th>
+                                      <th scope="col">المتطلبـــــــــــــــات</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>حاسب آلي</td>
+                                      <td>92</td>
+                                      <td>متطلبات معهد إجبارية</td>
+                                    </tr>
+                                    <tr>
+                                      <td>تاريخ وتذوق فنون</td>
+                                      <td>92</td>
+                                      <td>@متطلبات أكاديمية إختيارية</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                              <div class="bg-light fs-7 fw-medium text-center p-3 border border-bottom-0">
+                                الفصل الثاني
+                              </div>
+                              <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-hover text-nowrap fw-medium mb-0">
+                                  <thead class="gray-head">
+                                    <tr>
+                                      <th scope="col">اسم المقرر</th>
+                                      <th scope="col">عدد الساعات</th>
+                                      <th scope="col">المتطلبـــــــــــــــات</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>تطور فكر فلسفي</td>
+                                      <td>92</td>
+                                      <td>متطلبات معهد إجبارية</td>
+                                    </tr>
+                                    <tr>
+                                      <td>تاريخ وتذوق فنون</td>
+                                      <td>92</td>
+                                      <td>متطلبات أكاديمية إختيارية</td>
+                                    </tr>
+                                    <tr>
+                                      <td>فنية تطور تاريخ 3</td>
+                                      <td>92</td>
+                                      <td>متطلبات أكاديمية إختيارية</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <a
+                              class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                              حمل المقررات كامله
+                              <i class="icon-arrow-sm"></i>
+                            </a>
+                          </div>
+                          <div class="tab-pane py-3 fade" id="PHDseconde-year" role="tabpanel"
+                            aria-labelledby="PHDseconde-tab">
+                            ...
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingPHDFees">
+                    <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsePHDFees" aria-expanded="false" aria-controls="collapsePHDFees">
+                      المصروفات
+                    </button>
+                  </h2>
+                  <div id="collapsePHDFees" class="accordion-collapse collapse" aria-labelledby="headingPHDFees"
+                    data-bs-parent="#accordionBs">
+                    <div class="accordion-body">
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <!--JOIN ROW-->
+            <!-- <div class="join-now mb-5 row align-items-center animate__animated animate__fadeInUp wow">
+              <div class="col-xl-6 mb-4 mb-xl-0">
+                <a class="btn btn-primary text-white d-flex align-items-center text-start py-3 px-4 fs-6 h-100">
+                  <div class="flex-fill pe-3">
+                    انضم إلى العام الدراسي الجديد في سبتمبر
+                    <span class="d-block fw-bold pt-1"> سجل الان </span>
+                  </div>
+                  <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+                </a>
+              </div>
+              <div class=" col-xl-6">
+                <a class="btn btn-link border border-primary d-flex align-items-center text-start py-3 px-4 fs-6">
+                  <div class="flex-fill pe-3">
+                    <div class="text-black fw-medium">
+                      شروط القبول والتسجيل للبرامج الدراسيه المتاحه
+                    </div>
+                    <span class="d-block fw-bold pt-1">إقراء المزيد</span>
+                  </div>
+                  <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+                </a>
+              </div>
+            </div> -->
+            <!--END JOIN ROW-->
+          </section>
+          <!-- <section class="py-5 px-2">
+            <div class="goto-link position-relative" id="courses"></div>
+            <h1 class="heading-font mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              الدراسات الحرة
+            </h1>
+            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow mb-4">
+              نظام تعليمي مسائي حر يقوم على نظام الدورات المتتالية، مدة الدراسة فيه نحو عامين أو 12 دورة بنظام دورة كل 6
+              أسابيع وهو لايمنح درجة علمية يمكن معادلتها من أي مكان
+            </p>
+
+            
+            <div class="row department-summery animate__animated animate__fadeInUp wow">
+              <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                <i class="icon-graduated mt-3 d-block"></i>
+                <h5 class="mt-4">شهادة بإتمام الدورة</h5>
+                <p class="fs-6 mb-3 pt-3">
+                  12 دورة
+                </p>
+              </div>
+              <div class="col-xl-4 col-xl-4 order-2 bg-light text-center py-4">
+                <i class="icon-money mt-3 d-block"></i>
+                <h5 class="mt-4">المصروفات</h5>
+                <ul class="d-inline-flex list-unstyled align-items-center justify-content-start mb-0 pt-3">
+                  <li class="text-end px-3">
+                    <span class="fw-medium fs-5">1450</span> <span>جم - للدورة</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xl-4 col-md-6 bg-light text-center py-4">
+                <i class="icon-calender mt-3 d-block"></i>
+                <h5 class="mt-4">تاريخ البدء</h5>
+                <p class="fs-6 mb-3 pt-3">
+                  19 سبتمبر 2022
+                </p>
+              </div>
+            </div>
+        
+
+
+
+            
+            <div class="d-block w-100 overflow-hidden animate__animated animate__fadeInUp">
+              <h4 class="text-black mt-5 mb-4">
+                الدورات المتاحه
+              </h4>
+             
+              <div class="swiper courses-list-card hListSwiper pb-5">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="card card-hover border-0 text-black">
+                      <div class="card-img-top position-relative overflow-hidden">
+                        <img src="assets/img/course-1.jpg" class="fit-img position-absolute">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">تطور فكر فلسفي</h5>
+                        <p class="card-text">د/ إسم المحاضر</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="card card-hover border-0 text-black">
+                      <div class="card-img-top position-relative overflow-hidden">
+                        <img src="assets/img/course-2.jpg" class="fit-img position-absolute">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">تاريخ وتذوق فنون</h5>
+                        <p class="card-text">د/ إسم المحاضر</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="card card-hover border-0 text-black">
+                      <div class="card-img-top position-relative overflow-hidden">
+                        <img src="assets/img/course-3.jpg" class="fit-img position-absolute">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">فنية تطور تاريخ</h5>
+                        <p class="card-text">د/ إسم المحاضر</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="card card-hover border-0 text-black">
+                      <div class="card-img-top position-relative overflow-hidden">
+                        <img src="assets/img/course-4.jpg" class="fit-img position-absolute">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">تطور فكر فلسفي</h5>
+                        <p class="card-text">د/ إسم المحاضر</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="card card-hover border-0 text-black">
+                      <div class="card-img-top position-relative overflow-hidden">
+                        <img src="assets/img/course-1.jpg" class="fit-img position-absolute">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">تطور فكر فلسفي</h5>
+                        <p class="card-text">د/ إسم المحاضر</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                كل الدورات
+                <i class="icon-arrow-sm"></i>
+              </a>
+            </div>
+          </section> -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+      <div class="row">
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الطالب
+              <p class="mb-0 text-gray mt-1">
+                تعرف على المواد و المهام و النتيجة
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع هيئة التدريس
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الموظفين
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              خدمات الخريجين
+              <p class="mb-0 text-gray mt-1">
+                تعرف على الخدمات الخاصه بالخرجين
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+
+  </main>
+</div>

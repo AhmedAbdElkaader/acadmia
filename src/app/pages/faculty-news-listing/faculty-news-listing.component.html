@@ -1,0 +1,153 @@
+<app-header></app-header>
+
+<!-- <app-app-nav></app-app-nav> -->
+<main class="">
+    <!-- whatsapp floating button -->
+    <div class="whatsapp position-fixed">
+      <div class="rounded-circle bg-white shadow align-items-center justify-content-center d-flex">
+        <img src="assets/img/whatsApp.svg">
+      </div>
+    </div>
+    <!-- END whatsapp floating button -->
+
+  <div class="container-fluid">
+    <div class="row bg-secondary py-4" style="margin-top: 6%">
+        <div class="col">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb animate__animated animate__fadeInDown mb-0">
+              <li class="breadcrumb-item mb-2 mb-md-0">
+                <a class="text-white">أكادميه الفنون</a>
+              </li>
+              <li class="breadcrumb-item mb-2 mb-md-0">
+                <a class="text-white">{{facultName}}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                 أخبار
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    <section class="row py-4">
+      <div class="col-xl-8 col-lg-10 mx-auto ">
+        <div class="pb-4 fw-medium animate__fadeInDown animate__faster wow">
+          العودة إلى 
+          <a class="text-primary" [routerLink]="['/faculty',faculty_id]">{{facultName}}<i class="icon-arrow-sm default"></i></a>
+        </div>
+        <div class="row animate__animated animate__fadeIn animate__fast wow">
+          <div class="col border-bottom">
+            <h3 class="lh-1 heading-font display-6 mb-2 fw-normal">
+              أخبار
+            </h3>
+          </div>
+          <!-- <div class="col-auto border-bottom filter-btn border-secondary">
+            <a class="d-flex align-items-center px-2 text-black" data-bs-toggle="offcanvas" href="#offcanvasSideFilter" role="button" aria-controls="offcanvasSideFilter">
+              <i class="icon-filter default text-primary"></i>
+              <span class="fw-medium fs-5 ps-1 d-none d-md-inline-block">
+                تصفية الأخبار
+              </span>
+            </a>
+          </div> -->
+        </div>
+        <!-- <div>
+          <ul class="list-inline pt-3 mb-0">
+            <li class="list-inline-item">
+              <div class="bg-light px-2 py-1 fw-medium d-flex align-items-center">
+                سينما <button type="button" class="btn-close sm ms-1" aria-label="Close"></button>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+        <!--feed listing-->
+        <div class="feed-listing animate__animated animate__fadeIn animate__faster wow">
+          <div class="pb-4">
+            <a *ngFor="let item of news_arr"
+            class="row py-4 border-bottom card-hover text-black border-0 feed-item">
+              <div class="col-md-auto col-3 pe-0 pe-lg-2">
+                <div class="list-img position-relative overflow-hidden news">
+                  <img class="fit-img position-absolute" src="{{item.IMG_PATH}}">
+                </div>
+              </div>
+              <div class="col fw-medium fw-medium pt-0 pt-lg-3">
+                  <h5 class="fs-5 mb-2 lh-base fw-bold">
+                    {{item.TITLE}}
+                  </h5>
+                  <div class=" mb-2 d-flex align-items-center">
+                    <span class="text-gray">{{item.NEW_DATE | date: 'dd/MM/yyyy'}}</span>
+                  </div>
+                  <p class="brife mb-2 opacity-75 pt-1 d-none d-md-block">
+                    {{item.DETAILS}}
+                  </p>
+                  <label class="badge bg-primary-light mt-2 py-1 px-2 lh-base text-black d-none d-md-inline-block">
+                    {{item.FACULTY_NAME}}
+                  </label>
+              </div>
+            </a>
+           
+          </div>
+          <div class="text-center pt-3">
+            <!-- <div class="progress" style="height: 1px;">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div> -->
+            <!-- <a class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+              المزيد من الدورات
+              <i class="icon-arrow-sm"></i>
+            </a> -->
+            
+          </div>
+        </div>
+      <!--end feed listing-->
+      </div>
+    </section>
+
+  </div>
+  <!--End News slider -->
+   
+    <!-- <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+      <div class="row">
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الطالب
+              <p class="mb-0 text-gray mt-1">
+                تعرف على المواد و المهام و النتيجة
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع هيئة التدريس
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الموظفين
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              خدمات الخريجين
+              <p class="mb-0 text-gray mt-1">
+                تعرف على الخدمات الخاصه بالخرجين
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+  </main>

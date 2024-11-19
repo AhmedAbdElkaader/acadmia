@@ -1,0 +1,196 @@
+<footer class="mt-4 bg-secondary">
+  <div class="container-fluid max-fluid pb-4 d-none d-md-block">
+    <div class="row justify-content-center">
+      <div class="col-auto d-none d-lg-block animate__animated animate__fadeInUp animate__faster wow">
+        <div class="logo px-3 pb-3 pt-5 bg-white">
+          <img class="m-2" src="assets/img/logo.jpg">
+        </div>
+      </div>
+      <div class="pt-5 col-auto text-white animate__animated animate__fadeInDown animate__fast wow">
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <ul class="list-unstyled ps-5">
+              <li>
+                <h5>الفرع الرئيسي</h5>
+              </li>
+              <li *ngFor="let item of main_branch">
+                <a style="cursor: pointer" (click)="gotToFaculty(item)">{{item.FACULTY_NAME}}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-auto">
+            <ul class="list-unstyled ps-5">
+              <li>
+                <h5>فرع اسكندرية</h5>
+              </li>
+              <li *ngFor="let item of alex_branch">
+                <a style="cursor: pointer" (click)="gotToFaculty(item)">{{item.FACULTY_NAME}}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-auto">
+            <ul class="list-unstyled ps-5">
+              <li>
+                <h5>إنشاءات الأكاديمية</h5>
+              </li>
+              <li *ngFor="let item of buildingArr ; let i = index">
+                <a (click)="gotToConstrction(item)" style="cursor: pointer">
+                  {{item.TITLE}}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="col-auto"> -->
+          <!-- <ul class="list-unstyled ps-5">
+              <li>
+                  <h5>البرامج الأكاديمية</h5>
+              </li>
+              <li>
+                <a>
+                  دراسات البكالوريوس
+                </a>
+              </li>
+              <li>
+                <a>
+                الدراسات العليا 
+                </a>
+              </li>
+              <li>
+                <a>
+                  الدراسات الحرة
+                </a>
+              </li>
+            </ul> -->
+          <!-- <ul class="list-unstyled ps-5">
+              <li>
+                  <h5>مقرات الأكاديمية</h5>
+              </li>
+              <li>
+                <a>
+                  مقر الجيزه
+                </a>
+              </li>
+              <li>
+                <a>
+                  مقر الإسكندرية
+                </a>
+              </li>
+            </ul> -->
+          <!-- </div> -->
+          <!-- <div class="col-auto">
+            <ul class="list-unstyled ps-5">
+              <li>
+                  <h5>عن الأكاديمية </h5>
+              </li>
+              <li>
+                <a>
+                  الخلفية التاريخية  
+                </a>
+              </li>
+              <li>
+                <a>
+                  هيئة التدريس
+                </a>
+              </li>
+              <li>
+                <a>
+                  الخريجين
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled ps-5">
+              <li>
+                <a>
+                  <h5>
+                    دراسات و بحوث 
+                  </h5>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+          <div class="col-auto">
+            <ul class="list-unstyled ps-5">
+              <li>
+                <h5>روابط سريعة</h5>
+              </li>
+              <!-- <li routerLink="/register">
+                <a >
+                  التقديم والقبول
+                </a>
+              </li> -->
+              <li routerLink="/news_list">
+                <a>
+                  الأخبار
+                </a>
+              </li>
+              <li routerLink="/events">
+                <a>
+                  الفعاليات
+                </a>
+              </li>
+              <li>
+                <a style="color: #fff" target="_blank" href="https://panel.aoa.edu.eg/">
+                  بوابة اعضاء ﻫﻴﺌﺔ اﻟﺘﺪرﻳﺲ
+                </a>
+              </li>
+              <li>
+                <a style="color: #fff"  target="_blank" href="https://student.aoa.edu.eg/">
+                  بوابة الطلبة
+                </a>
+              </li>
+              <li>
+                <a style="color: #fff"  target="_blank" [href]="bank">
+                  بوابة بنك المعرفة المصري
+                </a>
+              </li>
+              <li>
+                <a style="color: #fff"  [href]="modelLink" target="_blank">
+                  منصة موديل للجامعات المصرية
+                </a>
+              </li>
+              <li>
+                <a style="color: #fff" [href]="CENTERLIBGATE_LINK" target="_blank">
+                  بوابة مكتبات الأكاديمية
+                </a>
+              </li>
+              <li routerLink="/contact_us">
+                <a>
+                  إتصل بنا
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="bg-primary">
+    <div class="container-fluid text-center 
+    d-flex justify-content-between
+    py-3 animate__animated animate__fadeInUp wow">
+      <p class="mb-0 fw-medium text-white copyrights">حقوق الطبع والنشر © 2021 أكاديمية الفنون . جميع الحقوق محفوظة.</p>
+      <div class="icon_social">
+        <!-- <a [href]="bank" target="_blank">
+          <img src="assets/icon/bank-building.png">
+        </a> -->
+        <a [href]="instgram" target="_blank">
+          <img src="assets/icon/instagram.png">
+        </a>
+        <a [href]="tiwtter" target="_blank">
+          <img src="assets/icon/twitter.png">
+        </a>
+        <!-- <a [href]="modelLink" target="_blank">
+          <img src="assets/icon/graduation-cap.png">
+        </a> -->
+        <a [href]="youtube" target="_blank">
+          <img src="assets/icon/social.png">
+        </a>
+        <a [href]="facebook" target="_blank">
+          <img src="assets/icon/facebook-app-symbol.png">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

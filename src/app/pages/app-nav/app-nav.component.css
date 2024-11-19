@@ -1,0 +1,68 @@
+.academy-header-logo {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.academy-header-logo img {
+  width: 86px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.home-header .academy-header-logo {
+  -webkit-margin-start: -1.5rem;
+          margin-inline-start: -1.5rem;
+  padding: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .home-header .academy-header-logo {
+    padding: 0.5rem 1rem 0.3rem;
+  }
+}
+
+.home-header .academy-header-logo img {
+  width: 120px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  margin: 0.25rem;
+}
+
+.home-header .bg-white .register {
+  min-height: 0;
+}
+
+.icon-nav {
+  height: 24.8px;
+}
+
+.nav-button:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.main-nav-container {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.main-nav-container .register {
+  min-height: 59px;
+}
+
+.main-nav-container.bg-white, .main-nav-container.r-hheader {
+  -webkit-box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.main-nav-container.bg-white .academy-header-logo, .main-nav-container.r-hheader .academy-header-logo {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.main-nav-container.bg-white .academy-header-logo img, .main-nav-container.r-hheader .academy-header-logo img {
+  width: 90px;
+}
+/*# sourceMappingURL=header.css.map */

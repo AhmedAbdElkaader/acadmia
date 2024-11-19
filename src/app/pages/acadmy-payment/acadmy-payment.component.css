@@ -1,0 +1,138 @@
+/*Direction */
+.r-progress {
+    height: 2px;
+  }
+  
+  .btn-g-list-icon i {
+    display: inline-block;
+    height: 29px;
+    overflow: hidden;
+  }
+  
+  .btn-g-list-icon i::before {
+    position: relative;
+  }
+  
+  .btn-g-list-icon .icon-alex {
+    font-size: 29px;
+  }
+  
+  .btn-g-list-icon .icon-alex::before {
+    top: -2px;
+  }
+  
+  .btn-g-list-icon .icon-giza {
+    font-size: 63px;
+    display: inline-block;
+    height: 29px;
+    overflow: hidden;
+  }
+  
+  .btn-g-list-icon .icon-giza::before {
+    top: -22px;
+  }
+  
+  .btn-close {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    opacity: 0.3;
+  }
+  
+  .faculty-list .accordion-button i {
+    color: #8A8A8A;
+    display: inline-block;
+    height: 36px;
+  }
+  
+  .faculty-list .accordion-button i::before {
+    position: relative;
+  }
+  
+  .faculty-list .accordion-button:not(.collapsed) i {
+    color: #D1002C;
+  }
+  
+  .faculty-list .icon-theater {
+    font-size: 36px;
+  }
+  
+  .faculty-list .icon-theater::before {
+    top: -3px;
+  }
+  
+  .faculty-list .icon-group {
+    font-size: 50px;
+  }
+  
+  .faculty-list .icon-group::before {
+    top: -11px;
+  }
+  
+  .faculty-list .icon-ballet {
+    font-size: 36px;
+  }
+  
+  .faculty-list .icon-ballet::before {
+    top: -3px;
+  }
+  
+  .faculty-list .icon-cinema {
+    font-size: 44px;
+  }
+  
+  .faculty-list .icon-cinema::before {
+    top: -8px;
+  }
+  
+  .faculty-list .icon-oud {
+    font-size: 36px;
+  }
+  
+  .faculty-list .icon-oud::before {
+    top: -3px;
+  }
+  
+  .faculty-list .icon-disorder {
+    font-size: 41px;
+  }
+  
+  .faculty-list .icon-disorder::before {
+    top: -5px;
+  }
+  
+  .faculty-list .icon-sufi-dancing {
+    font-size: 36px;
+  }
+  
+  .faculty-list .icon-sufi-dancing::before {
+    top: -3px;
+  }
+  
+  .img-div {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .img-div .icon-upload {
+    top: 50%;
+    left: 50%;
+    height: 28px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  
+  .payment .mc {
+    width: 45px;
+  }
+  
+  .payment .fawry {
+    width: 70px;
+    border-radius: 0.5rem;
+  }
+  
+  .payment .meza {
+    width: 50px;
+    border-radius: 0.5rem;
+  }
+  /*# sourceMappingURL=register.css.map */

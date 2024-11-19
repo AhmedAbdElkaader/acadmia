@@ -1,0 +1,263 @@
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+    <app-app-nav></app-app-nav>
+    <main class="">
+        <!-- whatsapp floating button -->
+        <div class="whatsapp position-fixed">
+            <div class="rounded-circle bg-white shadow align-items-center justify-content-center d-flex">
+                <img src="assets/img/whatsApp.svg">
+            </div>
+        </div>
+        <!-- END whatsapp floating button -->
+
+        <div class="container-fluid position-relative">
+            <div class="row bg-secondary py-4">
+                <div class="col">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb animate__animated animate__fadeInDown mb-0">
+                            <li class="breadcrumb-item mb-2 mb-md-0">
+                                <a class="text-white" href="home.html">أكادميه الفنون</a>
+                            </li>
+                            <li class="breadcrumb-item mb-2 mb-md-0">
+                                <a class="text-white" href="faculty.html">{{reserch_details.faculty_name}}</a>
+                            </li>
+                            <li class="breadcrumb-item mb-2 mb-md-0">
+                                <a class="text-white" href="research-listing.html">
+                                    دراسات و بحوث
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                {{reserch_details.TITLE}}
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <section class="row pb-5 pt-ms-5 pt-4  animate__animated animate__fadeIn animate__fast wow">
+                <div class="col-lg-8 col-xl-9 ps-lg-4 course-details">
+
+                    <h2>{{reserch_details.TITLE}}</h2>
+                    <!-- <h5 class="mb-0">
+                        د/ إسم الباحث - رسالة ماجستير
+                    </h5> -->
+                    <label class="badge bg-primary-light py-1 px-2 lh-base text-black d-sm-none d-inline-block mt-2">
+                        قسم السيناريو
+                    </label>
+                    <div class="position-relative mt-4">
+                        <img src="{{reserch_details.IMG_PATH}}" />
+                        <!-- <div class="swiper detailsSlideSwiper pb-4">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="course-img position-relative overflow-hidden">
+                                        <img class="fit-img position-absolute" src="assets/img/research2.jpg">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="course-img position-relative overflow-hidden">
+                                        <img class="fit-img position-absolute" src="assets/img/course-1.jpg">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="course-img position-relative overflow-hidden">
+                                        <img class="fit-img position-absolute" src="assets/img/research3.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination w-100"></div>
+                        </div> -->
+                        <div class="bg-white p-3 position-absolute start-0 d-md-flex align-items-center date-details">
+                            <div class="d-flex me-3 align-items-center">
+                                <i class="icon-calender text-primary me-2"></i>
+                                <div class="date d-flex flex-column ">
+                                    <label class="fw-medium">تاريخ النشر</label>
+                                    <p class="fw-medium mb-0">19 سبتمبر 2022</p>
+                                </div>
+                            </div>
+                            <label class="badge bg-primary-light py-1 px-2 lh-base text-black d-sm-inline-block d-none">
+                                قسم السيناريو
+                            </label>
+                        </div>
+                    </div>
+                    <div class="position-relative article-container">
+
+                        <!-- <div class="mb-4">
+                            <h5 class="fw-bold text-black mb-2">
+                                الملخص
+                            </h5>
+                            <p class="text-muted fw-medium">
+                                ففي المسارح العالمية يمکننا أن نجد حرکات المياه علي خشبة المسرح والخلفية، بالإضافة إلى
+                                المؤثرات والتقنيات الضوئية وعروض الفيديو، والتي يتم التحکم وإدارتها فيها من خلال مراکز
+                                رقمية صغيرة. وبالرغم من انتشار تقنيات وأساليب التعبير عن تصميم المنظر المسرحي بإستخدام
+                                التکنولوجيا الرقمية والمؤثرات البصرية للعرض المسرحي عالمياً إضافة إلى کل ما قدمه
+                                المصممون والمتخصصون من مجهودات لتطوير العرض المسرحي بهذه التقنيات الحديثة محلياً، إلا
+                                أنه لايزال هناک فجوة کبيرة بين ما يعرض عالمياً
+                            </p>
+                        </div> -->
+                        <div class="mb-4" style="padding-top: 6rem">
+                            <h5 class="fw-bold text-black mb-2">
+                                التفاصيل
+                            </h5>
+                            <p class="text-muted fw-medium">
+                                {{reserch_details.DETAILS}}
+                            </p>
+                        </div>
+                        <!-- <div class="mb-4">
+                            <h5 class="fw-bold text-black mb-2">
+                                الفصل الأول
+                            </h5>
+                            <p class="text-muted fw-medium">
+                                وما يطبق في العرض المسرحي محلياً. يمکننا أن نلقي الضوء على أجهزة وبرامج التکنولوجيا
+                                الرقمية المُستخدمة في تصميم المنظر المسرحي کحل عملي لمشکلات التصميم وعملية الإخراج علي
+                                خشبة المسرح. فالتطور التکنولوجي في العصر الحديث يساعد على توظيف تصميم المنظر المسرحي
+                                لصناعة الصورة المشهدية التي تتلاءم مع متطلبات اللحظة التاريخية المعاصرة , والتي ساعدت في
+                                إعادة تأهيل اللغة المسرحية، وبما أن المسرح يشکل الوعي الجمعي من خلال التعبيرعن أفکاره و
+                                مضمونه سعى إلى استخدام التکنولوجيا الرقمية لکي تکون کأداة من أدوات الفعل الإبداعي من أجل
+                                صناعة سينوغرافيا من خلال استخدام الحاسب الآلي و البرامج الحديثة في رسم سينوغرافيا أکثر
+                                إبداعاً و تعبيراً فلابد لمتخصصى التصميم الداخلى الاهتمام بدراسة التکنولوجية الرقمية
+                                الخاصة بتصميم الديکور المسرحي لأنه أصبح المجال الخصب عالمياً، وأيضاً ضرورة اهتمام الجهات
+                                المختصة بالمسارح بتجهيز المسرح بأحدث التقنيات الرقمية من أجهزة وبرامج لإخراج العمل
+                                المسرحي بشکل متطور وشيق ومبدع ففي المسارح العالمية يمکننا أن نجد حرکات المياه علي خشبة
+                                المسرح والخلفية، بالإضافة إلى المؤثرات والتقنيات الضوئية وعروض الفيديو، والتي يتم التحکم
+                                وإدارتها فيها من خلال مراکز رقمية صغيرة. وبالرغم من انتشار تقنيات وأساليب التعبير عن
+                                تصميم المنظر المسرحي بإستخدام التکنولوجيا الرقمية والمؤثرات البصرية للعرض المسرحي
+                                عالمياً إضافة إلى کل ما قدمه المصممون والمتخصصون من مجهودات لتطوير العرض المسرحي بهذه
+                                التقنيات الحديثة محلياً، إلا أنه لايزال هناک فجوة کبيرة بين ما يعرض عالمياً
+                            </p>
+                        </div> -->
+
+                    </div>
+                    <!-- <div class="more-article text-center position-relative">
+                        <a id="showArticle" class="btn text-primary fw-bold border-0">
+                            إقراء المزيد
+                        </a>
+                    </div> -->
+                    <!-- <div class="border-top border-bottom mt-5 py-1 d-flex">
+                        <ul class="list-inline mb-0 d-flex align-items-center">
+                            <li class="list-inline-item">
+                                <button class="btn btn-primary download-pdf d-flex fw-bold justify-content-center">
+                                    <i class="icon-doc d-inline-block me-1"></i>
+                                    حمل PDF
+                                </button>
+                            </li>
+                            <li class="list-inline-item">
+                                <button class="btn border-0 px-1">
+                                    <img src="assets/img/fb.svg">
+                                </button>
+                            </li>
+                            <li class="list-inline-item">
+                                <button class="btn border-0 px-1">
+                                    <img src="assets/img/twitter.svg">
+                                </button>
+                            </li>
+                            <li class="list-inline-item">
+                                <button
+                                    class="btn border-0 text-black fw-medium px-1 share-btn d-flex align-items-center dropdown-toggle dropdown-toggle-split"
+                                    type="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="icon-share d-inline-block me-1"></i>
+                                    شارك البحث
+                                </button>
+                                <ul class="dropdown-menu border shadow p-0 dropdown-share"
+                                    aria-labelledby="dropdownShare">
+                                    <li><a class="dropdown-item border-bottom fw-medium  d-flex align-items-center"
+                                            href="#">
+                                            <i class="icon-email d-inline-block me-2 text-muted"></i>
+                                            بريد إلكتروني
+                                        </a></li>
+                                    <li><a class="dropdown-item fw-medium d-flex align-items-center" href="#">
+                                            <i class="icon-copy d-inline-block me-2 text-muted"></i>
+                                            نسخ الرابط
+                                        </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <!-- <div class="pt-4 d-lg-flex justify-content-end d-none">
+                        <a class="btn btn-link border border-primary d-flex align-items-center text-start">
+                            <div class="fw-medium flex-fill pe-2 pb-1 ">
+                                التالي
+                                <p class="mb-0 mt-1 text-black">فنون الميديا وتأصيل القيم الاخلاقية لطفل الروضة </p>
+                            </div>
+                            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                        </a>
+                    </div> -->
+                </div>
+                <aside class="col-lg-4 col-xl-3 mt-lg-5 pt-5">
+                    <div class="border px-3 pt-4">
+                        <h3>أبحاث ذات صله</h3>
+                        <ul class="list-unstyled fw-medium fs-7">
+                            <li class="border-top py-4 px-1">
+                                <a class="text-black hover">البناء المونتاجى في اعمال المخرج اليمنى سمير العفيف ...</a>
+                            </li>
+                            <li class="border-top py-4 px-1">
+                                <a class="text-black hover">تأثير تقنيات الإضاءة الحديثة على تصميم عروض البالية
+                                    المعاصر</a>
+                            </li>
+                            <li class="border-top py-4 px-1">
+                                <a class="text-black hover">فنون الميديا وتأصيل القيم الاخلاقية لطفل الروضة</a>
+                            </li>
+                            <li class="border-top py-4 px-1">
+                                <a class="text-black hover">تأثير تقنيات الإضاءة الحديثة على تصميم عروض البالية
+                                    المعاصر</a>
+                            </li>
+                            <li class="border-top py-4 px-1">
+                                <a class="text-black hover">فنون الميديا وتأصيل القيم الاخلاقية لطفل الروضة </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="text-center w-100 overflow-hidden pt-5">
+                        <img src="assets/img/300x600.jpg">
+                    </div> -->
+                </aside>
+            </section>
+
+        </div>
+        <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+            <div class="row">
+                <div
+                    class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+                    <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                        <div class="fw-medium flex-fill p-1">
+                            موقع الطالب
+                            <p class="mb-0 text-gray mt-1">
+                                تعرف على المواد و المهام و النتيجة
+                            </p>
+                        </div>
+                        <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                    </a>
+                </div>
+                <div
+                    class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+                    <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                        <div class="fw-medium flex-fill p-1">
+                            موقع هيئة التدريس
+                            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+                        </div>
+                        <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                    </a>
+                </div>
+                <div
+                    class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+                    <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                        <div class="fw-medium flex-fill p-1">
+                            موقع الموظفين
+                            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+                        </div>
+                        <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+                    <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                        <div class="fw-medium flex-fill p-1">
+                            خدمات الخريجين
+                            <p class="mb-0 text-gray mt-1">
+                                تعرف على الخدمات الخاصه بالخرجين
+                            </p>
+                        </div>
+                        <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

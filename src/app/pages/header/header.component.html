@@ -1,0 +1,119 @@
+<header class="container-fluid nimate__animated animate__fadeIn wow">
+  <div class="row main-nav-container">
+    <div class="col d-flex">
+      <a routerLink="/" class="d-inline-block bg-white academy-header-logo">
+        <img src="assets/img/logo.jpg" class="d-block" />
+      </a>
+    </div>
+    <div class="col-auto align-items-center d-flex">
+      <div data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav">
+        <a class="btn nav-button bg-white text-black p-3 d-block d-flex">
+          <i class="icon-nav lh-1 d-block fs-4"></i>
+          <span class="ms-2 fw-medium d-none d-md-inline-block">اكتشف أكاديميه الفنون</span>
+        </a>
+      </div>
+      <button [disabled]="!IS_REGISTRATION_OPEN" class="btn btn-primary fs-5 ms-1 register d-flex align-items-center" data-bs-toggle="modal"
+      data-bs-target="#conditionsModel">سجل الان</button>
+    </div>
+  </div>
+  <!--faculty nav -->
+  <nav class="navbar navbar-expand-lg faculty-nav row py-0 position-fixed w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-0 d-flex align-items-center py-0 me-0">
+        <div class="bg-white border-top border-primary p-3 border-5">
+          <img src="{{faculty_logo}}" style="width: 56px" />
+        </div>
+        <h2 [routerLink]="['/faculty',facultyId]" class="fw-bold ps-3 mb-0 d-inline-block d-lg-none d-xl-inline-block">
+          {{FACULTY_NAME}}
+        </h2>
+      </a>
+      <button class="navbar-toggler position-absolute top-0 end-0 bg-primary" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav px-4 px-xl-4 px-lg-0">
+
+          <li style="cursor: pointer" class="nav-item px-2 " [routerLinkActive]="'active'"
+            [routerLink]="['/about',facultyId]">
+            <a class="nav-link  fw-medium" aria-current="page">عن المعهد</a>
+          </li>
+          <li [routerLinkActive]="'active'" [routerLink]="['/register',facultyId]" class="nav-item px-2">
+            <a class="nav-link fw-medium">القبول والتسجيل</a>
+          </li>
+
+          <li class="nav-item px-2 dropdown" *ngIf="departments.length != 0" [routerLinkActive]="'active'">
+            <a class="nav-link dropdown-toggle" id="departmentDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-bs-offset="10,20">
+              أقسام المعهد
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end border-bottom border-primary mt-lg-3"
+              aria-labelledby="departmentDropdownMenuLink">
+              <li *ngFor="let item of departments" (click)="goto_depart(item)">
+                <a class="dropdown-item">{{item.TITLE}}</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item px-2 dropdown" [routerLinkActive]="'active'">
+            <a class="nav-link dropdown-toggle" id="systemDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-bs-offset="10,20">
+              الانظمة التعليمية
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end border-bottom border-primary mt-lg-3"
+              aria-labelledby="systemDropdownMenuLink">
+              <li><a class="dropdown-item" (click)="faculty_fees('false')">التعليم النظامى </a></li>
+              <li *ngIf="HAS_CREDIT">
+                <a class="dropdown-item" (click)="faculty_fees('true')">التعليم الموازي بمصروفات </a>
+              </li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item px-2 dropdown">
+            <a class="nav-link dropdown-toggle" id="programDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-bs-offset="10,20">
+              البرامج الدراسة
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end border-bottom border-primary mt-lg-3"
+              aria-labelledby="programDropdownMenuLink">
+              <li><a class="dropdown-item" [routerLink]="['/bachelor_study']"> دراسة البكالوريوس</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/master_study']">الدراسات العليا</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/courses_study']">الدراسات الحرة</a></li>
+            </ul>
+          </li> -->
+          <li style="cursor: pointer" class="nav-item px-2 " [routerLinkActive]="'active'"
+            [routerLink]="['/faculty_news_listing',facultyId]">
+            <a class="nav-link  fw-medium" aria-current="page">الأخبار</a>
+          </li>
+          <li style="cursor: pointer" class="nav-item px-2 " [routerLinkActive]="'active'"
+            [routerLink]="['/faculty_Events',facultyId]">
+            <a class="nav-link  fw-medium" aria-current="page">الفعاليات</a>
+          </li>
+
+
+          <li class="nav-item px-2 dropdown" [routerLinkActive]="'active'">
+            <a class="nav-link dropdown-toggle" id="systemDropdownMenuLink1" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-bs-offset="10,20">
+               المزيد
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end border-bottom border-primary mt-lg-3"
+              aria-labelledby="systemDropdownMenuLink1">
+              <li>
+                <a class="dropdown-item" [routerLink]="['/instractors',facultyId]">أعضاء هيئة التدريس</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/research_faculty_list',facultyId]">دراسات و بحوث</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item px-2" [routerLinkActive]="'active'" [routerLink]="['/contact_us']">
+            <a class="nav-link fw-medium"> اتصل بنا </a>
+          </li>
+          <!-- contact_us -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--END faculty nav-->
+</header>

@@ -1,0 +1,102 @@
+<app-app-nav></app-app-nav>
+<main>
+        <!--HERO Faculty-->
+        <section class="pb-md-5 position-relative">
+          <div class="position-relative faculty-hero d-flex">
+            <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+              <img class="position-absolute" src="assets/img/contactus-hero.jpg" />
+              <div class="black-layer position-absolute top-0 end-0 h-100 w-100"></div>
+            </div>
+            <div
+              class="position-relative d-flex align-items-lg-end justify-content-center institute-pref flex-column inner">
+              <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+              <div class="pref position-relative text-white pe-lg-5 pe-3 ms-3 animate__animated animate__slideInRight wow">
+                <h2 class="heading-font d-inline-block pt-5">
+                  شروط-القبول
+                </h2>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb animate__animated animate__fadeInDown">
+                    <li class="breadcrumb-item mb-2 mb-md-0">
+                      <a class="text-white">أكادميه الفنون</a>
+                    </li>
+                    <li class="breadcrumb-item mb-2 mb-md-0">
+                      <a class="text-white">
+                        اﻟﺘﻘﺪﻳﻢ واﻟﻘﺒﻮل
+                      </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      شروط القبول
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="container-fluid floated-contatiner-top position-relative">
+          <div class="row">
+            <div class="col-lg-11 offset-lg-1 bg-white">
+              <div class="col-lg-11 ps-3">
+                <section class="py-5">
+                  <div class="card mb-5">
+                    <div class="card-header fw-medium fs-5 text-black">
+                      الشروط العامة للقبول بمعاهد الأكاديمية  ​
+                    </div>
+                    <div class="card-body">
+                      <ol class="">
+                        <li class="mb-2" *ngFor="let item of list_condtion">
+                          {{item}}
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+    
+                  <!-- <div class="card">
+                    <div class="card-header fw-medium fs-5 text-black">
+                      يتم ترتيب المقبولين وفقاً للضوابط التالية: 
+                    </div>
+                    <div class="card-body">
+                      <ol>
+                        <li class="mb-2">
+                          يرصد في الكنترول شيت مجموع الدرجات الحاصل عليها الطالب في اختبارات القبول كذلك مجموع الدرجات الحاصل عليها بالثانوية العامة أو ما يعادلها أو الشهادة الجامعية. 
+                        </li>
+                        <li class="mb-2">
+                          يتم ترتيب المرشحين بأولوية الحاصلين على أعلى الدرجات في اختبارات القبول. 
+                        </li>
+                        <li class="mb-2">
+                          إذا تساوى أكثر من متقدم في درجات اختبارات القبول يقبل الحاصلين على الدرجة الأعلى فى الثانوية العامة أو ما يعادلها أو الشهادة الجامعية. 
+                        </li>
+                        <li class="mb-2">
+                          يطبق على الطلاب الحاصلين على النسبة المعلن عنها في الثانوية العامة أو ما يعادلها بكسر النصف في المائة وما فوق من النصف في المائة يجبر الكسر إلى درجة كاملة في المائة (1% صالح الطالب) أسوة بالسوابق. 
+                        </li>
+                        <li class="mb-2">
+                          يقبل الطلبة الذين لهم حق دخول الدور الثاني في امتحان الثانوية العامة واستوفوا شرط المجموع (بإضافة نسبة النجاح في مواد الرسوب على المجموع الكلي) وذلك بعد كتابة تعهد بإحضار أصل الشهادات قبل بداية امتحانات القبول وإلا اعتبر تقديمه لاغيًا. 
+                        </li>
+                      </ol>
+                    </div>
+                  </div> -->
+                  <!--JOIN ROW-->
+                  <!-- <div class="join-now mt-5 row align-items-center animate__animated animate__fadeInUp wow">
+                    <div class="col col-xl-6">
+                      <a class="btn btn-primary text-white d-flex align-items-center text-start py-3 px-4 fs-6" data-bs-toggle="modal" data-bs-target="#conditionsModel">
+                        <div class="flex-fill pe-3">
+                          انضم إلى العام الدراسي الجديد في سبتمبر
+                          <span class="d-block fw-bold pt-1"> سجل الان </span>
+                        </div>
+                        <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+                      </a>
+                    </div>
+                    <label class="text-gray fs-5 fw-medium ps-4 col-auto d-none d-md-block">
+                      متبقي 27 يوم فقط للتسجيل !
+                    </label>
+                  </div> -->
+                  <!--END JOIN ROW-->
+                </section>
+    
+              </div>
+    
+    
+            </div>
+          </div>
+        </div>
+      </main>

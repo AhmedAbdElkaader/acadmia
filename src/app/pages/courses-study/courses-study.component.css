@@ -1,0 +1,215 @@
+@media (min-width: 768px) {
+    .floated-contatiner-top {
+      margin-top: -12.625rem;
+    }
+  }
+  
+  .fs-label {
+    font-size: 0.8125rem;
+  }
+  
+  .search-btn {
+    width: 58px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  .search-btn i {
+    font-size: 23px;
+    height: 23px;
+    top: -3px;
+  }
+  
+  .search-btn:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+  }
+  /*# sourceMappingURL=innerTemplat.css.map */
+  /*Direction */
+.institute-pref {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+    width: 50%;
+  }
+  
+  .institute-pref.inner {
+    padding-bottom: 18rem;
+  }
+  
+  @media (max-width: 1199.98px) {
+    .institute-pref {
+      width: 60%;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .institute-pref {
+      width: 80%;
+    }
+    .institute-pref.inner {
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+    }
+  }
+  
+  .institute-pref .blend-darken-bg {
+    background: #D1002C;
+    mix-blend-mode: darken;
+  }
+  
+  .institute-pref .pref {
+    z-index: 1;
+    max-width: 600px;
+  }
+  
+  .institute-pref .pref label {
+    font-size: calc(1.4375rem + 2.25vw);
+    line-height: 0.9;
+  }
+  
+  @media (min-width: 1200px) {
+    .institute-pref .pref label {
+      font-size: 3.125rem;
+    }
+  }
+  
+  .institute-pref .pref h2 {
+    font-size: calc(1.4375rem + 2.25vw);
+  }
+  
+  @media (min-width: 1200px) {
+    .institute-pref .pref h2 {
+      font-size: 3.125rem;
+    }
+  }
+  
+  .institute-pref .pref p {
+    min-height: 126px;
+  }
+  
+  .faculty-hero .slid-img > img {
+    min-height: 100%;
+    height: auto;
+    min-width: 100%;
+    width: auto;
+    max-width: unset;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  
+  .black-layer {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(52.75%, rgba(0, 0, 0, 0)), to(#000000));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.75%, #000000 100%);
+  }
+  /*# sourceMappingURL=facultyHero.css.map */
+  /*Direction */
+@media (min-width: 992px) {
+    aside.side-filter {
+      width: 240px;
+      margin-left: 30px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    aside.side-filter {
+      width: 330px;
+    }
+  }
+  
+  .offcanvas-filter {
+    padding-bottom: 90px;
+  }
+  
+  .btn-close.sm {
+    width: 2px;
+    height: 2px;
+  }
+  /*# sourceMappingURL=side-filter.css.map */
+  /*Direction */
+@media (min-width: 992px) {
+    .plus-filter {
+      width: calc(100% - 270px);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .plus-filter {
+      width: calc(100% - 360px);
+    }
+  }
+  
+  .list-img:not(.news) {
+    width: 66px;
+    height: 66px;
+  }
+  
+  @media (min-width: 768px) {
+    .list-img {
+      width: 260px;
+      height: 210px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .list-img {
+      width: 100%;
+      height: unset;
+      margin-bottom: 1rem;
+    }
+    .list-img img {
+      position: static !important;
+      -webkit-transform: unset !important;
+              transform: unset !important;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .list-img.news {
+      width: 100%;
+      height: unset;
+      margin-bottom: 1rem;
+    }
+    .list-img.news img {
+      position: static !important;
+      -webkit-transform: unset !important;
+              transform: unset !important;
+      width: 100%;
+    }
+  }
+  
+  .feed-listing .brife {
+    font-size: 0.875rem;
+  }
+  
+  .feed-listing .feed-item h5 {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  .feed-listing .feed-item:hover h5 {
+    color: #D1002C;
+  }
+  
+  @media (max-width: 767.98px) {
+    .feed-listing .price {
+      padding-right: 102px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .feed-listing .price {
+      padding-right: calc(1.5rem * .5);
+      margin-top: .5rem;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .feed-listing .main-points {
+      opacity: 0.7;
+      font-size: 0.875rem;
+    }
+  }
+  /*# sourceMappingURL=feed-listing.css.map */

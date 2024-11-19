@@ -1,0 +1,189 @@
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+    <app-header></app-header>
+    <main>
+        <app-whatsapp></app-whatsapp>
+        <section class="pb-md-5 position-relative">
+            <div class="position-relative faculty-hero d-flex">
+                <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+                    <img class="position-absolute" [src]="SLIDER_IMAGE" />
+                    <div class="black-layer position-absolute top-0 end-0 h-100 w-100"></div>
+                </div>
+                <div
+                    class="position-relative d-flex align-items-lg-end justify-content-center institute-pref flex-column inner">
+                    <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+                    <div
+                        class="pref position-relative text-white pe-lg-5 pe-3 ms-3 animate__animated animate__slideInRight wow">
+                        <h2 class="heading-font d-inline-block pt-5">
+                            <label class="d-block text-sm-start">{{facult_date}}</label>
+                            {{facultyName}}
+                        </h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb animate__animated animate__fadeInDown">
+                                <li class="breadcrumb-item mb-2 mb-md-0">
+                                    <a class="text-white">أكادميه الفنون</a>
+                                </li>
+                                <li class="breadcrumb-item mb-2 mb-md-0">
+                                    <a class="text-white">
+                                        {{facultyName}}
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    أعضاء هيئة التدريس
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="offcanvas-header align-items-start">
+                <div class="text-center w-100">
+                    <div class="inst-img overflow-hidden rounded-circle mx-auto">
+                        <img [src]="techDetails?.image ? techDetails.image : 'assets/img/instructor-default.png'"style="width:500px" />
+                    </div>
+                    <div class="inst-info ps-3 pt-2">
+                        <h6 class="mb-1 text-black">
+                            {{techDetails?.full_name}}
+                        </h6>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="offcanvas-body">
+                <div class="border-top pt-3 ">
+                    <h5 class="fs-6 fw-bold mb-2">
+                        المركز الحالي:
+                    </h5>
+                    <p>
+                        <span>{{techDetails?.job_describtion}}</span>
+                        {{techDetails?.faculty}}
+                    </p>
+                </div>
+
+                <div class="border-top pt-3">
+                    <h5 class="fs-6 fw-bold mb-2">
+                        الإنتاج الفكري والفلسفي
+                    </h5>
+                    <!--Max 3 'ines and more to see the full paragraphe '-->
+                    <p>
+                        {{techDetails?.Scientific_intellectual_production}}
+                    </p>
+                </div>
+
+
+
+                <div class="border-top pt-3">
+                    <h5 class="fs-6 fw-bold mb-2">
+                        البعثات و المنح الدراسيه
+                    </h5>
+                    <!--Max 3 'ines and more to see the full paragraphe '-->
+                    <p>
+                        {{techDetails?.Scholarships_curricula}}
+                    </p>
+                </div>
+
+
+                <div class="border-top pt-3">
+                    <h5 class="fs-6 fw-bold mb-2">
+                        المراجع والموسوعات المدرج فيها اسمه
+                    </h5>
+                    <!--Max 3 'ines and more to see the full paragraphe '-->
+                    <p>
+                        {{techDetails?.References_encyclopedias}}
+                    </p>
+                </div>
+
+
+                <div class="border-top pt-3">
+                    <h5 class="fs-6 fw-bold mb-2">
+                        المؤهلات العلميه و الشهادات
+                    </h5>
+                    <!--Max 3 'ines and more to see the full paragraphe '-->
+                    <ng_container *ngFor="let item of techDetails?.Academic_qualifications_certificates">
+                        <ul class="list-unstyled mb-0 custom-styled ps-4">
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary">المؤهل</div>
+                                <div>
+                                    {{item.title}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary"> تفاصيل </div>
+                                <div>{{item.org}}</div>
+                            </li>
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary">سنه الحصول</div>
+                                <div>
+                                    {{item.acquire_date}}
+                                </div>
+                            </li>
+                        </ul>
+                        <hr>
+                    </ng_container>
+                </div>
+
+                <div class="border-top pt-3">
+                    <h5 class="fs-6 fw-bold mb-2">
+                        الوسمه و الجواءز
+                    </h5>
+                    <!--Max 3 'ines and more to see the full paragraphe '-->
+                    <ng_container *ngFor="let item of techDetails?.honors_awards">
+                        <ul class="list-unstyled mb-0 custom-styled ps-4">
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary">الوسمه او الجائزة</div>
+                                <div>
+                                    {{item.title}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary"> تفاصيل </div>
+                                <div>{{item.org}}</div>
+                            </li>
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary">سنه الحصول</div>
+                                <div>
+                                    {{item.acquire_date}}
+                                </div>
+                            </li>
+                        </ul>
+                        <hr>
+                    </ng_container>
+                </div>
+
+
+                <div class="border-top pt-3">
+                    <h5 class="fs-6 fw-bold mb-2">
+                        الوظائف والمهن
+                    </h5>
+                    <!--Max 3 'ines and more to see the full paragraphe '-->
+                    <ng_container *ngFor="let item of techDetails?.Jobs_professions">
+                        <ul class="list-unstyled mb-0 custom-styled ps-4">
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary">الوظائف او المهنة</div>
+                                <div>
+                                    {{item.title}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary"> تفاصيل </div>
+                                <div>{{item.org}}</div>
+                            </li>
+                            <li>
+                                <div class="fs-7 fw-medium text-secondary">سنه الحصول</div>
+                                <div>
+                                    {{item.acquire_date}}
+                                </div>
+                            </li>
+                        </ul>
+                        <hr>
+                    </ng_container>
+                </div>
+
+            </div>
+        </section>
+    </main>
+</div>

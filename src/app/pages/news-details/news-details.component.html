@@ -1,0 +1,203 @@
+<!-- header -->
+<app-app-nav></app-app-nav>
+
+<!-- END header -->
+
+<main class="">
+  <!-- whatsapp floating button -->
+  <app-whatsapp></app-whatsapp>
+  <!-- END whatsapp floating button -->
+  <div class="container-fluid position-relative">
+    <div class="row bg-secondary py-4">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb animate__animated animate__fadeInDown mb-0">
+            <li class="breadcrumb-item mb-2 mb-md-0">
+              <a class="text-white" routerLink="/">أكادميه الفنون</a>
+            </li>
+            <!-- <li class="breadcrumb-item mb-2 mb-md-0">
+              <a class="text-white" href="faculty.html">معهد السينما</a>
+            </li> -->
+            <li class="breadcrumb-item mb-2 mb-md-0">
+              <a class="text-white" (click)="go_to_news()">
+                أخبار
+              </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ new_data.TITLE }}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <section
+      class="row pb-5 pt-4  animate__animated animate__fadeIn animate__fast wow"
+    >
+      <div class="col-lg-8 col-xl-9 ps-lg-4 course-details">
+        <!-- <div class="pb-4 fw-medium animate__fadeInDown animate__faster wow">
+          العودة إلى
+          <a class="text-primary"
+            >المعهد العالي للسينما <i class="icon-arrow-sm default"></i
+          ></a>
+        </div> -->
+        <h2>{{ new_data.TITLE }}</h2>
+        <!-- <h6 class="fw-medium mb-0">
+          بواسطه مصطفى طاهر
+        </h6> -->
+        <!-- <label
+          class="badge bg-primary-light py-1 px-2 lh-base text-black d-sm-none d-inline-block mt-2"
+        >
+          سينما
+        </label> -->
+        <div class="position-relative mt-4">
+                <img src="{{new_data.IMG_PATH}}"/>
+          <div
+            class="bg-white p-3  start-0 d-md-flex align-items-center date-details" >
+            <div class="d-flex me-3 align-items-center">
+              <i class="icon-calender text-primary me-2"></i>
+              <div class="date d-flex flex-column ">
+                <label class="fw-medium">تاريخ النشر</label>
+                <p class="fw-medium mb-0">{{new_data.NEW_DATE}}</p>
+              </div>
+            </div>
+            <label
+              class="badge bg-primary-light py-1 px-2 lh-base text-black d-sm-inline-block d-none"
+            >
+              سينما
+            </label>
+          </div>
+        </div>
+        <div class="position-relative pt-4">
+          <div class="mb-4">
+            <p class="text-muted fw-medium">
+             {{new_data.DETAILS}}
+            </p>
+          </div>
+         
+        </div>
+        <!-- <div class="border-top border-bottom mt-5 py-1 d-flex">
+          <ul class="list-inline mb-0 d-flex align-items-center">
+            <li class="list-inline-item">
+              <button class="btn border-0 px-1">
+                <img src="assets/img/fb.svg" />
+              </button>
+            </li>
+            <li class="list-inline-item">
+              <button class="btn border-0 px-1">
+                <img src="assets/img/twitter.svg" />
+              </button>
+            </li>
+            <li class="list-inline-item">
+              <button
+                class="btn border-0 text-black fw-medium px-1 share-btn d-flex align-items-center dropdown-toggle dropdown-toggle-split"
+                type="button"
+                id="dropdownShare"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="icon-share d-inline-block me-1"></i>
+                شارك البحث
+              </button>
+              <ul
+                class="dropdown-menu border shadow p-0 dropdown-share"
+                aria-labelledby="dropdownShare"
+              >
+                <li>
+                  <a
+                    class="dropdown-item border-bottom fw-medium  d-flex align-items-center"
+                    href="#"
+                  >
+                    <i class="icon-email d-inline-block me-2 text-muted"></i>
+                    بريد إلكتروني
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item fw-medium d-flex align-items-center"
+                    href="#"
+                  >
+                    <i class="icon-copy d-inline-block me-2 text-muted"></i>
+                    نسخ الرابط
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+      <aside class="col-lg-4 col-xl-3 mt-lg-5 pt-5">
+        <div class="border px-3 pt-4">
+          <h3>أخبار أكثر قراءة</h3>
+          <ul class="list-unstyled fw-medium fs-7">
+            <li class="border-top py-4 px-1" *ngFor="let item of top_readed">
+              <a class="text-black hover" (click)="newsDetails(item)">{{item.TITLE}} </a>
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="text-center w-100 overflow-hidden pt-5">
+          <img src="assets/img/300x600.jpg" />
+        </div> -->
+      </aside>
+    </section>
+  </div>
+  <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+    <div class="row">
+      <div
+        class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow"
+      >
+        <a
+          class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100"
+        >
+          <div class="fw-medium flex-fill p-1">
+            موقع الطالب
+            <p class="mb-0 text-gray mt-1">
+              تعرف على المواد و المهام و النتيجة
+            </p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div
+        class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow"
+      >
+        <a
+          class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100"
+        >
+          <div class="fw-medium flex-fill p-1">
+            موقع هيئة التدريس
+            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div
+        class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow"
+      >
+        <a
+          class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100"
+        >
+          <div class="fw-medium flex-fill p-1">
+            موقع الموظفين
+            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div
+        class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow"
+      >
+        <a
+          class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100"
+        >
+          <div class="fw-medium flex-fill p-1">
+            خدمات الخريجين
+            <p class="mb-0 text-gray mt-1">
+              تعرف على الخدمات الخاصه بالخرجين
+            </p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

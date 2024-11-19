@@ -1,0 +1,94 @@
+/*Direction */
+.event-featured-img {
+  height: 450px;
+}
+
+.event-featured .event-title {
+  max-height: 90%;
+  z-index: 9;
+}
+
+.event-featured .event-title h3 {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+@media (max-width: 991.98px) {
+  .event-featured .event-title {
+    width: calc(100% - 3rem);
+    right: calc(-.5 * 1.5);
+  }
+  .event-featured .event-title h3 {
+    font-size: 1.5rem !important;
+  }
+}
+/*# sourceMappingURL=events-listing.css.map */
+
+/*Direction */
+.eventSwiper .swiper-slide {
+  width: 300px;
+  height: 350px;
+}
+
+@media (min-width: 992px) {
+  .eventSwiper .swiper-slide {
+    width: 33.33333333333333%;
+    height: 560px;
+    min-width: 480px;
+  }
+}
+
+.eventSwiper .swiper-pagination-bullet:last-child {
+  margin-left: 130px !important;
+}
+
+.eventSwiper .event-info h4 {
+  max-height: 99px;
+  overflow: hidden;
+}
+
+.event-card .event-info {
+  width: 80%;
+}
+
+@media (min-width: 992px) {
+  .event-card .event-info {
+    min-height: 260px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .event-card .event-info {
+    width: 55%;
+  }
+}
+
+.event-card .bg-white {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.event-card:hover .bg-white {
+  background-color: #D1002C !important;
+  color: #fff !important;
+}
+
+.faculty-events-list .event-card {
+  height: 330px;
+}
+
+.faculty-events-list .event-card label,
+.faculty-events-list .event-card span {
+  font-size: 0.875rem;
+}
+
+.faculty-events-list .event-card .event-info {
+  width: calc(100% - 1rem);
+  min-height: 0;
+}
+
+.faculty-events-list .event-card h4 {
+  max-height: 67px;
+  overflow: hidden;
+}
+/*# sourceMappingURL=eventsSlid.css.map */

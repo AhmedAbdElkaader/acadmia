@@ -1,0 +1,346 @@
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+  <!-- header -->
+  <app-header></app-header>
+  <!-- end header -->
+  <main>
+
+    <!-- whatsapp -->
+    <app-whatsapp></app-whatsapp>
+    <!-- end wahtsApp -->
+    <section class="pb-5 position-relative">
+      <div class="position-relative faculty-hero d-flex">
+        <div class="slid-img position-absolute w-100 h-100 top-0 start-0 overflow-hidden">
+          <img class="position-absolute" src="{{faculty_image}}" />
+          <div class="black-layer position-absolute top-0 start-0 h-100 w-100"></div>
+        </div>
+        <div class="position-relative d-flex align-items-lg-end justify-content-center institute-pref flex-column">
+          <div class="blend-darken-bg position-absolute top-0 start-0 h-100 w-100"></div>
+          <div class="pref position-relative text-white pe-lg-5 pe-3 ms-3 animate__animated animate__slideInRight wow">
+            <h2 class="heading-font d-inline-block pt-5">
+              <label class="d-block text-sm-end">{{DATE_ESTABLISH}}</label>
+              {{FACULTY_NAME}}
+            </h2>
+            <p class="fs-5 mb-0">
+             {{aboutFaculty}}
+            </p>
+          </div>
+        </div>
+        <div class="position-absolute start-0 bottom-0 container-fluid">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb animate__animated animate__fadeInDown">
+              <li class="breadcrumb-item">
+                <a class="text-white">أكادميه الفنون</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a class="text-white" href="faculty.html">
+                  {{FACULTY_NAME}}
+                </a>
+              </li>
+              <!-- <li class="breadcrumb-item active" aria-current="page">
+                القبول والتسجيل
+              </li> -->
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid">
+      <!--About-->
+      <div class="row py-5">
+        <div class="col-xl-8 col-lg-10 mx-auto">
+          <h3
+            class="text-center heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+            نبذة عن المعهد
+          </h3>
+          <p class="fs-5 fw-medium mb-5 animate__animated animate__fadeInUp animate__fast wow">
+            {{aboutFaculty}}
+          </p>
+          <!--JOIN ROW-->
+          <!-- <div class="join-now mb-5 row align-items-center animate__animated animate__fadeInUp wow">
+            <div class="col col-xl-6">
+              <a class="btn btn-primary text-white d-flex align-items-center text-start py-3 px-4 fs-6">
+                <div class="flex-fill pe-3">
+                  انضم إلى العام الدراسي الجديد في سبتمبر
+                  <span class="d-block fw-bold pt-1"> سجل الان </span>
+                </div>
+                <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+              </a>
+            </div>
+            <label class="text-gray fs-5 fw-medium ps-4 col-auto d-none d-md-block">
+              متبقي 27 يوم فقط للتسجيل !
+            </label>
+          </div> -->
+          <!--END JOIN ROW-->
+          <!-- <div class="row">
+            <div
+              class="col-lg-4 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+              <a class="btn btn-link caption border border-primary d-flex align-items-center text-start p-3 fs-6 h-100">
+                <div class="fw-medium flex-fill p-1">
+                  دراسة البكالوريوس
+                  <p class="mb-0 text-gray mt-1">4 سنوات فقط تفصلك عن حلمك</p>
+                </div>
+                <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+              </a>
+            </div>
+            <div
+              class="col-lg-4 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+              <a class="btn btn-link caption border border-primary d-flex align-items-center text-start p-3 fs-6 h-100">
+                <div class="fw-medium flex-fill p-1">
+                  الدراسات العليا
+                  <p class="mb-0 text-gray mt-1">
+                    كن من مطوري السينما و التلفزة
+                  </p>
+                </div>
+                <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+              <a class="btn btn-link caption border border-primary d-flex align-items-center text-start p-3 fs-6 h-100">
+                <div class="fw-medium flex-fill p-1">
+                  الدراسات الحرة
+                  <p class="mb-0 text-gray mt-1">أثقل مهاراتك بشكل إحترافي</p>
+                </div>
+                <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+              </a>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!--Actions-->
+      <div class="row pt-5 pb-lg-5 pb-3">
+        <div
+          class="col-lg-4 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title fs-4 mt-2 fw-medium">أقسام المعهد</h5>
+              <p class="card-subtitle mb-3 pb-3 text-gray border-bottom">
+                يضم المعهد {{departments.length}} أقسام
+              </p>
+              <ul class="list-unstyled custom-styled ps-4 mb-3">
+                <li *ngFor="let item of departments">
+                  <a (click)="goto_depart(item)"
+                  class="fw-medium fs-6 text-black link-list">{{item.TITLE}}</a>
+                </li>
+              </ul>
+
+              <!-- <a class="btn btn-secondary mb-4 fs-5">
+                التفاصيل
+                <i class="icon-arrow-sm default"></i>
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title fs-4 mt-2 fw-medium">
+                الانظمة التعليمية
+              </h5>
+              <p class="card-subtitle mb-3 pb-3 text-gray border-bottom">
+                يتبع المعهد النظم التعليمية التابعه لأكادميه الفنون
+              </p>
+              <ul class="list-unstyled custom-styled ps-4 mb-3">
+                <li (click)="faculty_fees('false')">
+                  <a class="fw-medium fs-6 text-black link-list d-block">
+                    التعليم النظامى
+                    <p class="mb-0 caption fw-normal mb-2 pb-2">
+                      تدعمه الحكومة المصرية مثله مثل أي جامعة مصرية
+                    </p>
+                  </a>
+                </li>
+                <li *ngIf="has_credit" (click)="faculty_fees('true')">
+                  <a class="fw-medium fs-6 text-black link-list d-block">
+                    لتعليم الموازي بمصروفات
+                    <p class="mb-0 caption fw-normal mb-2 pb-2">
+                      يقوم الطالب فيه بدفع مصروفات تعليمه كاملة
+                    </p>
+                  </a>
+                </li>
+                <!-- <li>
+                  <a class="fw-medium fs-6 text-black link-list d-block">
+                    الدراسات الحرة
+                    <p class="mb-0 caption fw-normal mb-2 pb-2">
+                      نظام تعليمي حر مسائي على هيئة دورات متتالية
+                    </p>
+                  </a>
+                </li> -->
+              </ul>
+
+              <!-- <a class="btn btn-secondary mb-4 fs-5">
+                تعرف أكثر
+                <i class="icon-arrow-sm default"></i>
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title fs-4 mt-2 fw-medium">دراسات و بحوث</h5>
+              <p class="card-subtitle mb-3 pb-3 text-gray border-bottom">
+                تابع أحدث الدراسات في صناعه  {{FACULTY_NAME}}
+              </p>
+              <ul class="list-unstyled ps-0 mb-3 research-list">
+                <li class="py-2" *ngFor="let item of Researches">
+                  <a class="d-flex align-items-center text-black">
+                    <div class="media-img flex-shrink-0 position-relative overflow-hidden">
+                      <img class="fit-img position-absolute" src="{{item.IMG_PATH}}" />
+                    </div>
+                    <div class="fs-6 fw-medium flex-grow-1 ps-3">
+                      {{item.TITLE}}
+                    </div>
+                  </a>
+                </li>
+              </ul>
+
+              <a [routerLink]="['/research_faculty_list',facultyId]" class="btn btn-secondary mb-4 fs-5">
+                كل الدراسات
+                <i class="icon-arrow-sm default"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row py-5">
+        <!--Faculty Events-->
+        <div class="col mb-lg-0 mb-5 animate__animated animate__fadeIn wow">
+          <h4 class="lh-base my-3">فعاليات  {{FACULTY_NAME}}</h4>
+          <div class="row faculty-events-list">
+            <div class="col-xl-4 col-md-6 mb-4 mt-1" (click)="go_to_event(item)" *ngFor="let item of events">
+              <a class="position-relative overflow-hidden d-flex event-card">
+                <img class="hover-scale fit-img position-absolute" src="{{item.IMG_PATH}}" />
+                <div class="position-absolute bg-white bottom-0 start-0 text-black event-info px-3 py-4">
+                  <label class="text-black-50">{{item.FACULTY_NAME}}</label>
+                  <h4 class="fw-medium pb-3 mb-0 pt-2 fs-6 lh-base">
+                    {{item.TITLE}}
+                  </h4>
+                  <span class="border-top border-primary pt-2 d-inline-block">
+                    {{item.START_DATE | date:'yyyy/MM/dd' }}
+                  </span>
+                </div>
+              </a>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="col text-end">
+              <a [routerLink]="['/faculty_Events',facultyId]"
+              class="btn btn-link fs-5 all d-inline-flex align-items-center ps-1 fw-medium">
+                كل فعاليات
+                <i class="icon-arrow-sm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 animate__animated animate__fadeIn wow">
+          <div class="bg-secondary py-4 px-3 text-white h-100">
+            <h4 class="lh-base mb-4">أخبار  {{FACULTY_NAME}}</h4>
+            <ul class="list-unstyled ps-0 news-side-list">
+              <li class="py-3" *ngFor="let item of news">
+                <a class="d-flex text-white">
+                  <div class="media-img flex-shrink-0 position-relative overflow-hidden">
+                    <img class="fit-img position-absolute" src="{{item.IMG_PATH}}" />
+                  </div>
+                  <div class="flex-grow-1 ps-3">
+                    <span class="date opacity-50">{{item.NEW_DATE | date:'yyyy/MM/dd'}}</span>
+                    <p class="mb-0 fs-6">
+                      {{item.TITLE}}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="text-start">
+              <a [routerLink]="['/faculty_news_listing',facultyId]"
+              class="btn btn-link text-white fs-5 all d-inline-flex align-items-center ps-1 fw-medium">
+                كل الأخبار
+                <i class="icon-arrow-sm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- gallrey -->
+<section class="py-5 mb-5">
+  <div class="container-fluid">
+    <h2 class="heading-font heading-style mb-5 fw-normal animate__faster animate__animated animate__fadeInUp wow">
+      معرض الصور</h2>
+  </div>
+  <div class="bg-secondary">
+    <div class="container-fluid">
+      <div class="row animate__animated animate__fadeInUp wow">
+
+        <swiper [config]="galley_Config" class="swiper eventSwiper defult-pagination">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let item of gallery">
+              <a (click)="eventDetails(item.ID)" class="position-relative overflow-hidden d-flex h-100 event-card">
+                <img class="hover-scale fit-img position-absolute" src="{{item.image_path}}">
+              </a>
+            </div>
+          </div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </swiper>
+
+        <div class="swiper-more-link text-end">
+          <a  class="text-primary d-inline-block fw-bold position-relative mb-1">
+            كل الصور
+            <i class="icon-arrow-sm position-relative"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END gallrey -->
+    <!-- <section class="container-fluid pt-5 pt-5 pb-lg-5 pb-3">
+      <div class="row">
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الطالب
+              <p class="mb-0 text-gray mt-1">
+                تعرف على المواد و المهام و النتيجة
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع هيئة التدريس
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الموظفين
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              خدمات الخريجين
+              <p class="mb-0 text-gray mt-1">
+                تعرف على الخدمات الخاصه بالخرجين
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+  </main>
+  <!-- <app-footer></app-footer> -->
+
+</div>

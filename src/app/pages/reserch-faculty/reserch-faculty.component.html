@@ -1,0 +1,267 @@
+<app-header></app-header>
+
+  <main class="">
+    <!-- whatsapp floating button -->
+    <div class="whatsapp position-fixed">
+      <div class="rounded-circle bg-white shadow align-items-center justify-content-center d-flex">
+        <img src="assets/img/whatsApp.svg">
+      </div>
+    </div>
+    <!-- END whatsapp floating button -->
+
+    <div class="container-fluid position-relative">
+      <div class="row bg-secondary py-4" style="margin-top: 6%">
+        <div class="col">
+          <h1
+            class="text-white heading-font heading-style mb-2 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+            دراسات و بحوث
+          </h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb animate__animated animate__fadeInDown mb-0">
+              <li class="breadcrumb-item mb-2 mb-md-0">
+                <a class="text-white">أكادميه الفنون</a>
+              </li>
+              <li class="breadcrumb-item mb-2 mb-md-0">
+                <a class="text-white">{{FACULTY_NAME}}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                  دراسات و بحوث
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <section class="pb-5 pt-4 d-lg-flex">
+            <!--desktop side filter-->
+            <!-- <aside class="side-filter pt-4 d-none d-lg-block">
+              <div class="floating-label-select position-relative border mb-4">
+                <select class="floating-select form-select border-0 fw-medium"
+                  onclick="this.setAttribute('value', this.value);" value="1">
+                  <option selected value="1">الأحدث</option>
+                  <option value="2">الأكثر تحميل</option>
+                  <option value="3">الأقدم</option>
+                </select>
+                <label>ترتيب حسب</label>
+              </div>
+              <div class="accordion">
+                <a class="btn bg-primary-light text-primary fw-medium mb-3 ">
+                  حذف الكل
+                </a>
+                <div class="accordion-item border-0 border-top">
+                  <h2 class="accordion-header" id="headingFilterDepartments">
+                    <button class="accordion-button bg-transparent fw-medium fs-4 text-black shadow-none px-0"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilterDepartments"
+                      aria-expanded="true" aria-controls="collapseFilterDepartments">
+                      المعاهد
+                    </button>
+                  </h2>
+                  <div id="collapseFilterDepartments" class="accordion-collapse collapse show"
+                    aria-labelledby="headingFilterDepartments">
+                    <div class="accordion-body px-0 py-0 text-secondary fw-medium">
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check1">
+                        <label class="form-check-label" for="check1">
+                          الفنون المسرحية <span class="text-black">(10)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check2">
+                        <label class="form-check-label" for="check2">
+                          الكونسرفتوار <span class="text-black">(10)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check3">
+                        <label class="form-check-label" for="check3">
+                          باليه <span class="text-black">(10)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check4">
+                        <label class="form-check-label" for="check4">
+                          السينما <span class="text-black">(10)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check5">
+                        <label class="form-check-label" for="check5">
+                          موسيقى عربية <span class="text-black">(10)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check6">
+                        <label class="form-check-label" for="check6">
+                          النقد الفني <span class="text-black">(10)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check7">
+                        <label class="form-check-label" for="check7">
+                          الفنون الشعبية <span class="text-black">(59)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check8">
+                        <label class="form-check-label" for="check8">
+                          فنون الطفل <span class="text-black">(58)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item border-0 border-top">
+                  <h2 class="accordion-header" id="headingFilterLevel">
+                    <button class="accordion-button bg-transparent fw-medium fs-4 text-black shadow-none px-0"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilterLevel"
+                      aria-expanded="false" aria-controls="collapseFilterLevel">
+                      البحوث
+                    </button>
+                  </h2>
+                  <div id="collapseFilterLevel" class="accordion-collapse collapse show"
+                    aria-labelledby="headingFilterLevel">
+                    <div class="accordion-body px-0 pb-0">
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check9">
+                        <label class="form-check-label" for="check9">
+                          رسائل ماجستير <span class="text-black">(58)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check9">
+                        <label class="form-check-label" for="check9">
+                          رسائل دكتوراه <span class="text-black">(58)</span>
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check11">
+                        <label class="form-check-label" for="check11">
+                          أخري <span class="text-black">(58)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside> -->
+            <!--end desktop side filter-->
+            <!--mobile side filter-->
+            <!-- <div class="row d-lg-none">
+              <div class="col">
+                <div class="floating-label-select position-relative border">
+                  <select class="floating-select form-select border-0 fw-medium"
+                    onclick="this.setAttribute('value', this.value);" value="1">
+                    <option selected value="1">الأحدث</option>
+                    <option value="2">الأكثر تحميل</option>
+                    <option value="3">الأقدم</option>
+                  </select>
+                  <label>ترتيب حسب</label>
+                </div>
+
+              </div>
+              <div class="col-auto ps-0">
+
+                <a class="btn border text-black d-flex align-items-center h-100" data-bs-toggle="offcanvas"
+                  href="#offcanvasSideFilter" role="button" aria-controls="offcanvasSideFilter">
+                  <i class="icon icon-filter default"></i>
+                </a>
+              </div>
+            </div> -->
+            <!--end mobile side filter-->
+            <!--feed listing-->
+            <div class="feed-listing plus-filter">
+              <div class="pb-4">
+                <a *ngFor="let item of resaerchList"
+                (click)="Details(item)"
+                 class="row py-4 border-bottom card-hover text-black border-0 feed-item">
+                  <div class="col-sm-auto">
+                    <div class="list-img position-relative overflow-hidden">
+                      <img class="fit-img position-absolute" src="{{item.IMG_PATH}}">
+                    </div>
+                  </div>
+                  <div class="col fw-medium">
+                    <h5 class="fs-5 mb-2 lh-base fw-bold">
+                      {{item.TITLE}}
+                    </h5>
+                    <!-- <div class=" mb-2 d-flex align-items-center">
+                      <span class="">د/ إسم الباحث - رسالة ماجستير</span>
+                    </div> -->
+                    <p class="brife mb-2 opacity-75 pt-1 lh-base d-none d-sm-block">
+                     {{item.DETAILS}}
+                    </p>
+                    <!-- <label class="badge bg-primary-light mt-2 py-1 px-2 lh-base text-black">
+                      قسم السيناريو
+                    </label> -->
+                  </div>
+                </a>
+               
+                
+              </div>
+              <div class="text-center pt-3">
+                <!-- <div class="progress" style="height: 1px;">
+                      <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> -->
+                <!-- <a
+                  class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                  المزيد من الأبحاث
+                  <i class="icon-arrow-sm"></i>
+                </a> -->
+
+              </div>
+            </div>
+            <!--end feed listing-->
+          </section>
+          
+        </div>
+      </div>
+      
+    </div>
+    <!-- <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+      <div class="row">
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الطالب
+              <p class="mb-0 text-gray mt-1">
+                تعرف على المواد و المهام و النتيجة
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع هيئة التدريس
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الموظفين
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              خدمات الخريجين
+              <p class="mb-0 text-gray mt-1">
+                تعرف على الخدمات الخاصه بالخرجين
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+  </main>

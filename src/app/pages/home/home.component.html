@@ -1,0 +1,1117 @@
+<!-- header -->
+<header class="container-fluid  home-header nimate__animated animate__fadeIn wow">
+  <div class="row main-nav-container">
+    <div class="col d-flex">
+      <a class="d-inline-block bg-white academy-header-logo">
+        <img src="assets/img/logo.jpg" class="d-block">
+      </a>
+    </div>
+    
+    <div class="col-auto align-items-center d-flex">
+     
+      <!-- <a >
+        سجل الان
+       
+      </a> -->
+      <button [disabled]="!IS_REGISTRATION_OPEN" data-bs-toggle="modal"  data-bs-target="#conditionsModel"
+      class="btn btn-primary fs-5 me-1 register d-flex align-items-center">سجل الان</button>
+      <div data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav">
+        <a class="btn nav-button bg-white text-black p-3 d-block">
+          <i class="icon-nav lh-1 d-block fs-4"></i>
+        </a>
+      </div>
+
+    </div>
+    <div class="postionH1">
+      <h1>بث تجريبي</h1>
+    </div>
+  </div>
+</header>
+
+<!-- <div class="cover"></div> -->
+<!-- <mat-spinner></mat-spinner> -->
+<!-- END header -->
+<!-- hero slide Swiper -->
+<section class="pb-5 mb-5 institute-section position-relative">
+
+  <swiper [config]="configheroOne" dir="rtl" class="instituteSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of faucltyArr">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="{{item.SLIDER_IMAGE}}" />
+          </div>
+
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100 "></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">{{item.DATE_ESTABLISH}}</label>
+                {{item.FACULTY_NAME}}
+              </h2>
+              <p class="fs-3 mb-0">
+                {{item.ABOUT_FACULTY}}
+              </p>
+            </div>
+            <a (click)="go_to_faculty(item)"
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow d-block"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="swiper-slide">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="assets/img/slider/conservatoire-slid.jpg" />
+          </div>
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column  justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">1969</label>
+                الكونسرفتوار
+              </h2>
+              <p class="fs-3 mb-0">
+                ﻳﻘﻮم اﻟﻤﻌﻬﺪ ﺑﺘﺄﻫﻴﻞ ﻣﻮﺳﻴﻘﻴﻴﻦ ﻣﺘﺨﺼﺼﻴﻦ ﻟﻠﻌﺰف ﻋﻠﻰ اﻟﺂﻟﺎت اﻟﻤﻮﺳﻴﻘﻴﺔ اﻟﻤﺨﺘﻠﻔﺔ
+              </p>
+            </div>
+            <a
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow d-block"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="assets/img/slider/ballet-slid.jpg" />
+          </div>
+
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column  justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">1958</label>
+                ﻓﻦ رﻗﺺ اﻟﺒﺎﻟﻴﻪ
+              </h2>
+              <p class="fs-3 mb-0">
+                ﺗﺼﻤﻴﻢ أﻋﻤﺎل ﺑﺎﻟﻴﻪ ﻣﺼﺮﻳﺔ ﺗﻬﺪف إﻟﻰ رﻓﻊ ﻣﺴﺘﻮى ﻓﻦ اﻟﺮﻗﺺ و ﺗﺤﺪﻳﺜﻪ
+              </p>
+            </div>
+            <a
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow d-block"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide institute-swiper-slid">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="assets/img/slider/cinema-slide.jpg" />
+          </div>
+
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column  justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">1957</label>
+                ﻓﻦ اﻟﺴﻴﻨﻤﺎ
+              </h2>
+              <p class="fs-3 mb-0">
+                ﺗﺄﻫﻴﻞ اﻟﺨﺮﻳﺠﻴﻦ ﻋﻠﻤﻴﺎ وﻋﻤﻠﻴﺎ ﻟﻠﻌﻤﻞ ﻓﻲ ﻣﺠﺎل ﺻﻨﺎﻋﺔ اﻟﺴﻴﻨﻤﺎ وﻣﺤﻄﺎت اﻟﺘﻠﻔﺰة
+              </p>
+            </div>
+            <a
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide institute-swiper-slid">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="assets/img/slider/music-slid.jpg" />
+          </div>
+
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column  justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">1914</label>
+                ﻣﻮﺳﻴﻘﻰ ﻋﺮﺑﻴﺔ
+              </h2>
+              <p class="fs-3 mb-0">
+                ﺗﺄﻫﻴﻞ اﻟﺨﺮﻳﺠﻴﻦ ﻋﻠﻤﻴﺎ وﻋﻤﻠﻴﺎ ﻟﻠﻌﻤﻞ ﻓﻲ ﻣﺠﺎل ﺻﻨﺎﻋﺔ اﻟﺴﻴﻨﻤﺎ وﻣﺤﻄﺎت اﻟﺘﻠﻔﺰة
+              </p>
+            </div>
+            <a
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-slide institute-swiper-slid">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="assets/img/slider/criticism-slid.jpg" />
+          </div>
+
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column  justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">1969</label>
+                اﻟﻨﻘﺪ اﻟﻔﻨﻲ
+              </h2>
+              <p class="fs-3 mb-0">
+                ﺗﻮﺛﻴﻖ اﻟﺮواﺑﻂ اﻟﻨﻘﺪﻳﺔ واﻟﻔﻨﻴﺔ ﻣﻊ اﻟﻤﺆﺳﺴﺎت اﻟﻤﺸﺘﻐﻠﺔ ﺑﺎﻟﻨﻘﺪ واﻟﻔﻜﺮ اﻟﺜﻘﺎﻓﻰ
+              </p>
+            </div>
+            <a
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide institute-swiper-slid">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="assets/img/slider/folkarts-slid.jpg" />
+          </div>
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column  justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">1969</label>
+                اﻟﻔﻨﻮن اﻟﺸﻌﺒﻴﺔ
+              </h2>
+              <p class="fs-3 mb-0">
+                ﺗﻮﺛﻴﻖ اﻟﺮواﺑﻂ اﻟﻨﻘﺪﻳﺔ واﻟﻔﻨﻴﺔ ﻣﻊ اﻟﻤﺆﺳﺴﺎت اﻟﻤﺸﺘﻐﻠﺔ ﺑﺎﻟﻨﻘﺪ واﻟﻔﻜﺮ اﻟﺜﻘﺎﻓﻰ
+              </p>
+            </div>
+            <a
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide institute-swiper-slid">
+        <div class="position-relative institute-swiper-slid d-flex">
+          <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+            <img class="position-absolute" src="assets/img/slider/child-slid.jpg" />
+          </div>
+          <div class="position-relative d-flex align-items-lg-end institute-pref flex-column  justify-content-center">
+            <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+            <div
+              class="pref position-relative text-white pe-lg-5 pe-3 me-3 animate__animated animate__slideInRight wow">
+              <h2 class="heading-font d-inline-block">
+                <label class="d-block text-end">1969</label>
+                ﻓﻨﻮن اﻟﻄﻔﻞ
+              </h2>
+              <p class="fs-3 mb">
+                إﻋﺪاد اﻟﻜﻮادر اﻟﻤﺘﺨﺼﺼﺔ ﻓﻲ ﻣﺠﺎﻟﺎت ﻓﻨﻮن اﻟﻄﻔﻞ وﺗﻨﺸﺌﺖ ﻋﻠﻰ ﻧﺤﻮ ﺳﻠﻴﻢ
+              </p>
+            </div>
+            <a
+              class="rounded-circle bg-white btn btn-link d-flex align-items-center justify-content-center position-relative align-self-end animate__animated animate__bounceInUp wow">
+              <i class="icon-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </swiper>
+
+
+  <swiper #swiper [config]="configherotow" dir="rtl" thumbsSlider=""
+    class="instituteThumbsSlider text-white animate__animated animate__fadeIn wow">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of faucltyArr">
+        <div class="py-4 px-3">
+          <h5 class="heading-font fs-4 mb-3">{{item.SHORT_FACULTY_NAME}}</h5>
+          <p class="mb-4">
+            {{item.ABOUT_FACULTY}}
+          </p>
+          <i class="icon-arrow-sm"></i>
+        </div>
+      </div>
+    </div>
+  </swiper>
+</section>
+
+<!--about academy-->
+<section class="container-fluid max-fluid py-5 mb-5" style="margin-bottom: 7rem">
+  <div class="row ">
+    <div class="col-xl-8 col-lg-10 mx-auto ">
+      <h1
+        class="text-center heading-font heading-style mb-5 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+        أﻛﺎدﻳﻤﻴﺔ اﻟﻔﻨﻮن
+      </h1>
+      <p class="fs-5 fw-medium mb-5 animate__animated animate__fadeInUp animate__fast wow">
+        {{massege}}
+      </p>
+      <ul class="list-unstyled pe-0 d-flex text-center justify-content-center animate__animated animate__fadeInUp wow">
+        <li class="px-3 flex-fill">
+          <p class="heading-font text-primary fw-bold fs-2 lh-1 mb-0">1969</p>
+          <label class="mb-0 fs-5 fw-medium">
+            إﻓﺘﺘﺢ ﻓﻲ
+          </label>
+        </li>
+        <li class="px-3 flex-fill">
+          <p class="heading-font text-primary fw-bold fs-2 lh-1 mb-0">{{faculty_count}}</p>
+          <label class="mb-0 fs-5 fw-medium">
+            معاهد
+          </label>
+        </li>
+        <li class="px-3 flex-fill">
+          <p class="heading-font text-primary fw-bold fs-2 lh-1 mb-0">1200</p>
+          <label class="mb-0 fs-5 fw-medium">
+            ﻣﺪرس ﻣﺤﺘﺮاف
+          </label>
+        </li>
+      </ul>
+
+      <!-- <div class="join-now mt-5 row align-items-center animate__animated animate__fadeInUp wow">
+        <div class="col col-xl-6">
+          <a class="btn btn-primary text-white d-flex align-items-center text-start py-3 px-4 fs-6">
+            <div class="flex-fill pe-3">
+              انضم إلى العام الدراسي الجديد في سبتمبر
+              <span class="d-block fw-bold pt-1"> سجل الان </span>
+            </div>
+            <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <label class="text-gray fs-5 fw-medium ps-4 col-auto d-none d-md-block">
+          متبقي 27 يوم فقط للتسجيل !
+        </label>
+      </div> -->
+
+    </div>
+  </div>
+</section>
+<!--END about academy-->
+<section class="pb-5 row">
+  <div class="col-lg-6 h-100 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+    <div class="brief bg-secondary position-relative p-4 overflow-hidden text-white mb-3">
+      <img class="position-absolute fit-img" src="assets/img/faculty-pic.jpg">
+      <div class="position-absolute w-100 h-100 bg-secondary opacity-75 top-0 start-0"></div>
+      <div class="position-relative">
+        <h3 class="heading-font">الرساله</h3>
+        <p class="mb-0">
+          {{misson}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 h-100 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+    <div class="brief bg-primary p-4 text-white mb-3">
+      <div class="position-relative">
+        <h3 class="heading-font"> الأهداف </h3>
+        <p class="mb-0">
+          {{goals}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section style="margin-top: 10%">
+  <div class="container-fluid floated-contatiner-top position-relative">
+    <div class="row">
+      <div class="col-lg-11 offset-lg-1 bg-white">
+        <div class="col-11 ps-3">
+
+          <section class="pt-4 mt-2 pb-5">
+            <h3
+              class="heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              الرؤية
+            </h3>
+            <p class="fs-5 fw-medium animate__animated animate__fadeInUp animate__fast wow">
+              <span class="d-block mb-4">
+                {{Vission}}
+              </span>
+            </p>
+          </section>
+
+        </div>
+        <!--Fuculty Managers-->
+
+        <section class="col pt-4 mt-2 pb-5">
+          <h3 class="heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+            رئيس الاكاديمية و نائب رئيس الاكاديمية
+          </h3>
+          <div class="manger-swiper-container">
+            <div class="swiper managers-swiper">
+              <swiper [config]="mangerConfig">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="position-relative overflow-hidden latest d-flex swiper-element">
+                      <img class="hover-scale fit-img position-absolute"
+                        [src]="Academy_president_img ? Academy_president_img : 'assets/img/instructor-default.png'">
+
+                      <div class="position-absolute bg-white bottom-0 end-0 text-black manger-info p-4">
+
+                        <h4 class="fw-medium fs-4 mb-0 pb-3 lh-md">
+                          أ.د.{{Academy_president_name}}
+                        </h4>
+                        <span class="pt-1 border-top border-primary text-black fs-6">رئيس الاكاديمية </span>
+                        <p class="pt-2 mb-0  opacity-75 fw-medium">
+                          {{Academy_president_about}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="position-relative overflow-hidden d-flex swiper-element">
+                      <img class="hover-scale fit-img position-absolute"
+                        [src]="Academy_Vice_president_img ? Academy_Vice_president_img : 'assets/img/instructor-default.png'">
+                      <div class="position-absolute bg-white bottom-0 end-0 text-black manger-info p-4">
+                        <h4 class="fw-medium fs-4 mb-0 pb-3 lh-md">
+                          أ.د.{{Academy_Vice_president_name}}
+                        </h4>
+                        <span class="pt-1 border-top border-primary text-black fs-6"> نائب الرئيس </span>
+                        <p class="pt-2 mb-0  opacity-75 fw-medium">
+                          {{Academy_Vice_president_about}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </swiper>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--  -->
+
+<!-- News slider -->
+<section class="py-5 mb-5 news-container">
+  <div class="container-fluid bg-secondary">
+    <div class="row">
+      <div class="col news-grid">
+        <swiper [config]="newsConfig" class="swiper newsSwiper defult-pagination">
+          <div class="swiper-wrapper">
+            <!-- <div>
+              
+            </div> -->
+            <div class="swiper-slide" *ngFor="let item of newsArr2 ; let i = index">
+              <a (click)="newsDetails(item.ID)"
+                class="position-relative main post overflow-hidden d-block text-white animate__animated animate__fadeInUp wow">
+                <img class="hover-scale fit-img position-absolute" src="{{item.IMG_PATH}}">
+                <div class="position-absolute post-caption bottom-0 end-0">
+                  <label class="px-3 pt-3 pb-2 mb-0">
+                    {{item.NEW_DATE | date : "yyyy/MM/dd"}}
+                  </label>
+                  <p class="px-3 pt-8 overflow-hidden fs-4">
+                    {{item.TITLE}}
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide" *ngFor="let item of newsArr ; let i = index">
+              <div class="position-relative">
+                <h3 *ngIf="i == 0"
+                  class="heading-font heading-style fw-normal lh-base position-absolute text-white news-heading animate__fast animate__animated animate__fadeInUp wow">
+                  <a>أخبار</a>
+                </h3>
+                <a (click)="newsDetails(item.ID)"
+                  class="position-relative post overflow-hidden d-block text-white animate__animated animate__fadeInUp wow">
+                  <img class="hover-scale fit-img position-absolute" src="{{item.IMG_PATH}}">
+                  <div class="position-absolute post-caption top-0 start-0">
+                    <label class="px-3 pt-3 pb-2 mb-0">
+                      {{item.NEW_DATE | date : "yyyy/MM/dd"}}
+                    </label>
+                    <p class="px-3 pt-8 overflow-hidden fs-5">
+                      {{item.TITLE}}
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </swiper>
+        <div class="swiper-more-link text-end">
+          <a routerLink="/news_list"
+            class="text-primary d-inline-block fw-bold position-relative mb-1 animate__animated animate__fadeInDown wow">
+            كل الأخبار
+            <i class="icon-arrow-sm position-relative"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="py-5 mb-5 news-container">
+  <div class="container-fluid bg-secondary">
+    <div class="row">
+      <div class="col news-grid">
+        <div class="swiper newsSwiper defult-pagination">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a
+                class="position-relative main post overflow-hidden d-block text-white animate__animated animate__fadeInUp wow">
+                <img class="hover-scale fit-img position-absolute" src="assets/img/news-1.jpg">
+                <div class="position-absolute post-caption bottom-0 end-0">
+                  <label class="px-3 pt-3 pb-2 mb-0">
+                    06 ﻳﻮﻧﻴﻮ 2021
+                  </label>
+                  <p class="px-3 pt-8 overflow-hidden fs-4">
+                    وزﻳﺮة اﻟﺜﻘﺎﻓﺔ ﺗﺘﻔﻘﺪ اﻟﺈﻧﺸﺎءات اﻟﺠﺪﻳﺪة ﺑﺄﻛﺎدﻳﻤﻴﺔ اﻟﻔﻨﻮن
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <div class="position-relative">
+                <h3
+                  class="heading-font heading-style fw-normal lh-base position-absolute text-white news-heading animate__fast animate__animated animate__fadeInUp wow">
+                  <a>أخبار</a>
+                </h3>
+                <a
+                  class="position-relative post overflow-hidden d-block text-white animate__animated animate__fadeInUp wow">
+                  <img class="hover-scale fit-img position-absolute" src="assets/img/news2.jpg">
+                  <div class="position-absolute post-caption top-0 start-0">
+                    <label class="px-3 pt-3 pb-2 mb-0">
+                      06 ﻳﻮﻧﻴﻮ 2021
+                    </label>
+                    <p class="px-3 pt-8 overflow-hidden fs-5">
+                      اﻋﺮف ﺷﺮوط اﻟﺘﻘﺪم ﻟﺒﺮﻧﺎﻣﺞ اﻟﺒﻌﺜﺎت اﻟﺘﺪرﻳﺒﻴﺔ ﻟﺄﻋﻀﺎء ﻫﻴﺌﺔ اﻟﺘﺪرﻳﺲ
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <a
+                class="position-relative post overflow-hidden d-block text-white animate__animated animate__fadeInUp wow">
+                <img class="hover-scale fit-img position-absolute" src="assets/img/news3.jpg">
+                <div class="position-absolute post-caption bottom-0 end-0">
+                  <label class="px-3 pt-3 pb-2 mb-0">
+                    06 ﻳﻮﻧﻴﻮ 2021
+                  </label>
+                  <p class="px-3 pt-8 overflow-hidden fs-5">
+                    ﺗﻮﻗﻴﻊ ﺑﺮوﺗﻮﻛﻮل ﺗﻌﺎون ﺑﻴﻦ أﻛﺎدﻳﻤﻴﺔ اﻟﻔﻨﻮن واﻟﻤﺮﻛﺰ اﻟﻘﻮﻣﻲ ﻟﻠﺘﻌﻠﻴﻢ اﻟﺎﻟﻜﺘﺮوﻧﻲ
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a
+                class="position-relative post overflow-hidden d-block text-white animate__animated animate__fadeInUp wow">
+                <img class="hover-scale fit-img position-absolute" src="assets/img/research3.jpg">
+                <div class="position-absolute post-caption top-0 start-0">
+                  <label class="px-3 pt-3 pb-2 mb-0">
+                    06 ﻳﻮﻧﻴﻮ 2021
+                  </label>
+                  <p class="px-3 pt-8 overflow-hidden fs-5">
+                    اﻋﺮف ﺷﺮوط اﻟﺘﻘﺪم ﻟﺒﺮﻧﺎﻣﺞ اﻟﺒﻌﺜﺎت اﻟﺘﺪرﻳﺒﻴﺔ ﻟﺄﻋﻀﺎءﻫﻴﺌﺔ اﻟﺘﺪرﻳﺲ
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a
+                class="position-relative post overflow-hidden d-block text-white animate__animated animate__fadeInUp wow">
+                <img class="hover-scale fit-img position-absolute" src="assets/img/research2.jpg">
+                <div class="position-absolute post-caption bottom-0 end-0">
+                  <label class="px-3 pt-3 pb-2 mb-0">
+                    06 ﻳﻮﻧﻴﻮ 2021
+                  </label>
+                  <p class="px-3 pt-8 overflow-hidden fs-5">
+                    ﺗﻮﻗﻴﻊ ﺑﺮوﺗﻮﻛﻮل ﺗﻌﺎون ﺑﻴﻦ أﻛﺎدﻳﻤﻴﺔ اﻟﻔﻨﻮن واﻟﻤﺮﻛﺰ اﻟﻘﻮﻣﻲ ﻟﻠﺘﻌﻠﻴﻢ اﻟﺎﻟﻜﺘﺮوﻧﻲ
+                  </p>
+                </div>
+              </a>
+            </div>
+
+          </div>
+          
+          <div class="swiper-pagination"></div>
+
+        </div>
+        <div class="swiper-more-link text-end">
+          <a
+            class="text-primary d-inline-block fw-bold position-relative mb-1 animate__animated animate__fadeInDown wow">
+            كل الأخبار
+            <i class="icon-arrow-sm position-relative"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!--End News slider -->
+
+<!-- academy programs -->
+<!-- <section class="container-fluid py-5 ">
+  <h2 class="heading-font heading-style mb-5 fw-normal animate__faster animate__animated animate__fadeInUp wow">
+    اﻟﺪراﺳﺔ ﻓﻲ أﻛﺎدﻳﻤﻴﺔ اﻟﻔﻨﻮن</h2>
+  <div class="row">
+    <div class="col-md-6 col-lg mb-5 animate__animated animate__fadeInUp animate__faster  wow">
+      <a class="position-relative hover-img overflow-hidden programs-link d-block">
+        <img class="w-100" src="assets/img/ba.jpg">
+        <div class="position-absolute bottom-0 end-0 p-4 bg-white fs-4 text-black fw-medium d-flex align-items-center">
+          دراﺳﺎت اﻟﺒﻜﺎﻟﻮرﻳﻮس
+          <i class="icon-arrow-sm text-primary ms-1"></i>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg mb-5 animate__animated animate__fadeInUp animate__fast wow">
+      <a class="position-relative hover-img overflow-hidden programs-link d-block">
+        <img src="assets/img/master.jpg">
+        <div class="position-absolute top-0 start-0 p-4 bg-white fs-4 text-black fw-medium d-flex align-items-center">
+          اﻟﺪراﺳﺎت اﻟﻌﻠﻴﺎ
+          <i class="icon-arrow-sm text-primary ms-1"></i>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg mb-5 animate__animated animate__fadeInUp wow">
+      <a class="position-relative hover-img overflow-hidden programs-link d-block">
+        <img src="assets/img/freelance.jpg">
+        <div class="position-absolute bottom-0 end-0 p-4 bg-white fs-4 text-black fw-medium d-flex align-items-center">
+          اﻟﺪراﺳﺎت اﻟﺤﺮة
+          <i class="icon-arrow-sm text-primary ms-1"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</section> -->
+<!--END academy programs -->
+
+
+<!--academy research -->
+<section class="container-fluid py-5 mb-5">
+  <h2 class="heading-font heading-style mb-5 fw-normal animate__faster animate__animated animate__fadeInUp wow">
+    دراﺳﺎت و ﺑﺤﻮث</h2>
+  <div class="row">
+    <div *ngFor="let item of Researches ; let index = index" (click)="Details(item)"
+      class="col-md-6 col-lg mb-5 animate__faster animate__animated animate__fadeInUp wow">
+      <a class="card research-card">
+        <div class="card-img-top position-relative overflow-hidden">
+          <img src="{{item.IMG_PATH}}" class="fit-img position-absolute">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-black fs-4 fw-medium mb-3 overflow-hidden">
+            {{item.TITLE}}
+          </h5>
+          <p class="card-text mb-3">
+            {{item.DETAILS}}
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row animate__animated animate__fadeInUp wow">
+    <div class="col text-center">
+      <a routerLink="/research_list" class="btn btn-link fs-5 all d-inline-flex align-items-center pe-1 fw-medium">
+        ﻛﻞ اﻟﺪراﺳﺎت
+        <i class="icon-arrow-sm"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<!--END academy research -->
+
+<!-- applay -->
+<!-- <section class="pb-5 mb-5">
+  <div class="position-relative overflow-hidden container-fluid">
+    <div class="bg-gray-absolute position-absolute top-0 h-100 d-none d-lg-block"></div>
+    <div class="row position-relative">
+      <div class="col-lg-7 pb-lg-5 pb-4 mt-lg-5 pt-lg-5  animate__animated animate__fadeInDown wow">
+        <h2 class="heading-font heading-style mb-1 fw-normal pt-lg-4">اﺟﻌﻞ ﺷﻐﻔﻚ ﻋﻤﻠﻚ </h2>
+        <p class="fs-5 fw-medium mb-0">ﺳﻮف ﻳﺘﻢ ﻓﺘﺢ ﺑﺎب اﻟﻘﺒﻮل ﻓﻲ اﻟﻨﻈﺎم اﻟﻤﻮازي و دﺑﻠﻮم اﻟﺪراﺳﺎت اﻟﺤﺮة آﺧﺮ ﺷﻬﺮ ﻳﻨﺎﻳﺮ
+        </p>
+      </div>
+      <div class="col-lg-4 position-relative nimate__faster animate__animated animate__fadeInLeft wow">
+        <img class="position-absolute top-0 start-0 apply-img-bg" src="assets/img/search-form.jpg">
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-lg-11 find-program-form position-relative apply-search-main py-lg-5 py-4 animate__animated animate__fadeInUp wow">
+        <div class="bg-mode-darken top-0 start-0 w-100 h-100 position-absolute"></div>
+        <h5 class="text-white position-relative fs-4 mb-md-5 mb-4 lh-md">
+          اﺑﺤﺚ ﻋﻦ اﻟﺒﺮﻧﺎﻣﺞ و اﻟﻤﻌﻬﺪ اﻟﻤﻨﺎﺳﺐ ﻟﻚ ﺗﻌﺮف ﻋﻠﻰ ﺷﺮوط اﻟﻘﺒﻮل و اﻟﻤﻮاد و اﻟﺸﻬﺎده اﻟﺘﻲ ﻳﺘﻢ اﻟﺤﺼﻮل ﻋﻠﻴﻬﺎ و أﻗﺮب
+          ﻣﻮﻋﺪ ﻟﻠﺘﺴﺠﻴﻞ
+        </h5>
+        <form class="row my-3 pe-lg-5">
+          <div class="col-md pb-3 pb-md-0">
+            <div class="floating-label-select position-relative">
+              <select class="floating-select form-select border-0" onclick="this.setAttribute('value', this.value);"
+                value="">
+                <option value=""></option>
+                <option value="1">ﺒﻜﺎﻟﻮرﻳﻮس</option>
+                <option value="2">ثانويه عامه</option>
+              </select>
+              <label>اﻟﻤﺆﻫﻞ اﻟﺪراﺳﻲ</label>
+            </div>
+          </div>
+          <div class="col-md pe-md-0 pb-3 pb-md-0">
+            <div class="floating-label-select position-relative">
+              <select class="floating-select form-select border-0" onclick="this.setAttribute('value', this.value);"
+                value="">
+                <option value=""></option>
+                <option value="1">اﻟﻔﻨﻮن اﻟﻤﺴﺮﺣﻴﺔ</option>
+                <option value="2">اﻟﻜﻮﻧﺴﺮﻓﺘﻮار</option>
+                <option value="3">اﻟﺒﺎﻟﻴﻪ</option>
+              </select>
+              <label> إﺧﺘﺮ اﻟﻤﻌﻬﺪ</label>
+            </div>
+          </div>
+          <div class="col-md pe-md-0 pb-3 pb-md-0">
+            <div class="floating-label-select position-relative">
+              <select class="floating-select form-select border-0 fw-medium"
+                onclick="this.setAttribute('value', this.value);" value="">
+                <option value=""></option>
+                <option value="1">ﺒﻜﺎﻟﻮرﻳﻮس</option>
+                <option value="2">دراﺳﺎت حرة</option>
+              </select>
+              <label>البرنامج</label>
+            </div>
+          </div>
+
+          <div class="col-md-auto pe-md-0">
+            <button
+              class="btn bg-white search-btn position-relative h-100 d-flex align-items-center justify-content-center">
+              <i class="icon-search"></i>
+              <span class="d-inline-block d-md-none fs-4 fw-medium py-2 pe-2">
+                بحث
+              </span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</section> -->
+<!-- END applay -->
+
+<!-- events -->
+<section class="py-5 mb-5">
+  <div class="container-fluid">
+    <h2 class="heading-font heading-style mb-5 fw-normal animate__faster animate__animated animate__fadeInUp wow">
+      اﻟﻔﻌﺎﻟﻴﺎت اﻟﻘﺎدﻣﺔ</h2>
+  </div>
+  <div class="bg-secondary">
+    <div class="container-fluid">
+      <div class="row animate__animated animate__fadeInUp wow">
+
+        <swiper [config]="eventConfig" class="swiper eventSwiper defult-pagination">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let item of events">
+              <a (click)="eventDetails(item.ID)" class="position-relative overflow-hidden d-flex h-100 event-card">
+                <img class="hover-scale fit-img position-absolute" src="{{item.IMG_PATH}}">
+                <div class="position-absolute bg-white bottom-0 end-0 text-black event-info p-lg-4 p-3">
+                  <label class="pt-3 text-black-50 fs-5">{{item.FACULTY_NAME}}</label>
+                  <h4 class="fw-medium fs-4 pb-3 pt-lg-2 lh-md">
+                    {{item.TITLE}}
+                  </h4>
+                  <span class="pb-3 pt-1 border-top border-primary">{{item.START_DATE | date:'yyyy-MM-dd'}}</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </swiper>
+
+        <div class="swiper-more-link text-end">
+          <a routerLink="/events" class="text-primary d-inline-block fw-bold position-relative mb-1">
+            كل اﻟﻔﻌﺎﻟﻴﺎت
+            <i class="icon-arrow-sm position-relative"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END events -->
+
+<!--Graduated-->
+<section class="container-fluid py-5 mb-5">
+  <h2 class="heading-font heading-style mb-5 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+    خريجين أكاديمية الفنون</h2>
+
+  <div class="animate__animated animate__fadeInUp wow">
+
+    <swiper class="swiper" [config]="gradConfig">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of gradution_arr">
+          <div class="graduated-year-list border-start position-relative px-3 pt-5">
+            <label class="position-absolute top-0 start-0 heading-font text-primary fw-bold fs-1 lh-1 mt-3 ps-4">
+              {{item.graduation_year}}
+            </label>
+            <ul class="row list-unstyled px-3 pt-5 graduated-list">
+              <li class="col position-relative" *ngFor="let grad of item.graduates">
+                <div class="student-img position-relative overflow-hidden">
+                  <img class="position-absolute fit-img" src="{{grad.image}}">
+                </div>
+                <div class="position-absolute student-info bg-white p-3">
+                  <p class="fs-4 fw-medium mb-2">
+                    {{grad.name}}
+                  </p>
+                  <label class="text-black-50 mb-0">
+                    {{grad.faculty_name}}
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="swiper-slide">
+            <div class="graduated-year-list border-start position-relative px-3 pt-5">
+              <label class="position-absolute top-0 start-0 heading-font text-primary fw-bold fs-1 lh-1 mt-3 ps-4">
+                1976
+              </label>
+              <ul class="row list-unstyled px-3 pt-5 graduated-list">
+                <li class="col position-relative">
+                  <div class="student-img position-relative overflow-hidden">
+                    <img class="position-absolute fit-img" src="assets/img/graduate4.jpg">
+                  </div>
+                  <div class="position-absolute student-info bg-white p-3">
+                    <p class="fs-4 fw-medium mb-2">رشوان توفيق</p>
+                    <label class="text-black-50 mb-0">فنون المسرحية</label>
+                  </div>
+                </li>
+                <li class="col position-relative">
+                  <div class="student-img position-relative overflow-hidden">
+                    <img class="position-absolute fit-img" src="assets/img/graduate3.jpg">
+                  </div>
+                  <div class="position-absolute student-info bg-white p-3">
+                    <p class="fs-4 fw-medium mb-2">برلنتي عبد الحميد</p>
+                    <label class="text-black-50 mb-0">فنون المسرحية</label>
+                  </div>
+                </li>
+                <li class="col position-relative">
+                  <div class="student-img position-relative overflow-hidden">
+                    <img class="position-absolute fit-img" src="assets/img/graduate2.jpg">
+                  </div>
+                  <div class="position-absolute student-info bg-white p-3">
+                    <p class="fs-4 fw-medium mb-2">نور الشريف</p>
+                    <label class="text-black-50 mb-0">فنون المسرحية</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="graduated-year-list border-start position-relative px-3 pt-5">
+              <label class="position-absolute top-0 end-0 heading-font text-primary fw-bold fs-1 lh-1 mt-3 pe-4">
+                1976
+              </label>
+              <ul class="row list-unstyled px-3 pt-5 graduated-list">
+                <li class="col position-relative">
+                  <div class="student-img position-relative overflow-hidden">
+                    <img class="position-absolute fit-img" src="assets/img/graduate1.jpg">
+                  </div>
+                  <div class="position-absolute student-info bg-white p-3">
+                    <p class="fs-4 fw-medium mb-2">رشوان توفيق</p>
+                    <label class="text-black-50 mb-0">فنون المسرحية</label>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div> -->
+      </div>
+    </swiper>
+
+    <!-- <div thumbsSlider="" class="swiper timelineYear">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <span class="d-block fs-4 fw-medium heading-font lh-1 py-3 ps-2">
+            1976
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <span class="d-block fs-4 fw-medium heading-font lh-1 py-3 ps-2">
+            1973
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <span class="d-block fs-4 fw-medium heading-font lh-1 py-3 ps-2">
+            1994
+          </span>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+</section>
+<!--END Graduated-->
+
+<!-- gallrey -->
+<section class="py-5 mb-5">
+  <div class="container-fluid">
+    <h2 class="heading-font heading-style mb-5 fw-normal animate__faster animate__animated animate__fadeInUp wow">
+      معرض الصور</h2>
+  </div>
+  <a class="bg-secondary">
+    <a class="container-fluid">
+      <a class="row animate__animated animate__fadeInUp wow">
+
+        <!-- <swiper [config]="galley_Config" class="swiper eventSwiper defult-pagination">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let item of gallery">
+              <a (click)="eventDetails(item.ID)" class="position-relative overflow-hidden d-flex h-100 event-card">
+                <img class="hover-scale fit-img position-absolute" src="{{item.image_path}}">
+              
+              </a>
+            </div>
+          </div>
+        </swiper> -->
+        <div class="col-3 mb-2" *ngFor="let item of gallery">
+          <div data-bs-toggle="modal" data-bs-target="#imagePoup" (click)="openImage(item.image_path)">
+              <img style="width: 100% ; height:170px; cursor: pointer;" [src]="item.image_path">
+          </div>
+      </div>
+        <a class="swiper-more-link text-end mt-5">
+          <a class="text-primary d-inline-block fw-bold position-relative mb-1">
+            كل الصور
+            <i class="icon-arrow-sm position-relative"></i>
+          </a>
+        </a>
+      </a>
+    </a>
+  </a>
+</section>
+
+
+
+<div class="modal fade" id="imagePoup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="conditionsModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img [src]="src_image">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn " data-bs-dismiss="modal">إغلاق</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END gallrey -->
+
+<!-- footer -->
+<!-- <app-footer></app-footer> -->
+<!-- end footer -->
+
+<!-- <div class="offcanvas offcanvas-end main-nav" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+    <div class="offcanvas-header align-items-end">
+      <h5 class="offcanvas-title mx-auto" id="offcanvasNavLabel">
+        <a class="d-block p-3">
+          <img class="logo" src="assets/img/logo.jpg">
+        </a>
+      </h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+      <a class="nav-search d-flex bg-light px-3 py-3 text-black">
+        <label class="mb-0 col">
+          بحث
+        </label>
+        <div class="col-auto">
+          <i class="icon-search"></i>
+        </div>
+      </a>
+      <div class="academy-nav mt-3">
+        <div class="accordion" id="accordionNav">
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingInstitutes">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstitutes" aria-expanded="true" aria-controls="collapseInstitutes">
+                المعاهد
+              </button>
+            </h2>
+            <div id="collapseInstitutes" class="accordion-collapse collapse show" aria-labelledby="headingInstitutes" data-bs-parent="#accordionNav">
+              <div class="accordion-body px-0 border-bottom pb-0">
+                <ul class="list-unstyled pe-0">
+                  <li class="px-3"> 
+                    <a>
+                      اﻟﻔﻨﻮن اﻟﻤﺴﺮﺣﻴﺔ
+                    </a>
+                  </li>
+                  <li  class="px-3">
+                    <a>
+                      اﻟﻜﻮﻧﺴﺮﻓﺘﻮار
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اﻟﺒﺎﻟﻴﻪ
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اﻟﺴﻴﻨﻤﺎ
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اﻟﻤﻮﺳﻴﻘﻰ اﻟﻌﺮﺑﻴﺔ
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اﻟﻨﻘﺪ اﻟﻔﻨﻲ
+
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اﻟﻔﻨﻮن اﻟﺸﻌﺒﻴﺔ
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingAbout">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrograms" aria-expanded="false" aria-controls="collapsePrograms">
+                البرامج اﻟﺄﻛﺎدﻳﻤﻴﺔ 
+              </button>
+            </h2>
+            <div id="collapsePrograms" class="accordion-collapse collapse" aria-labelledby="headingAbout" data-bs-parent="#accordionNav">
+              <div class="accordion-body px-0 border-bottom pb-0">
+                <ul class="list-unstyled pe-0">
+                  <li class="px-3">
+                    <a>
+                      دراﺳﺎت اﻟﺒﻜﺎﻟﻮرﻳﻮس
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اﻟﺪراﺳﺎت اﻟﻌﻠﻴﺎ
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اﻟﺪراﺳﺎت اﻟﺤﺮة
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header" >
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed" type="button">
+                اﻟﺘﻘﺪﻳﻢ واﻟﻘﺒﻮل
+              </button>
+            </h2>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed" type="button">
+                دراﺳﺎت و ﺑﺤﻮث
+              </button>
+            </h2>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed" type="button">
+                الأخبار
+              </button>
+            </h2>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed" type="button">
+                الفعاليات
+              </button>
+            </h2>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingPrograms">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbout" aria-expanded="false" aria-controls="collapseAbout">
+                ﻋﻦ اﻟﺄﻛﺎدﻳﻤﻴﺔ 
+              </button>
+            </h2>
+            <div id="collapseAbout" class="accordion-collapse collapse" aria-labelledby="headingPrograms" data-bs-parent="#accordionNav">
+              <div class="accordion-body px-0 border-bottom pb-0">
+                <ul class="list-unstyled pe-0">
+                  <li class="px-3">
+                    <a>
+                      نبذة عن اﻟﺄﻛﺎدﻳﻤﻴﺔ
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      الهيكل التنظيمي 
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      مقرات اﻟﺄﻛﺎدﻳﻤﻴﺔ
+                    </a>
+                  </li>
+                  <li class="px-3">
+                    <a>
+                      اتصل بنا
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingStudent">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStudent" aria-expanded="true" aria-controls="collapseStudent">
+                الطلبة
+              </button>
+            </h2>
+            <div id="collapseStudent" class="accordion-collapse collapse" aria-labelledby="headingStudent" data-bs-parent="#accordionExample">
+              <div class="accordion-body px-0 border-bottom pb-0">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom no-body collapsed" type="button">
+                ﻫﻴﺌﺔ اﻟﺘﺪرﻳﺲ واﻟﻤﻮﻇﻔﻴﻦ
+              </button>
+            </h2>
+          </div>
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingGraduated">
+              <button class="accordion-button bg-transparent fw-medium fs-7 text-black border-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGraduated" aria-expanded="false" aria-controls="collapseGraduated">
+                الخريجون
+              </button>
+            </h2>
+            <div id="collapseGraduated" class="accordion-collapse collapse" aria-labelledby="headingGraduated" data-bs-parent="#accordionExample">
+              <div class="accordion-body px-0 border-bottom pb-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

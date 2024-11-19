@@ -1,0 +1,137 @@
+/*Direction */
+.course-details .price {
+    font-size: calc(1.5rem + 3vw);
+    line-height: 1;
+  }
+  
+  @media (min-width: 1200px) {
+    .course-details .price {
+      font-size: 3.75rem;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .course-details .price {
+      font-weight: 700 !important;
+    }
+  }
+  
+  .course-details .course-img {
+    height: 365px;
+  }
+  
+  .course-details .icon-calender,
+  .course-details .icon-time,
+  .course-details .icon-location {
+    font-size: 31px;
+    height: 34px;
+  }
+  
+  .course-details .date label {
+    font-size: 0.875rem;
+    opacity: 0.6;
+  }
+  
+  @media (min-width: 1200px) {
+    .course-details .instructor-img {
+      width: 145px;
+      height: 145px;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .enroll {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .course-time {
+      border-right-width: 0 !important;
+    }
+  }
+  
+  .date-details {
+    z-index: 1;
+  }
+  
+  .swiper + .date-details {
+    bottom: 1.5rem;
+  }
+  
+  .article-container {
+    height: 550px;
+    overflow: hidden;
+  }
+  
+  .article-container:after {
+    content: " ";
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 254, 254, 0)), color-stop(89.7%, #FFFFFF));
+    background: linear-gradient(180deg, rgba(255, 254, 254, 0) 0%, #FFFFFF 89.7%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 130px;
+    width: 100%;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    opacity: 100%;
+  }
+  
+  .article-container.all-article {
+    height: auto;
+  }
+  
+  .article-container.all-article:after {
+    opacity: 0;
+  }
+  
+  .more-article {
+    z-index: 1;
+    margin-top: -22px;
+  }
+  
+  .share-btn .icon-share {
+    font-size: 25px;
+    height: 25px;
+  }
+  
+  @media (min-width: 576px) {
+    .download-pdf {
+      min-width: 130px;
+    }
+  }
+  
+  .download-pdf .icon-doc {
+    font-size: 25px;
+    height: 25px;
+  }
+  
+  .dropdown-share {
+    min-width: unset;
+  }
+  
+  .dropdown-share .icon-copy,
+  .dropdown-share .icon-email {
+    font-size: 25px;
+    height: 25px;
+  }
+  
+  .event-date i {
+    color: #C4C4C4;
+  }
+  
+  .event-date .icon-time {
+    font-size: 21px;
+    height: 20px;
+  }
+  
+  .event-date .date-list {
+    font-size: 0.875rem;
+  }
+  
+  .event-date .icon-location {
+    font-size: 24px;
+    height: 25px;
+  }
+  /*# sourceMappingURL=course-details.css.map */

@@ -1,0 +1,604 @@
+<app-app-nav></app-app-nav>
+<main>
+    <mat-spinner *ngIf="showspiner"></mat-spinner>
+    <div class="container-fluid">
+        <section class="row py-3">
+            <div class="col-lg-8 col-xl-5 mx-auto py-2">
+                <h3 class=" heading-font heading-style mb-2 fw-normal">
+                    التسجيل في أكاديمية الفنون
+                </h3>
+                <p routerLink="/academy_conditions" class="fs-6 fw-medium mb-0">تعرف على المعاهد داخل الأكادمية و<a
+                        style="color:#D1002C"> شروط التقديم</a> فيها </p>
+            </div>
+        </section>
+        <div class="progress r-progress row">
+            <div class="progress-bar" role="progressbar" [style.width]="width" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+        <section class="row pt-3 pb-5">
+            <form class="col-lg-8 col-xl-5 mx-auto py-2">
+                <div *ngIf="showTab1">
+                    <h4 class="mb-4">
+                        إختر فرع الأكادمية المراد التقديم فيه
+                    </h4>
+                    <div class="btn-g-list-icon mb-4" role="group" aria-label="Basic radio toggle button group">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 " *ngFor="let item of partAcadmi">
+                                <input (click)="getItemOFAcadmy(item)" type="radio" class="btn-check" name="btnradio"
+                                    id="{{item.ID}}" autocomplete="off">
+                                <label class="btn btn-outline-primary p-3 w-100 text-start" for="{{item.ID}}">
+                                    <i [ngClass]="item.BRANCH_ICON_FONT"></i>
+                                    <p class="mb-0 fw-medium">{{item.TITLE}}</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <button (click)="nextTab('2')" [disabled]="!showButton"
+                            class="btn btn-primary flex-grow-1 fw-bold fs-5 py-3 lh-1">التالي</button>
+                    </div>
+                </div>
+            </form>
+
+
+            <div *ngIf="showTab2">
+                <form class="mx-auto col-lg-8" [formGroup]="secoundForm">
+
+                    <h4 class="mb-1">
+                        إختر التخصصات المراد التقديم فيها
+                    </h4>
+                    <p class="mb-4">يمكنك إختبار تخصص واحد أو أكثر داخل كل معهد</p>
+                    <!-- <label class="badge bg-primary-light py-1 px-2 lh-base text-black mb-3">
+                        {{objOfAcadmy.TITLE}} <button type="button" class="btn-close" aria-label="Close"></button>
+                    </label> -->
+                    <div class="faculty-list mb-4 ps-2">
+                        <div class="accordion-item border-top mb-3" *ngFor="let item of objOfAcadmy; let i = index">
+                            <div>
+                                <h2 class="accordion-header" id="headingSDancing{{i}}">
+                                    <button class="accordion-button collapsed fw-medium py-2" type="button"
+                                        data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseSDancing'+i"
+                                        aria-expanded="true" [attr.aria-controls]="'collapseSDancing'+i">
+                                        <i class="me-2" [ngClass]="item.FACULTY_ICON_FONT"></i> <span
+                                            class="pt-2 d-inline-block">
+                                            {{item.FACULTY_NAME}} - {{item.govTilte}}
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div [id]="'collapseSDancing'+i" class="accordion-collapse collapse"
+                                    [attr.aria-labelledby]="'headingSDancing'+i">
+                                    <div class="accordion-body">
+
+                                        <div class="list-group list-group-flush">
+                                            <div *ngIf="item.ADMISSION_REQURIMENTS != null"
+                                                class="bg-light border p-2 d-flex align-items-center mt-2" role="alert">
+                                                <div class="">
+                                                    <img src="assets/img/info.svg">
+                                                </div>
+                                                <div class="flex-grow-1 small ps-2 text-black">
+                                                    {{item.ADMISSION_REQURIMENTS}}
+                                                </div>
+                                            </div>
+                                            <hr *ngIf="item.ADMISSION_REQURIMENTS != null">
+
+                                            <div *ngIf="item.FACULTY_ICON_FONT == 'icon-theater'">
+                                                <label class="list-group-item fw-medium"
+                                                    *ngFor="let depart of item.DEPARTMENTS ; let i = index">
+                                                    <input class="form-check-input me-1"
+                                                        (change)="chnageStatusOFDepartment($event,depart,item.FACULTY_NAME,item)"
+                                                        type="checkbox" [value]="depart.ID">
+                                                    {{depart.DEPARTMENT_NAME}}
+
+                                                    <div *ngIf="depart.ADMISSION_REQURIMENTS"
+                                                        class="bg-light border p-2 d-flex align-items-center mt-2"
+                                                        role="alert">
+                                                        <div class="">
+                                                            <img src="assets/img/info.svg">
+                                                        </div>
+                                                        <div class="flex-grow-1 small ps-2 text-black">
+                                                            {{depart.ADMISSION_REQURIMENTS}}
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div *ngIf="item.FACULTY_ICON_FONT != 'icon-theater'">
+                                                <label class="list-group-item fw-medium"
+                                                    *ngFor="let depart of item.DEPARTMENTS">
+                                                    <input class="form-check-input me-1"
+                                                        (change)="chnageStatusOFDepartment($event,depart,item.FACULTY_NAME,item)"
+                                                        formControlName="{{item.FACULTY_NAME + item.govTilte}}"
+                                                        type="radio" value="{{depart.ID}}">
+                                                    {{depart.DEPARTMENT_NAME}}
+
+                                                    <div *ngIf="depart.ADMISSION_REQURIMENTS"
+                                                        class="bg-light border p-2 d-flex align-items-center mt-2"
+                                                        role="alert">
+                                                        <div class="">
+                                                            <img src="assets/img/info.svg">
+                                                        </div>
+                                                        <div class="flex-grow-1 small ps-2 text-black">
+                                                            {{depart.ADMISSION_REQURIMENTS}}
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+
+                                            <!-- <label class="list-group-item fw-medium" *ngIf="item.IS_CREDIT == true">
+                                            <input class="form-check-input me-1" (change)="IS_CREDIT($event,item)"
+                                                type="checkbox" value="">
+                                            تعليم موازي
+                                        </label> -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <button (click)="getdataOfSeoundForm()" [disabled]="!statusOfRadio"
+                            class="btn btn-primary flex-grow-1 fw-bold fs-5 py-3 lh-1">التالي</button>
+                        <!-- <button (click)="goBack('1')" class="btn fw-medium fs-5 py-3 lh-1 ms-2">السابق</button> -->
+                    </div>
+                </form>
+            </div>
+
+            <div *ngIf="showTab3">
+                <form class="mx-auto col-lg-8" [formGroup]="spechialForm">
+
+                    <h4 class="mb-1">
+                        إختر التخصص المراد التقديم فيه
+                    </h4>
+                    <!-- <p class="mb-4">يمكنك إختبار تخصص واحد أو أكثر داخل كل معهد</p> -->
+                    <label class="badge bg-primary-light py-1 px-2 lh-base text-black mb-3">
+                        {{objOfAcadmy.TITLE}} <button type="button" class="btn-close" aria-label="Close"></button>
+                    </label>
+                    <label *ngFor="let item of t5ososat; let i = index"
+                        class="badge bg-primary-light py-1 px-2 lh-base text-black mb-3" style="margin-right: 5px">
+                        {{item.FACULTY_NAME}} <button type="button" class="btn-close" aria-label="Close"></button>
+                    </label>
+                    <div class="faculty-list mb-4 ps-2">
+                        <div class="accordion-item border-top mb-3" *ngFor="let item of t5ososat; let i = index">
+                            <h2 class="accordion-header" id="headingSDancing{{i}}">
+                                <button class="accordion-button collapsed fw-medium py-2" type="button"
+                                    data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseSDancing'+i"
+                                    aria-expanded="true" [attr.aria-controls]="'collapseSDancing'+i">
+                                    <i class="me-2"></i> <span class="pt-2 d-inline-block">
+                                        {{item.DEPARTMENT_NAME}}
+                                    </span>
+                                </button>
+                            </h2>
+                            <div [id]="'collapseSDancing'+i" class="accordion-collapse collapse"
+                                [attr.aria-labelledby]="'headingSDancing'+i">
+                                <div class="accordion-body">
+                                    <div class="list-group list-group-flush">
+                                        <label class="list-group-item fw-medium"
+                                            *ngFor="let depart of item.SPECIALIZATIONS">
+                                            <input class="form-check-input me-1" (change)="checkSpechila($event)"
+                                                formControlName="{{item.idControl}}" type="radio" value="{{depart.ID}}">
+                                            {{depart.SPECIALIZATION_NAME}}
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <button (click)="getdataOfSpechialForm()" [disabled]="!statusOfRadioSpechial"
+                            class="btn btn-primary flex-grow-1 fw-bold fs-5 py-3 lh-1">التالي</button>
+                        <button (click)="goBack('1')" class="btn fw-medium fs-5 py-3 lh-1 ms-2">السابق</button>
+                    </div>
+                </form>
+            </div>
+
+            <div *ngIf="showTab4" class="showTab3">
+                <div *ngIf="showspiner" class="cover"></div>
+                <form class="mx-auto col-lg-8" [formGroup]="thirdForm">
+                    <h4 class="mb-4">
+                        معلومات الحساب
+                    </h4>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" formControlName="firstName"
+                                    (input)="ifArabic($event,1)" [ngClass]="{'is-invalid':validFirst}"
+                                    id="floatingInput" placeholder="الاسم الاول">
+                                <label for="floatingInput">الاسم الاول</label>
+                                <div *ngIf="validFirst" style="color: red; font-size: 12px ; margin-top: 5px">
+                                    من فضلك ادخل الاسم باللغة العربية
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md ps-md-0">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid':validsecound}"
+                                    formControlName="secoundName" id="floatingInput" (input)="ifArabic($event,2)"
+                                    placeholder="الاسم الثاني">
+                                <label for="floatingInput">الاسم الثاني</label>
+                                <div *ngIf="validsecound" style="color: red; font-size: 12px ; margin-top: 5px">
+                                    من فضلك ادخل الاسم باللغة العربية
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid':validThird}"
+                                    formControlName="thirdName" id="floatingInput" (input)="ifArabic($event,3)"
+                                    placeholder="الاسم الثالث">
+                                <label for="floatingInput">الاسم الثالث</label>
+                                <div *ngIf="validThird" style="color: red; font-size: 12px ; margin-top: 5px">
+                                    من فضلك ادخل الاسم باللغة العربية
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md ps-md-0">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid':validFour}"
+                                    formControlName="fourName" id="floatingInput" (input)="ifArabic($event,4)"
+                                    placeholder="الاسم الرابع">
+                                <label for="floatingInput">الاسم الرابع</label>
+                                <div *ngIf="validFour" style="color: red; font-size: 12px ; margin-top: 5px">
+                                    من فضلك ادخل الاسم باللغة العربية
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" formControlName="email" id="floatingInput">
+                        <label for="floatingInput">البريد الإلكتروني</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="date" class="form-control" (input)="getAdge($event)" [(ngModel)]="date"
+                            formControlName="date" id="floatingInput" placeholder="">
+                        <label for="floatingInput">تاريخ الميلاد</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="number" class="form-control" value="{{age}}" disabled id="floatingInput"
+                            placeholder="">
+                        <label for="floatingInput">العمر</label>
+                    </div>
+                    <!-- <div class="form-floating mb-4">
+                        <input type="password" class="form-control" formControlName="password" id="floatingInput"
+                            [ngClass]="{'is-invalid':f.password.errors?.minLength}">
+                        <label for="floatingInput">كلمة المرور</label>
+                        <div class="erorr" *ngIf="f.password.errors?.minlength">(كلمة المرور لا تقل عن 8 احرف او
+                            ارقام)</div>
+                    </div> -->
+                    <h4 class="pt-3 mb-4">
+                        معلومات الطالب
+                    </h4>
+                    <div class="mb-4 d-flex align-items-center">
+                        <div class="rounded-circle img-div border bg-light position-relative">
+                            <input class="form-control position-relative border-0 h-100 rounded-circle"
+                                formControlName="userPhoto" accept="image/*,.pdf" (change)="onFileChange($event , '1')"
+                                type="file" id="formFile" value=" ">
+                            <i class="icon-upload fs-3 position-absolute mx-auto"></i>
+                        </div>
+                        <div class="ps-2">
+                            <span class="d-block fw-medium">قم برفع صوره شخصية </span>
+                            <span class="small opacity-75 text-black"> مقاس الصوره 4X6 </span>
+                            <span class="d-block fw-medium">{{imageOne}}</span>
+                        </div>
+                    </div>
+                    <div class="floating-label-select position-relative border mb-4">
+                        <select (change)="changeGendar($event)" class="floating-select form-select border-0"
+                            formControlName="gendar">
+                            <option value=""></option>
+                            <option value="1">ذكر</option>
+                            <option value="2">أنثي </option>
+                        </select>
+                        <label>النوع</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" formControlName="phoneNumber"
+                            [ngClass]="{'is-invalid':f.phoneNumber.errors?.min}" id="floatingInput">
+                        <label for="floatingInput">رقم المحمول</label>
+                    </div>
+                    <div class="floating-label-select position-relative border mb-4">
+                        <select (change)="changeNathon($event)" class="floating-select form-select border-0"
+                            formControlName="National">
+                            <option value=""></option>
+                            <option *ngFor="let item of NationalitiesArr" value="{{item.ID}}">{{item.TITLE}}</option>
+                        </select>
+                        <label>الجنسيه</label>
+                    </div>
+                    <div class="floating-label-select position-relative border mb-4">
+                        <select class="floating-select form-select border-0" (change)="changeMoahlAlDrasi($event)"
+                            formControlName="moahlAlDrasi">
+                            <option value=""></option>
+                            <option *ngFor="let item of PreCertificates" value="{{item.ID}}">{{item.TITLE}}</option>
+                        </select>
+                        <label>المؤهل الدراسي</label>
+                    </div>
+
+                    <div class="form-floating mb-4" *ngIf="dargtAlMoahl">
+                        <input type="number" class="form-control" formControlName="drgtAlMoahl" id="floatingInput">
+                        <label for="floatingInput">درجة المؤهل</label>
+                    </div>
+
+                    <div class="position-relative mb-4" *ngIf="moahlAldrasiStatus">
+                        <input class="form-control invalid position-relative" (change)="onFileChange($event,'5')"
+                            type="file" accept="image/*,.pdf" id="formFile" value=" " formControlName="dorTani">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">قم برفع اقرار الدور الثاني</span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imageFive}}</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div *ngIf="showDrpoDowenTgned" class="floating-label-select position-relative border mb-4">
+                        <select (change)="changeTagned($event)" class="floating-select form-select border-0"
+                            formControlName="NationalStatus">
+                            <option value=""></option>
+                            <option value="ادي الخدمه">ادي الخدمه</option>
+                            <option value="إعفاء نهائي">إعفاء</option>
+                            <option value="مؤجل">مؤجل</option>
+                            <option value="لم يصبه الدور">لم يصبه الدور</option>
+                        </select>
+                        <label>موقف التجنيد</label>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" formControlName="NationalNumber"
+                                    [ngClass]="{'is-invalid':f.NationalNumber.errors?.min}" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput"> رقم الهوية (لرقم القومي / جواز السفر)</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mt-3 mt-sm-0">
+                            <div class="position-relative">
+                                <input class="form-control position-relative" (change)="onFileChange($event ,'2')"
+                                    type="file" id="formFile" accept="image/*,.pdf" value=" " formControlName="idPhoto">
+                                <button
+                                    class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                                    <i class="icon-upload fs-4 text-primary"></i>
+                                    <div class="ps-2">
+                                        <span class="d-block">قم برفع الهويه الذي تم إدخالها </span>
+                                        <span id="file-name" class="small opacity-75 text-black"></span>
+                                        <span class="d-block">{{imagetow}}</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4">
+                        <input class="form-control invalid position-relative" (change)="onFileChange($event,'3')"
+                            type="file" id="formFile" value=" " accept="image/*,.pdf" formControlName="QUALIFICATION">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">قم برفع صوره شهاده المؤهل </span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imagethree}}</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="position-relative mb-4" *ngIf="showSevenGondUpload">
+                        <input class="form-control position-relative" (change)="onFileChange($event,'6')" type="file"
+                            id="formFile" value=" " formControlName="sevenGondPhoto">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">قم برفع استمارة 7 جند </span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imageSix}}</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="position-relative mb-4" *ngIf="showTagnedUpload">
+                        <input class="form-control position-relative" (change)="onFileChange($event,'4')" type="file"
+                            id="formFile" value=" " accept="image/*,.pdf" formControlName="tgnedPhoto">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">قم برفع موقف التجنيد </span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imageFour}}</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="position-relative mb-4" *ngIf="showshhadtAlKaed">
+                        <input class="form-control position-relative" (change)="onFileChange($event,'9')" type="file"
+                            id="formFile" value=" " formControlName="REGISTRATION_CERTIFICATE_FILE_NAME">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">شهاده قيد من الكليه/ المعهد</span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imagetasaa}}</span>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- <div class="position-relative mb-4">
+                        <input class="form-control position-relative" (change)="onFileChange($event,'8')" type="file"
+                            id="formFile" value=" " formControlName="BANK_TRANSFER_FILE_NAME">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">مستند التحويل البنكي</span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imagetamnia}}</span>
+                            </div>
+                        </button>
+                    </div> -->
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" (change)="statusOfAhtygaat($event)" type="checkbox" value=""
+                            id="condChecke" [checked]="ischeckedA7tygat">
+                        <p class="form-check-label text-black " for="condChecke">
+                            ذوي احتيجات خاصة
+                        </p>
+                    </div>
+                    <div class="position-relative mb-4" *ngIf="ischeckedA7tygat">
+                        <input class="form-control position-relative" (change)="onFileChange($event,'10')" type="file"
+                            accept="image/*,.pdf" id="formFile" value=" " formControlName="DETERMINATION_PEOPLE_FILE_NAME">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">احتيجات خاصة</span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imageTen}}</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="position-relative mb-4">
+                        <input class="form-control position-relative" (change)="onFileChange($event,'7')" type="file"
+                            accept="image/*,.pdf" id="formFile" value=" " formControlName="OTHER_FILES_FILE_NAME">
+                        <button
+                            class="btn w-100 h-100 text-black position-absolute top-0 start-0 d-flex align-items-center text-start ">
+                            <i class="icon-upload fs-4 text-primary"></i>
+                            <div class="ps-2">
+                                <span class="d-block">مستندات اخري</span>
+                                <span id="file-name" class="small opacity-75 text-black"></span>
+                                <span class="d-block">{{imageSeven}}</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <h4 class="mb-2">
+                        ملفات قد تساعدك
+                    </h4>
+                    <div>
+                        <ul>
+                            <li *ngFor="let item of list_of_files">
+                                <a style="color: #003cff" href="{{item.FILE_PATH}}" target="_blank">{{item.TITLE}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="form-check mb-3">
+                        <input class="form-check-input" (change)="condtionPrice($event)" type="checkbox" value=""
+                            id="condChecke" [checked]="ischeckedPrice">
+                        <p class="form-check-label text-black " for="condChecke">
+                            يتعهد بان ملف التحويل يشتمل قيمة مبلغ <br> {{totalPrice}} جنيه
+                        </p>
+                    </div> -->
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" (change)="condtionAcadmi($event)" type="checkbox" value=""
+                            id="condChecke" [checked]="ischeckedAcadmi">
+                        <p class="form-check-label text-black " for="condChecke">
+                            اجمالي رسوم الملفات {{totalPrice}} {{ifDloar ? 'دولار': 'جنية' }} يتم سدادهم عند قبول طلب الانضمام
+                        </p>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" (change)="condtion($event)" type="checkbox" value=""
+                            id="condCheck" [checked]="ischecked">
+                        <p class="form-check-label text-black " for="condCheck">
+                            أوافق على <a href="#" data-bs-toggle="modal" data-bs-target="#conditionsModel">الشروط</a>
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <!--   -->
+                        <button class="btn btn-primary flex-grow-1 fw-bold fs-5 py-3 lh-1"
+                            [disabled]="!thirdForm.valid || ischecked == false || ischeckedAcadmi == false"
+                            (click)="regsiter()">تسجيل</button>
+                        <button class="btn fw-medium fs-5 py-3 lh-1 ms-2" (click)="goBack('2')">السابق</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div *ngIf="showTab5">
+                <!-- <section class="row pt-3 pb-5">
+                    <form class="col-lg-8 col-xl-5 mx-auto py-2">
+                        <div>
+                            <h4 class="mb-4">
+                                اختر الوسيله المناسبة لك لدفع رسوم التقديم 500 جنيه
+                            </h4>
+                            <div class="btn-g-list-icon mb-4 payment" role="group"
+                                aria-label="Basic radio toggle button group">
+                                <div class="mb-3">
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                                        autocomplete="off">
+                                    <label
+                                        class="btn btn-outline-primary p-3 w-100 text-start d-flex align-items-center"
+                                        for="btnradio1">
+                                        <p class="mb-0 fw-medium flex-grow-1">
+                                            بطاقة الائتمان
+                                        </p>
+                                        <div>
+                                            <ul class="list-inline mb-0 px-0">
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/visa-logo.svg">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img class="mc" src="assets/img/mc.svg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                                        autocomplete="off">
+                                    <label
+                                        class="btn btn-outline-primary p-3 w-100 text-start d-flex align-items-center"
+                                        for="btnradio2">
+                                        <p class="mb-0 fw-medium flex-grow-1">
+                                            ميزة
+                                        </p>
+                                        <div>
+                                            <img src="assets/img/meeza.png" class="meza">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+                            <div class="d-flex">
+                                <button (click)="regsiter()"
+                                    class="btn btn-primary flex-grow-1 fw-bold fs-5 py-3 lh-1">إدفع ( 500
+                                    جنيه)</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </section> -->
+                <div class="container-fluid">
+                    <div class="pt-4 row">
+                        <div class="col-xl-6 col-lg-7 mx-auto">
+                            <div class="pb-5 text-center">
+                                <img src="assets/img/Confirm.svg"
+                                    class="mb-5 animate__animated animate__fadeInUp animate__faster">
+                                <h3
+                                    class="heading-font fs-2 mb-2 fw-normal animate__animated animate__fadeInUp animate__fast wow">
+                                    تم التسجيل في أكاديميه الفنون
+                                </h3>
+                                <p class="fw-medium opacity-75 animate__animated animate__fadeInUp wow mb-4">
+                                    يا {{fullName_submit}}
+                                </p>
+                                <p class="fw-medium opacity-75 animate__animated animate__fadeInUp wow mb-4">
+                                    {{email_submit}}</p>
+                                <a routerLink="/home"
+                                    class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                                    المزيد عن الأكاديمية
+                                    <i class="icon-arrow-sm"></i>
+                                </a>
+                            </div>
+                            <!-- <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                class="iframclass" [src]="shareLink"></iframe> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- <button id="googleBtn">Open Google</button> -->
+</main>

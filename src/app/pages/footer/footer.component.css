@@ -1,0 +1,26 @@
+footer li {
+    line-height: 1.93;
+  }
+  
+  footer li a {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  
+  footer li a:hover {
+    opacity: 1;
+  }
+  
+  footer li h5 {
+    font-size: 1.125rem;
+  }
+  
+  .copyrights {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  .icon_social img {
+    width: 20px;
+    margin-right: 10px
+  }
+  /*# sourceMappingURL=footer.css.map */

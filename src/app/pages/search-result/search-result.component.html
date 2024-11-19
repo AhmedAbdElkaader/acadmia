@@ -1,0 +1,88 @@
+<app-header></app-header>
+<main class="">
+    <!-- whatsapp floating button -->
+    <div class="whatsapp position-fixed">
+        <div class="rounded-circle bg-white shadow align-items-center justify-content-center d-flex">
+            <img src="assets/img/whatsApp.svg">
+        </div>
+    </div>
+    <!-- END whatsapp floating button -->
+
+    <div class="container-fluid">
+        <div class="row bg-secondary py-4">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb animate__animated animate__fadeInDown mb-0">
+                        <li class="breadcrumb-item mb-2 mb-md-0">
+                            <a class="text-white" href="home.html">أكادميه الفنون</a>
+                        </li>
+                        <li class="breadcrumb-item active mb-2 mb-md-0">
+                            بحث
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            نتيجة البحث عن السينما
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <section class="row py-5">
+            <div class="col-lg-8 mx-auto">
+                <h3 class="heading-font mb-3">
+                    نتيجة البحث عن السينما
+                </h3>
+                <div class="border mb-3">
+                    <div class="input-group input-group-lg position-relative search-main-input">
+                        <input type="text" class="form-control border-0 fw-medium" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-lg" placeholder="إبحث في أكادميه الفنون" value="سينما">
+                        <button class="btn border-0 position-absolute start-0 h-100 opacity-25" type="button">
+                            <i class="icon-search d-block"></i>
+                        </button>
+                    </div>
+                </div>
+                <h6 class="border-bottom pb-3">
+                    9 نتائج
+                </h6>
+                <!--feed listing-->
+                <div class="feed-listing search-result-list">
+                    <div class="pb-4">
+                        <a class="row py-4 border-bottom card-hover text-black border-0 feed-item">
+                            <div class="col fw-medium">
+                                <h5 class="fs-5 mb-2 lh-base fw-bold">
+                                    المعهد العالي للسينما
+                                </h5>
+                                <p class="brife mb-2 opacity-75 pt-1 lh-base">
+                                    تأهيل الخريجين علميا وعمليا للعمل في مجال صناعة السينما ومحطات التلفزة
+                                </p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="list-img position-relative overflow-hidden">
+                                    <img class="fit-img position-absolute" src="assets/img/research1.jpg">
+                                </div>
+                            </div>
+                        </a>
+                        <a class="row py-4 border-bottom card-hover text-black border-0 feed-item">
+                            <div class="col fw-medium">
+                                <h5 class="fs-5 mb-2 lh-base fw-bold">
+                                    المعهد العالي للسينما
+                                </h5>
+                                <p class="brife mb-2 opacity-75 pt-1 lh-base">
+                                    تأهيل الخريجين علميا وعمليا للعمل في مجال صناعة السينما ومحطات التلفزة
+                                </p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="list-img position-relative overflow-hidden">
+                                    <img class="fit-img position-absolute" src="assets/img/research1.jpg">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--end feed listing-->
+
+
+            </div>
+        </section>
+    </div>
+</main>
+<app-footer></app-footer>

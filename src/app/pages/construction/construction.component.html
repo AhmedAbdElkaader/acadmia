@@ -1,0 +1,126 @@
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+    <!-- header -->
+    <app-app-nav></app-app-nav>
+    <!-- end header -->
+    <main>
+
+        <!-- whatsapp -->
+        <app-whatsapp></app-whatsapp>
+        <!-- end wahtsApp -->
+        <section class="pb-5 position-relative">
+            <div class="position-relative faculty-hero d-flex">
+                <div class="slid-img position-absolute w-100 h-100 top-0 start-0 overflow-hidden">
+                    <img class="position-absolute" src="{{faculty_image}}" />
+                    <div class="black-layer position-absolute top-0 start-0 h-100 w-100"></div>
+                </div>
+                <div
+                    class="position-relative d-flex align-items-lg-end justify-content-center institute-pref flex-column">
+                    <div class="blend-darken-bg position-absolute top-0 start-0 h-100 w-100"></div>
+                    <div
+                        class="pref position-relative text-white pe-lg-5 pe-3 ms-3 animate__animated animate__slideInRight wow">
+                        <h2 class="heading-font d-inline-block pt-5">
+                            <!-- <label class="d-block text-sm-end">2312</label> -->
+                            {{CONSTRUCTION_NAME}}
+                        </h2>
+                    </div>
+                </div>
+                <div class="position-absolute start-0 bottom-0 container-fluid">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb animate__animated animate__fadeInDown">
+                            <li class="breadcrumb-item">
+                                <a class="text-white">أكادميه الفنون</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a class="text-white" href="faculty.html">
+                                    إنشاءات الأكاديمية
+                                </a>
+                            </li>
+                            <!-- <li class="breadcrumb-item active" aria-current="page">
+                      القبول والتسجيل
+                    </li> -->
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid" *ngIf="showView">
+            <!--About-->
+            <div class="row py-5">
+                <div class="col-xl-8 col-lg-10 mx-auto">
+                    <h3
+                        class="text-center heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+                        نبذة عن المنشأة
+                    </h3>
+                    <p class="fs-5 fw-medium mb-5 animate__animated animate__fadeInUp animate__fast wow">
+                        {{CONSTRUCTION_ABOUT}}
+                    </p>
+
+                </div>
+            </div>
+            <!--Actions-->
+            <div class="row pt-5 pb-lg-5 pb-3">
+                <div *ngFor="let item of subdetailslist"
+                    class=" col-lg-4 col-md-6 mb-lg-2 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+                    <div class=" card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4 mt-2 fw-medium">
+                                {{item.NAME}}
+                            </h5>
+                            <p class="card-subtitle mb-3 pb-3 text-gray border-bottom">
+                                {{item.DESCRIPTION}}
+                            </p>
+                            <ul class="list-unstyled custom-styled ps-4 mb-3">
+                                <li *ngFor="let val of item.itemsList">
+                                    <a class="fw-medium fs-6 text-black link-list">
+                                        {{val.NAME}}
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section *ngIf="!showView">
+            <div class="row py-5">
+                <div class="col-xl-8 col-lg-10 mx-auto">
+                    <h3
+                        class="text-center heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+                        صفحة تحت التطوير
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid" *ngIf="showView">
+            <h2
+                class="heading-font heading-style mb-5 fw-normal animate__faster animate__animated animate__fadeInUp wow">
+                معرض الصور</h2>
+            <div class="row">
+                <div class="col-3 mb-2" *ngFor="let item of galleryArry">
+                    <div data-bs-toggle="modal" data-bs-target="#imagePoup" (click)="openImage(item.image_path)">
+                        <img style="width: 100% ; height:170px; cursor: pointer;" [src]="item.image_path">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<div class="modal fade" id="imagePoup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="conditionsModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img [src]="src_image">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn " data-bs-dismiss="modal">إغلاق</button>
+            </div>
+        </div>
+    </div>
+</div>

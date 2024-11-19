@@ -1,0 +1,154 @@
+  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+      <!-- header -->
+      <app-header></app-header>
+
+      <!-- <app-app-nav></app-app-nav> -->
+      <!-- end header -->
+  
+      <main class="">
+  
+          <!-- whatsapp -->
+          <app-whatsapp></app-whatsapp>
+          <!-- end wahtsApp -->
+  
+          <div class="container-fluid">
+              <div class="row bg-secondary py-4 " style="margin-top:6%">
+                  <div class="col">
+                      <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb animate__animated animate__fadeInDown mb-0">
+                              <li class="breadcrumb-item mb-2 mb-md-0">
+                                  <a class="text-white">أكادميه الفنون</a>
+                              </li>
+                              <li class="breadcrumb-item mb-2 mb-md-0">
+                                  <a class="text-white">{{faculty_name}}</a>
+                              </li>
+                              <li class="breadcrumb-item active" aria-current="page">
+                                  فعاليات
+                              </li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+              <section class="row py-4">
+                  <div class="col-xl-11 mx-auto">
+                      <a class="row position-relative event-featured hover-img text-black">
+                          <div class="col-lg-4">
+                              <div
+                                  class="bg-white position-absolute bottom-0 col-lg-5 event-title overflow-hidden p-3 p-lg-0">
+                                  <label class="lh-base badge bg-primary-light mt-2 py-1 px-2 lh-base text-black mb-3">
+                                      {{event_obj.FACULTY_NAME}}
+                                  </label>
+                                  <h3 class="heading-font fs-1 fw-normal">
+                                      {{event_obj.TITLE}}
+                                  </h3>
+                                  <span class="border-top border-primary pt-2 d-inline-block mt-1 mt-lg-3">
+                                      {{event_obj.START_DATE | date : 'yyyy-MM-dd'}}
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="col-lg-8">
+                              <div class="event-featured-img position-relative overflow-hidden w-100">
+                                  <img class="fit-img position-absolute" src="{{event_obj.IMG_PATH}}">
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </section>
+              <section class="py-5 row">
+                  <div class="col-12">
+                      <div class="d-flexanimate__animated animate__fadeIn animate__fast wow">
+                          <div class="col border-bottom">
+                              <h3 class="lh-1 heading-font display-6 mb-2 fw-normal ">
+                                  الفعاليات
+                              </h3>
+                          </div>
+                          <!-- <div class="col-auto border-bottom filter-btn border-secondary ">
+                              <a class="d-flex align-items-center px-2 text-black" data-bs-toggle="offcanvas"
+                                  href="#offcanvasSideFilter" role="button" aria-controls="offcanvasSideFilter">
+                                  <i class="icon-filter default"></i>
+                                  <span class="fw-medium fs-5 ps-1 d-none d-md-inline-block">
+                                      تصفية النتائج
+                                  </span>
+                              </a>
+  
+                          </div> -->
+                      </div>
+                      <div class="row mb-4 faculty-events-list animate__animated animate__fadeIn animate__faster wow">
+
+                          <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mt-1" *ngFor="let item of events_arr">
+                              <a (click)="go_to_event(item)"
+                              class="position-relative overflow-hidden d-flex event-card">
+                                  <img class="hover-scale fit-img position-absolute" src="{{item.IMG_PATH}}" />
+                                  <div
+                                      class="position-absolute bg-white bottom-0 start-0 text-black event-info px-3 py-4">
+                                      <label class="text-black-50">{{item.FACULTY_NAME}}</label>
+                                      <h4 class="fw-medium pb-3 mb-0 pt-2 fs-6 lh-base">
+                                         {{item.TITLE}}
+                                      </h4>
+                                      <span class="border-top border-primary pt-2 d-inline-block">
+                                          {{item.START_DATE | date : 'yyyy-MM-dd'}}
+                                      </span>
+                                  </div>
+                              </a>
+                          </div>
+                   
+                      </div>
+                      <!-- <div class="text-center pt-3">
+                          <a
+                              class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                              المزيد من الفعاليات
+                              <i class="icon-arrow-sm"></i>
+                          </a>
+                      </div> -->
+                  </div>
+              </section>
+          </div>
+          <!-- <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+              <div class="row">
+                  <div
+                      class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+                      <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                          <div class="fw-medium flex-fill p-1">
+                              موقع الطالب
+                              <p class="mb-0 text-gray mt-1">
+                                  تعرف على المواد و المهام و النتيجة
+                              </p>
+                          </div>
+                          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                      </a>
+                  </div>
+                  <div
+                      class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+                      <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                          <div class="fw-medium flex-fill p-1">
+                              موقع هيئة التدريس
+                              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+                          </div>
+                          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                      </a>
+                  </div>
+                  <div
+                      class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+                      <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                          <div class="fw-medium flex-fill p-1">
+                              موقع الموظفين
+                              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+                          </div>
+                          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                      </a>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+                      <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+                          <div class="fw-medium flex-fill p-1">
+                              خدمات الخريجين
+                              <p class="mb-0 text-gray mt-1">
+                                  تعرف على الخدمات الخاصه بالخرجين
+                              </p>
+                          </div>
+                          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+                      </a>
+                  </div>
+              </div>
+          </section> -->
+      </main>
+  </div>

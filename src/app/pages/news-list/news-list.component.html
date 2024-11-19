@@ -1,0 +1,354 @@
+<app-app-nav></app-app-nav>
+<!-- END header -->
+<main>
+  <!-- whatsapp floating button -->
+  <app-whatsapp></app-whatsapp>
+  <!-- END whatsapp floating button -->
+
+  <!-- News slider -->
+  <section class="news-container mt-0 mb-5">
+    <div class="container-fluid bg-secondary py-4 overflow-hidden">
+      <h3
+        class="heading-font heading-style fw-normal lh-base text-white d-block d-lg-none animate__fast animate__animated animate__fadeInUp wow">
+        أخبار أكادميه الفنون
+      </h3>
+      <div class="row news-grid listing align-items-end">
+        <div class="col-lg-6" (click)="newsDetails(item)" *ngFor="let item of itemOne ; let i = index">
+          <a
+            class="position-relative main post overflow-hidden mb-4 mb-lg-0 d-block text-white animate__animated animate__fadeInUp wow">
+            <img class="hover-scale fit-img position-absolute" src="{{item.IMG_PATH}}">
+            <div class="position-absolute post-caption bottom-0 end-0">
+              <label class="px-3 pt-3 pb-2 mb-0">
+                {{item.NEW_DATE | date:'yyyy-MM-dd'}}
+              </label>
+              <p class="px-3 pt-8 overflow-hidden fs-4">
+                {{item.TITLE}}
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <h3
+            class="heading-font heading-style fw-normal lh-base text-white d-none d-lg-block animate__fast animate__animated animate__fadeInUp wow">
+            أخبار أكادميه الفنون
+          </h3>
+          <div class="row">
+            <div class="col-sm-6" *ngFor="let item of itemtow ; let i = index">
+              <a (click)="newsDetails(item)"
+                class="position-relative post overflow-hidden d-block mb-4 mb-lg-0 text-white animate__animated animate__fadeInUp wow">
+                <img class="hover-scale fit-img position-absolute" src="{{item.IMG_PATH}}">
+                <div class="position-absolute post-caption top-0 start-0">
+                  <label class="px-3 pt-3 pb-2 mb-0">
+                    {{item.NEW_DATE | date:'yyyy-MM-dd'}}
+                  </label>
+                  <p class="px-3 pt-8 overflow-hidden fs-5">
+                    {{item.TITLE}}
+                  </p>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container-fluid">
+    <section class="row py-5">
+      <div class="col-12">
+        <h3 class="lh-1 heading-font display-6 mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+          أهم الأخبار
+        </h3>
+        <!-- Swiper -->
+        <swiper [config]="config" class="courses-list-card hListSwiper full-width pb-4 animate__animated animate__fadeIn animate__faster wow">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" *ngFor="let item of topNews">
+                <a (click)="newsDetails(item)" class="card card-hover border-0 text-black">
+                  <div class="card-img-top position-relative overflow-hidden">
+                    <img src="{{item.IMG_PATH}}" class="fit-img position-absolute">
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="news-cat position-relative d-inline-block pt-1 px-2 ">
+                      <span class="text-gray">{{item.NEW_DATE | date : 'yyyy/MM/dd'}}</span> /
+                      <span class="text-primary fw-medium">{{item.FACULTY_NAME}}</span>
+                    </div>
+                    <h6 class="fw-bold mt-2 mb-3 px-2">
+                      {{item.TITLE}}
+                    </h6>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination w-100"></div>
+        </swiper>
+      </div>
+    </section>
+    <section class="row py-5">
+      <div class="col-xl-8 col-lg-10 mx-auto">
+        <div class="row animate__animated animate__fadeInDown animate__faster wow">
+          <div class="col border-bottom">
+            <h3 class="lh-1 heading-font display-6 mb-2 fw-normal ">
+              أحدث الأخبار
+            </h3>
+          </div>
+          <div class="col-auto border-bottom filter-btn border-secondary ">
+            <a class="d-flex align-items-center px-2 text-black" data-bs-toggle="offcanvas" href="#offcanvasSideFilter"
+              role="button" aria-controls="offcanvasSideFilter">
+              <i class="icon-filter default"></i>
+              <span class="fw-medium fs-5 ps-1 d-none d-md-inline-block">
+                تصفية الأخبار
+              </span>
+            </a>
+
+          </div>
+        </div>
+        <!--feed listing-->
+        <div class="feed-listing animate__animated animate__fadeIn animate__faster wow">
+          <div class="pb-4">
+            <a *ngFor="let item of LatestNews" (click)="newsDetails(item)"
+            class="row py-4 border-bottom card-hover text-black border-0 feed-item">
+              <div class="col-md-auto col-3 pe-0 pe-lg-2">
+                <div class="list-img position-relative overflow-hidden news">
+                  <img class="fit-img position-absolute" src="{{item.IMG_PATH}}">
+                </div>
+              </div>
+              <div class="col fw-medium fw-medium pt-0 pt-lg-3">
+                <h5 class="fs-5 mb-2 lh-base fw-bold">
+                 {{item.TITLE}}
+                </h5>
+                <div class=" mb-2 d-flex align-items-center">
+                  <span class="text-gray">{{item.NEW_DATE | date:'yyyy/MM/dd'}}</span>
+                </div>
+                <p class="brife mb-2 opacity-75 pt-1 d-none d-md-block">
+                  {{item.DETAILS}}
+                </p>
+                <!-- <label class="badge bg-primary-light mt-2 py-1 px-2 lh-base text-black d-none d-md-inline-block">
+                  قسم السيناريو
+                </label> -->
+              </div>
+            </a>
+            
+          </div>
+          <div class="text-center pt-3">
+            <!-- <div class="progress" style="height: 1px;">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div> -->
+            <a (click)="moreNews()"
+              class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+              المزيد من الأخبار
+              <i class="icon-arrow-sm"></i>
+            </a>
+
+          </div>
+        </div>
+        <!--end feed listing-->
+      </div>
+    </section>
+
+  </div>
+  <!--End News slider -->
+
+  <!-- <section class="container-fluid pt-lg-5 pt-3 pb-lg-5 pb-3">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            موقع الطالب
+            <p class="mb-0 text-gray mt-1">
+              تعرف على المواد و المهام و النتيجة
+            </p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            موقع هيئة التدريس
+            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            موقع الموظفين
+            <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+        <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+          <div class="fw-medium flex-fill p-1">
+            خدمات الخريجين
+            <p class="mb-0 text-gray mt-1">
+              تعرف على الخدمات الخاصه بالخرجين
+            </p>
+          </div>
+          <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+        </a>
+      </div>
+    </div>
+  </section> -->
+</main>
+
+
+<!--Side filter-->
+<div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasSideFilter" aria-labelledby="offcanvasSideFilterLabel">
+  <div class="offcanvas-header py-2 shadow">
+    <p class="offcanvas-title mb-0 fw-bold" id="offcanvasSideFilterLabel">200 خبر</p>
+    <div class="d-flex align-items-center">
+      <a class="btn bg-primary-light text-primary fw-medium me-2">
+        حذف الكل
+      </a>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="offcanvas-body offcanvas-filter">
+    <div class="side-filter">
+      <div class="accordion">
+        <div class="accordion-item border-0 border-top bg-transparent">
+          <h2 class="accordion-header" id="headingFilterMobileDepartments">
+            <button class="accordion-button bg-transparent fw-medium fs-4 text-black shadow-none px-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseFilterMobileDepartments" aria-expanded="true"
+              aria-controls="collapseFilterMobileDepartments">
+              المعاهد
+            </button>
+          </h2>
+          <div id="collapseFilterMobileDepartments" class="accordion-collapse collapse show"
+            aria-labelledby="headingFilterMobileDepartments">
+            <div class="accordion-body px-0 py-0 text-secondary fw-medium">
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check1" checked>
+                <label class="form-check-label" for="check1">
+                  الفنون المسرحية <span class="text-black">(10)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check2">
+                <label class="form-check-label" for="check2">
+                  الكونسرفتوار <span class="text-black">(10)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check3">
+                <label class="form-check-label" for="check3">
+                  باليه <span class="text-black">(10)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check4">
+                <label class="form-check-label" for="check4">
+                  السينما <span class="text-black">(10)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check5">
+                <label class="form-check-label" for="check5">
+                  موسيقى عربية <span class="text-black">(10)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check6">
+                <label class="form-check-label" for="check6">
+                  النقد الفني <span class="text-black">(10)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check7">
+                <label class="form-check-label" for="check7">
+                  الفنون الشعبية <span class="text-black">(59)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check8">
+                <label class="form-check-label" for="check8">
+                  فنون الطفل <span class="text-black">(58)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item border-0 border-top bg-transparent">
+          <h2 class="accordion-header" id="headingFilterMobileLevel">
+            <button class="accordion-button collapsed bg-transparent fw-medium fs-4 text-black shadow-none px-0"
+              type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilterMobileLevel" aria-expanded="false"
+              aria-controls="collapseFilterMobileLevel">
+              ترتيب حسب
+            </button>
+          </h2>
+          <div id="collapseFilterMobileLevel" class="accordion-collapse collapse"
+            aria-labelledby="headingFilterMobileLevel">
+            <div class="accordion-body px-0 pb-0">
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check9">
+                <label class="form-check-label" for="check9">
+                  الأحدث <span class="text-black">(58)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check9">
+                <label class="form-check-label" for="check9">
+                  الأكثر قراءة <span class="text-black">(58)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check10">
+                <label class="form-check-label" for="check10">
+                  الأقدم <span class="text-black">(58)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-0 border-top bg-transparent">
+          <h2 class="accordion-header" id="headingFilterMobileLevel">
+            <button class="accordion-button collapsed bg-transparent fw-medium fs-4 text-black shadow-none px-0"
+              type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilterDate" aria-expanded="false"
+              aria-controls="collapseFilterDate">
+              تاريخ النشر
+            </button>
+          </h2>
+          <div id="collapseFilterDate" class="accordion-collapse collapse" aria-labelledby="headingFilterMobileLevel">
+            <div class="accordion-body px-0 pb-0">
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check9">
+                <label class="form-check-label" for="check9">
+                  العام الماضي <span class="text-black">(58)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check9">
+                <label class="form-check-label" for="check9">
+                  آخر 6 أشهر <span class="text-black">(58)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check10">
+                <label class="form-check-label" for="check10">
+                  آخر 3 أشهر <span class="text-black">(58)</span>
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="check11">
+                <label class="form-check-label" for="check10">
+                  الشهر الماضي <span class="text-black">(58)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="p-3 bg-white position-absolute w-100 bottom-0 start-0 shadow">
+      <button class="btn btn-primary w-100 fs-5 fw-medium">
+        أظهر النتائج
+      </button>
+    </div>
+  </div>
+</div>
+<!--END Side filter-->

@@ -1,0 +1,509 @@
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="10" tabindex="0">
+  <app-header></app-header>
+  <!-- END header -->
+  <main>
+
+    <!-- whatsapp floating button -->
+    <app-whatsapp></app-whatsapp>
+    <!-- END whatsapp floating button -->
+
+    <!--HERO Faculty-->
+    <section class="pb-5 position-relative">
+      <div class="position-relative faculty-hero d-flex">
+        <div class="slid-img position-absolute w-100 h-100 top-0 end-0 overflow-hidden">
+          <img class="position-absolute" src="{{SLIDER_IMAGE}}" />
+          <div class="black-layer position-absolute top-0 end-0 h-100 w-100"></div>
+        </div>
+        <div
+          class="position-relative d-flex align-items-lg-end justify-content-center institute-pref flex-column inner">
+          <div class="blend-darken-bg position-absolute top-0 end-0 h-100 w-100"></div>
+          <div class="pref position-relative text-white pe-lg-5 pe-3 ms-3 animate__animated animate__slideInRight wow">
+            <h2 class="heading-font d-inline-block pt-5">
+              <label class="d-block text-sm-start">{{facult_date}}</label>
+              {{facultyName}}
+            </h2>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb animate__animated animate__fadeInDown">
+                <li class="breadcrumb-item">
+                  <a class="text-white">أكادميه الفنون</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a class="text-white">
+                    {{facultyName}}
+                  </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  القبول والتسجيل
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-fluid floated-contatiner-top position-relative pb-lg-5">
+      <div class="row">
+        <!--Desktop side nav-->
+        <div class="col-lg-3 pt-5 mt-4 pe-0 d-lg-block d-none">
+          <div class="bg-secondary p-3 h-100 list-group" id="navbar-example2">
+            <h4 class="text-white border-bottom border-primary pb-2 mt-2 mb-4 d-inline-block">
+              <span class="opacity-50">
+                القبول والتسجيل
+              </span>
+            </h4>
+            <ul class="list-unstyled side-nav pt-3 sticky-top" role="tablist">
+              <li (click)="element1.scrollIntoView({ behavior: 'smooth', block: 'center' })"
+               class="mb-4 animate__animated animate__fadeInRight animate__faster wow">
+                <a class="d-block p-3 text-white fs-5 list-group-item list-group-item-action">
+                  دراسة البكالوريوس
+                </a>
+              </li>
+              <li (click)="element2.scrollIntoView({ behavior: 'smooth', block: 'center' })"
+              class="mb-4 animate__animated animate__fadeInRight animate__fast wow">
+                <a class="d-block p-3 text-white fs-5 list-group-item list-group-item-action">
+                  الدراسات العليا
+                </a>
+              </li>
+              <!-- <li class="mb-4 animate__animated animate__fadeInRight wow">
+                <a class="d-block p-3 text-white fs-5 list-group-item list-group-item-action" href="#courses">
+                  الدراسات الحرة
+                </a>
+              </li> -->
+            </ul>
+          </div>
+
+        </div>
+        <!--END Desktop side nav-->
+        <div class="col bg-white pt-5 pb-lg-5">
+          <section class="px-2">
+            <h3
+              class="text-center heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              القبول والتسجيل
+            </h3>
+            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow">
+              شكرًا لك على اهتمامك بالتقدم إلى {{facultyName}}. فيما يلي شروط القبول و التسجيل للبرامج التي يتيحها
+              المعهد للدراسه
+            </p>
+          </section>
+          <!--Mobile side nav-->
+          <section class="sticky-top bg-white side-nav pb-2 d-block d-lg-none">
+            <ul class="list-inline  mb-0" role="tablist">
+              <li class="list-inline-item animate__animated animate__fadeInRight animate__faster wow">
+                <a class="d-block p-2 border list-group-item list-group-item-action" href="#bs">
+                  دراسة البكالوريوس
+                </a>
+              </li>
+              <li class="list-inline-item animate__animated animate__fadeInRight animate__fast wow">
+                <a class="d-block p-2 border list-group-item list-group-item-action" href="#master">
+                  الدراسات العليا
+                </a>
+              </li>
+              <!-- <li class="list-inline-item animate__animated animate__fadeInRight wow">
+                <a class="d-block p-2 border list-group-item list-group-item-action" href="#courses">
+                  الدراسات الحرة
+                </a>
+              </li> -->
+            </ul>
+          </section>
+          <!--END Mobile side nav-->
+          <section class="py-5 px-2" #element1>
+            <div class="goto-link position-relative" id="bs"></div>
+            <h1 class="heading-font mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              دراسة البكالوريوس
+            </h1>
+            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow mb-4">
+              شكرًا لك على اهتمامك بالتقدم إلى {{facultyName}}. القبول هو عملية من خطوتين: التقديم والاختبار. يرجى
+              التحقق من المتطلبات أدناه اللازمة لإكمال الطلب عبر الإنترنت و مواعيد الاختبارات.
+            </p>
+            <div class="accordion pt-3 mb-5 animate__animated animate__fadeIn animate__fast wow" id="accordionBs">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBs">
+                  <button class="accordion-button fw-medium fs-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseBs" aria-expanded="true" aria-controls="collapseBs">
+                    متطلبات التقدم
+                  </button>
+                </h2>
+                <div id="collapseBs" class="accordion-collapse collapse show" aria-labelledby="headingBs"
+                  data-bs-parent="#accordionBs">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled custom-styled ps-4 mb-2">
+                      <li *ngFor="let item of generalsubmissionrules" class="fw-medium fs-6 text-black pb-4">
+                        <a class="text-primary">
+                          {{item.value}}
+                        </a>
+                      </li>
+                    </ul>
+                    <h5 class="fw-bold">
+                      متطلبات خاصة بالمعهد
+                    </h5>
+                    <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow mb-4">
+                      {{faculty_admission_rules}}
+                    </p>
+                    <h5 class="fw-bold">
+                      متطلبات خاصة بالاقسام
+                    </h5>
+                    <ul class="list-unstyled custom-styled ps-4 mb-2">
+                      <ng-container *ngFor="let item of departments_admission_list">
+                        <li *ngIf="item.department_admission_rules != '' && item.department_admission_rules != null"
+                          class="fw-medium fs-6 text-black pb-4">
+                          <a class="text-primary" style="color: #000 !important">
+                            {{item.department_name}} <br> {{item.department_admission_rules}}
+                          </a>
+                        </li>
+                      </ng-container>
+                    </ul>
+                    <h5 class="fw-bold">
+                      التعليم النظامى
+                    </h5>
+                    <ul class="list-unstyled custom-styled sub ps-4 mb-3 ms-3">
+                      <li class="fw-medium fs-6 pb-4">
+                        يشترط المعهد ألا يزيد عمر الطالب عن 22 عاما في أول أكتوبر من عام التقدم للالتحاق في حالة
+                        الحاصلين على الثانوية العامة أو أي من الشهادات الأجنبية المعادلة لها
+                      </li>
+                      <li class="fw-medium fs-6 pb-4">
+                        في حالة المتقدمين للالتحاق من حملة المؤهلات العليا يشترط الا يزيد السن عن 26 عاما في حالة
+                        المتقدمين الحاصلين على مؤهل عال نظرى مثل الآداب والحقوق، وعن 28 عاما في حالة المتقدمين الحاصلين
+                        على مؤهل عال عملي مثل الطب والهندسة.
+                      </li>
+                      <!-- <li class="fw-medium fs-6 pb-4">
+                        يتم قبول عدد 8 طلاب في كل قسم من بينهم نسبة 10% كحد أقصى من حملة المؤهلات العليا، وللمعهد أن
+                        يقبل نسبة أقل من ذلك لايقبل أي من حملة المؤهلات العليا إذا لم يكن حملة المؤهلات العليا بالمستوى
+                        العلمي والفنى المطلوب حيث إن الأولوية لطالب الثانوية العامة
+                      </li> -->
+                    </ul>
+                    <h5 class="fw-bold">
+                      التعليم الموازي بمصروفات
+                    </h5>
+                    <ul class="list-unstyled custom-styled sub ps-4 mb-3 ms-3">
+                      <li class="fw-medium fs-6 pb-4">
+                        الحصول على شهادة الثانوية العامة أو مايعادلها من الشهادات الأجنبية كحد أدنى ودون شروط على
+                        المجموع أو السن أو عام
+                      </li>
+                      <li class="fw-medium fs-6 pb-4">
+                        في حالة المتقدمين للالتحاق من حملة المؤهلات العليا لا يوجد قيود على عام الحصول على المؤهل أو
+                        السن
+                      </li>
+                    </ul>
+                    <h5 class="fw-bold">
+                      الطلبة من غير المصريين
+                    </h5>
+                    <ul class="list-unstyled custom-styled sub ps-4 mb-3 ms-3">
+                      <li class="fw-medium fs-6 pb-4">
+                        نفس الشروط المطبقة على الطلاب المصريين من حيث السن ، ونفس الحد الأدنى للمجموع في الثانوية العامة
+                        أو البكالوريا المطبق على المصريين بعد إجراء المعادلة على الشهادة، كما يقبل الحاصلين على المؤهلات
+                        العليا في قسم السيناريو بنفس شروط السن المطبقة على الطلاب المصريين .
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    اختبارات القبول للمعهد
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionBs">
+                  <div class="accordion-body">
+                    <div *ngFor="let item of departments_Exams_list">
+                      <h5 class="fw-bold">
+                        {{item.department_name}}
+                      </h5>
+                      <ul class="list-unstyled custom-styled ps-4 mb-2">
+                        <li *ngFor="let exam of item.department_Exams_list" class="fw-medium fs-6 text-black pb-4">
+                          <a class="text-primary">
+                            {{exam.value}}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    التحقق من كافه المتطلبات
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionBs">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    مصروفات التقديم
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#accordionBs">
+                  <div class="accordion-body">
+                    <div>
+                      <h5 class="fw-bold">
+                        التعليم النظامى
+                      </h5>
+                      <p>{{admission_fees_mo3tmd}} جم</p>
+                    </div>
+                    <div>
+                      <h5 class="fw-bold">
+                        التعليم النظامى
+                      </h5>
+                      <p>{{admission_fees_credit}} جم</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--JOIN ROW-->
+            <!-- <div class="join-now mb-5 row align-items-center animate__animated animate__fadeInUp wow">
+              <div class="col col-xl-6">
+                <a class="btn btn-primary text-white d-flex align-items-center text-start py-3 px-4 fs-6">
+                  <div class="flex-fill pe-3">
+                    انضم إلى العام الدراسي الجديد في سبتمبر
+                    <span class="d-block fw-bold pt-1"> سجل الان </span>
+                  </div>
+                  <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+                </a>
+              </div>
+              <label class="text-gray fs-5 fw-medium ps-4 col-auto d-none d-md-block">
+                متبقي 27 يوم فقط للتسجيل !
+              </label>
+            </div> -->
+            <!--END JOIN ROW-->
+            <!-- <div class="animate__animated animate__fadeInUp wow">
+              <a
+                class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                الأسئلة الشائعة حول التقدم و القبول في المعهد العالي للسينما
+                <i class="icon-arrow-sm"></i>
+              </a>
+            </div> -->
+          </section>
+
+          <section class="py-5 px-2" #element2>
+            <div class="goto-link position-relative" id="master"></div>
+            <h1 class="heading-font mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              الدراسات العليا
+            </h1>
+            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow mb-4">
+              شكرًا لك على اهتمامك بالتقدم إلى {{facultyName}}. تواصل مع المعهد لمعرفه كافه التفاصيل
+            </p>
+            <h4 class="animate__animated animate__fadeIn animate__fast wow">
+              <span class="text-primary">1-</span> دراسة دبلوم الدراسات العليا
+            </h4>
+            <div class="accordion pt-3 mb-5 animate__animated animate__fadeIn animate__fast wow" id="accordionDiplom">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDiplom">
+                  <button class="accordion-button fw-medium fs-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseDiplom" aria-expanded="true" aria-controls="collapseDiplom">
+                    متطلبات التقدم
+                  </button>
+                </h2>
+                <div id="collapseDiplom" class="accordion-collapse collapse show" aria-labelledby="headingDiplom"
+                  data-bs-parent="#accordionDiplom">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled custom-styled ps-4 mb-2">
+                      <li class="fw-medium fs-6 text-black pb-4">
+                        أن يكون الطالب متخرجا من {{facultyName}} بتقدير عام جيد كحد أدنى وجيد في التخصص كحد أدنى.
+                        ويمكن قبول بعض التخصصات المعادلة من الجامعات المصرية بشرط تحقيق نسبة تشابه مع مقررات المعهد
+                        بنسبة تتجاوز 70%
+                      </li>
+                      <li class="fw-medium fs-6 text-black pb-4">
+                        يسمح لبعض الطلاب غير المتخرجين من المعهد في بعض التخصصات القليلة المحدودة بشرط تحقيق نسبة تشابه
+                        70% على الأقل مع مقررات المعهد .
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThreeDiplom">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThreeDiplom" aria-expanded="false" aria-controls="collapseThreeDiplom">
+                    التحقق من كافه المتطلبات
+                  </button>
+                </h2>
+                <div id="collapseThreeDiplom" class="accordion-collapse collapse" aria-labelledby="headingThreeDiplom"
+                  data-bs-parent="#accordionDiplom">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFourDiplom">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFourDiplom" aria-expanded="false" aria-controls="collapseFour">
+                    مصروفات التقديم
+                  </button>
+                </h2>
+                <div id="collapseFourDiplom" class="accordion-collapse collapse" aria-labelledby="headingFourDiplom"
+                  data-bs-parent="#accordionDiplom">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="animate__animated animate__fadeIn animate__fast wow">
+              <span class="text-primary">2-</span> دراسة الماجستير
+            </h4>
+            <div class="accordion pt-3 mb-5 animate__animated animate__fadeIn animate__fast wow" id="accordionMaster">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingMaster">
+                  <button class="accordion-button fw-medium fs-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseMaster" aria-expanded="true" aria-controls="collapseMaster">
+                    متطلبات التقدم
+                  </button>
+                </h2>
+                <div id="collapseMaster" class="accordion-collapse collapse show" aria-labelledby="headingMaster"
+                  data-bs-parent="#accordionMaster">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled custom-styled ps-4 mb-2">
+                      <li class="fw-medium fs-6 text-black pb-4">
+                        ن يكون الطالب متخرجا من {{facultyName}} أو اتمام دبلوم الدراسات العليا
+                         من {{facultyName}}
+                         بتقدير عام جيد وجيد جدا في التخصص كحد أدنى.
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThreeMaster">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    التحقق من كافه المتطلبات
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThreeMaster"
+                  data-bs-parent="#accordionMaster">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFourMaster">
+                  <button class="accordion-button fw-medium fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFourMaster" aria-expanded="false" aria-controls="collapseFour">
+                    مصروفات التقديم
+                  </button>
+                </h2>
+                <div id="collapseFourMaster" class="accordion-collapse collapse" aria-labelledby="headingFourMaster"
+                  data-bs-parent="#accordionMaster">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--JOIN ROW-->
+            <!-- <div class="join-now mb-5 row align-items-center animate__animated animate__fadeInUp wow">
+              <div class="col col-xl-6">
+                <a class="btn btn-primary text-white d-flex align-items-center text-start py-3 px-4 fs-6">
+                  <div class="flex-fill pe-3">
+                    انضم إلى العام الدراسي الجديد في سبتمبر
+                    <span class="d-block fw-bold pt-1"> سجل الان </span>
+                  </div>
+                  <i class="icon-arrow-sm default d-block overflow-hidden"></i>
+                </a>
+              </div>
+              <label class="text-gray fs-5 fw-medium ps-4 col-auto d-none d-md-block">
+                متبقي 27 يوم فقط للتسجيل !
+              </label>
+            </div> -->
+            <!--END JOIN ROW-->
+            <!-- <div class="animate__animated animate__fadeInUp wow">
+              <a
+                class="btn btn-link fs-5 all d-inline-flex align-items-center px-3 py-2 fw-medium border border-primary text-start">
+                الأسئلة الشائعة حول دراسةالدراسات العليا
+                <i class="icon-arrow-sm"></i>
+              </a>
+            </div> -->
+          </section>
+
+          <!-- <section class="py-5 px-2">
+            <div class="goto-link position-relative" id="courses"></div>
+            <h1 class="heading-font mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
+              الدراسات الحرة
+            </h1>
+            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow mb-4">
+              نظام تعليمي حر مسائي على هيئة دورات متتالية يسمح لهواة السينما بدراسة السينما دون شروط على السن أو عام
+              الحصول على المؤهل أو العدد المسموح بقبوله .فقط الحصول على ثانوية عامة أو مايعادلها من الشهادات الأجنبية
+              كحد ادني
+            </p>
+            <div>
+              <a class="btn btn-primary border-0 all py-2 px-3">
+                <span class="pe-4 pb-1 fs-6 fw-medium">إطلع على الدورات المتاحه</span>
+                <i class="icon-arrow-sm"></i>
+              </a>
+            </div>
+          </section> -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <section class="container-fluid pt-5 pt-5 pb-lg-5 pb-3">
+      <div class="row">
+        <div
+          class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__faster wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الطالب
+              <p class="mb-0 text-gray mt-1">
+                تعرف على المواد و المهام و النتيجة
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع هيئة التدريس
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp animate__fast wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              موقع الموظفين
+              <p class="mb-0 text-gray mt-1">تابع متطلبات الطلبه</p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-3 pb-lg-0 pb-3 animate__animated animate__fadeInUp wow">
+          <a class="btn caption border d-flex align-items-center text-start p-3 fs-6 h-100">
+            <div class="fw-medium flex-fill p-1">
+              خدمات الخريجين
+              <p class="mb-0 text-gray mt-1">
+                تعرف على الخدمات الخاصه بالخرجين
+              </p>
+            </div>
+            <i class="icon-arrow-sm m-1 default d-block overflow-hidden"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+
+  </main>
+
+
+</div>
