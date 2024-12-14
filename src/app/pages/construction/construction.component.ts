@@ -15,6 +15,7 @@ export class ConstructionComponent implements OnInit {
   galleryArry:any
   id
   showView = false
+  CONSTRUCTIONObj:any
   constructor(private rest : RestService , private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -26,6 +27,7 @@ export class ConstructionComponent implements OnInit {
   getConstrction(){
     this.rest.getConstrction(this.id).subscribe((res:any) => {
       console.log(res)
+      this.CONSTRUCTIONObj = res
       if(res.CONSTRUCTION_NAME == "وحدة ضمان الجودة"){
         this.showView = false
       }else {

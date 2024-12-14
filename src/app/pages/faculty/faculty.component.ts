@@ -29,6 +29,7 @@ export class FacultyComponent implements OnInit {
       clickable: true,
     },
   };
+  facultyObj:any
   constructor(private rest: FacultyService,
     private router: Router,
     private route: ActivatedRoute) { }

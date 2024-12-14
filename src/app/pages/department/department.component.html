@@ -80,12 +80,18 @@
         <!--END Desktop side nav-->
         <div class="col-lg-9 bg-white pt-5 pb-lg-5">
           <section class="px-2">
-            <h3
+            <!-- <h3
               class="text-center heading-font heading-style mb-4 fw-normal animate__animated animate__fadeInUp animate__faster wow">
               {{depart_obj.about_department}}
-            </h3>
-            <p class="fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow">
-              {{depart_obj.about_department}}
+            </h3> -->
+            <p class="text-center fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow">
+              {{depart_obj.department_message}}
+            </p>
+            <p class="text-center fs-6 fw-medium animate__animated animate__fadeInUp animate__fast wow">
+              <a [href]="depart_obj.department_QUALITY_FILE_LINK" target="_blank" style="color: blue;text-decoration: underline;">
+                رابط ملف الجودة
+              </a>
+              
             </p>
           </section>
           <!--Mobile side nav-->

@@ -231,4 +231,9 @@
 
   /*  */
 
-  
+  .icon_social a {
+    margin-right: 10px;
+  }
+  .icon_social a img{
+    width: 20px;
+  }

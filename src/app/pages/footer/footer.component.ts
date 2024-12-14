@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
   bank : ""
   instgram : ""
   modelLink : ""
-  CENTERLIBGATE_LINK : ''
+  CENTERLIBGATE_LINK 
   list_condtion: any;
   buildingArr: any;
   constructor(private rest: RestService , private route : Router) { }
@@ -34,7 +34,7 @@ export class FooterComponent implements OnInit {
       this.youtube = res.YOUTUBE
       this.bank = res.INFO_BANK
       this.modelLink = res.MOODLE_LINK
-      this.CENTERLIBGATE_LINK = res.CENTERLIBGATE_LINK
+      this.CENTERLIBGATE_LINK = 'http://library.aoa.edu.eg/'
       for (let i = 0; i < this.branches.length; i++) {
         for (let j = 0; j < this.branches[i].faculty.length; j++) {
           this.branches[i].faculty[j].branch_id = this.branches[i].branch_id
